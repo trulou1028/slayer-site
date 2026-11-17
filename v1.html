@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>slayer: physically accurate films, rendered on your laptop</title>
+<meta name="description" content="Slayer is a Go + Metal ray tracer for cosmology, astronomy and the outdoors. Write a scene in plain YAML, or let your agent write it, and Slayer traces the light into a finished film, score included.">
+<meta property="og:title" content="slayer">
+<meta property="og:description" content="Physically accurate films, rendered on your laptop, directed by your agent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#06060a;
+    --ink:#0d0d14;
+    --panel:#12121b;
+    --line:#23232f;
+    --star:#ece6da;
+    --dim:#9a958c;
+    --faint:#5f5b55;
+    --ember:#ff7a3d;
+    --ember-soft:#ffb38a;
+    --ice:#7fd4ff;
+    --serif:"Instrument Serif", Georgia, serif;
+    --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+    --sans:"Inter", system-ui, sans-serif;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--void);color:var(--star);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--mono)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember)}
+  h1,h2,h3{font-weight:400}
+  h2{font-family:var(--serif);font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.01em}
+  h2 em{color:var(--ember-soft)}
+  section{padding:120px 0;border-top:1px solid var(--line)}
+  .lede{color:var(--dim);max-width:620px;margin-top:18px;font-size:18px}
+
+  /* nav */
+  nav{position:fixed;inset:0 0 auto 0;z-index:20;backdrop-filter:blur(10px);background:rgba(6,6,10,.62);border-bottom:1px solid rgba(35,35,47,.6)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .wordmark{font-family:var(--mono);font-weight:700;font-size:18px;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .wordmark i{width:10px;height:10px;border-radius:50%;background:var(--ember);box-shadow:0 0 14px var(--ember)}
+  nav ul{display:flex;gap:28px;list-style:none;font-family:var(--mono);font-size:13px}
+  nav ul a{text-decoration:none;color:var(--dim)}
+  nav ul a:hover{color:var(--star)}
+  .gh{border:1px solid var(--line);padding:7px 14px;border-radius:999px;color:var(--star)!important}
+  @media (max-width:760px){nav ul li:not(:last-child){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 0 90px;border-top:none;overflow:hidden}
+  .hero-media{position:absolute;inset:0;z-index:0}
+  .hero-media video,.hero-media canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,10,.25) 0%,rgba(6,6,10,.15) 45%,rgba(6,6,10,.92) 100%)}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .hero h1{font-family:var(--serif);font-size:clamp(48px,8.4vw,112px);line-height:.95;letter-spacing:-.02em;max-width:1000px;margin-top:20px}
+  .hero h1 em{color:var(--ember-soft)}
+  .hero p{max-width:600px;margin-top:26px;font-size:19px;color:#d4cec3}
+  .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .btn{font-family:var(--mono);font-size:14px;text-decoration:none;padding:14px 22px;border-radius:999px;border:1px solid var(--line);background:rgba(18,18,27,.6);transition:.2s}
+  .btn:hover{border-color:var(--dim)}
+  .btn.primary{background:var(--ember);color:#160a04;border-color:var(--ember);font-weight:700}
+  .btn.primary:hover{background:var(--ember-soft)}
+  .scrollcue{position:absolute;right:28px;bottom:32px;z-index:2;font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.14em;writing-mode:vertical-rl}
+
+  /* stats */
+  .stats{padding:0;border-top:1px solid var(--line)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:34px 0 34px 22px;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:none;padding-left:0}
+  .stat b{display:block;font-family:var(--serif);font-size:44px;font-weight:400;line-height:1}
+  .stat span{display:block;margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+  @media (max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:none;padding-left:0}.stat{border-top:1px solid var(--line)}}
+
+  /* reel */
+  .reel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .sound-note{font-family:var(--mono);font-size:12px;color:var(--faint)}
+  .reel{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:52px}
+  .clip{position:relative;background:var(--ink);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:16/10}
+  .clip.wide{grid-column:span 8}
+  .clip.tall{grid-column:span 4;aspect-ratio:auto}
+  .clip.half{grid-column:span 6}
+  .clip video,.clip canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .clip figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;font-family:var(--mono);font-size:12px;background:linear-gradient(0deg,rgba(6,6,10,.85),rgba(6,6,10,0))}
+  .clip .snd{font-family:var(--mono);font-size:11px;background:rgba(6,6,10,.7);border:1px solid var(--line);color:var(--star);padding:6px 10px;border-radius:999px;cursor:pointer}
+  .clip .snd:hover{border-color:var(--ember)}
+  .clip .missing{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:10px;color:var(--faint)}
+  @media (max-width:860px){.clip.wide,.clip.tall,.clip.half{grid-column:span 12}.clip.tall{aspect-ratio:9/14}}
+
+  /* how */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px}
+  .step .n{font-family:var(--mono);font-size:12px;color:var(--ember)}
+  .step h3{font-family:var(--serif);font-size:30px;margin:14px 0 10px}
+  .step p{color:var(--dim);font-size:15px}
+  .step code{font-family:var(--mono);font-size:13px;color:var(--star);background:#0a0a11;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+  @media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* agent */
+  .agent{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+  .agent ul{list-style:none;margin-top:30px;display:grid;gap:18px}
+  .agent li{padding-left:26px;position:relative;color:var(--dim)}
+  .agent li b{color:var(--star);font-weight:500}
+  .agent li::before{content:"→";position:absolute;left:0;color:var(--ember);font-family:var(--mono)}
+  .term{background:#08080d;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:var(--mono);font-size:13.5px;line-height:1.75;box-shadow:0 40px 80px -30px rgba(255,122,61,.18)}
+  .term .bar{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .term .bar i{width:10px;height:10px;border-radius:50%;background:#2a2a36}
+  .term pre{padding:22px 22px 26px;white-space:pre-wrap;color:#cfc9be}
+  .term .c{color:var(--faint)}
+  .term .p{color:var(--ember)}
+  .term .k{color:var(--ice)}
+  .term .ok{color:#9be29b}
+  @media (max-width:900px){.agent{grid-template-columns:1fr}}
+
+  /* features */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .feat{padding:30px 28px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .feat .tag{font-family:var(--mono);font-size:11px;color:var(--ice)}
+  .feat h3{font-family:var(--serif);font-size:27px;margin:10px 0 8px}
+  .feat p{color:var(--dim);font-size:15px}
+  @media (max-width:900px){.feats{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.feats{grid-template-columns:1fr}}
+
+  /* start */
+  .start{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+  .reqs{margin-top:30px;display:grid;gap:12px}
+  .req{display:flex;gap:14px;align-items:baseline;font-size:15px;color:var(--dim)}
+  .req b{font-family:var(--mono);font-size:12px;color:var(--star);min-width:92px;font-weight:500}
+  @media (max-width:900px){.start{grid-template-columns:1fr}}
+
+  /* maker */
+  .maker{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start}
+  .orb{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#ffd9bf 0%,#ff7a3d 28%,#7a2a10 62%,#1a0904 100%);box-shadow:0 0 60px rgba(255,122,61,.35)}
+  .maker p{color:var(--dim);max-width:640px;margin-top:16px}
+  .maker p a{color:var(--star)}
+  .also{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .also a{font-family:var(--mono);font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:12px 16px;display:block}
+  .also a span{display:block;color:var(--faint);font-size:11px;margin-top:4px}
+  .also a:hover{border-color:var(--dim)}
+  @media (max-width:640px){.maker{grid-template-columns:1fr}}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;font-family:var(--mono);font-size:12px;color:var(--faint)}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer a{color:var(--dim)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="wordmark" href="#top"><i></i>slayer</a>
+    <ul>
+      <li><a href="#reel">reel</a></li>
+      <li><a href="#how">how it works</a></li>
+      <li><a href="#agents">agents</a></li>
+      <li><a href="#start">start</a></li>
+      <li><a class="gh" href="https://github.com/janearc/slayer">github ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-media">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <video class="asset" src="assets/the-beam.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  </div>
+  <div class="wrap">
+    <div class="kicker">go + metal + math + physics</div>
+    <h1>Physically accurate films, rendered on your laptop, <em>directed by your agent.</em></h1>
+    <p>Slayer is a ray tracer for cosmology, astronomy and the great outdoors. You (or Claude, or Codex) describe a scene in plain YAML. Slayer traces the light and hands back a finished film, score included.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#reel">watch the reel</a>
+      <a class="btn" href="https://github.com/janearc/slayer">read the source ↗</a>
+    </div>
+  </div>
+  <div class="scrollcue">scroll</div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>500k+</b><span>lines of go</span></div>
+    <div class="stat"><b>1</b><span>program, every frame in the reel</span></div>
+    <div class="stat"><b>0</b><span>cloud gpus required</span></div>
+    <div class="stat"><b>apache-2.0</b><span>open source</span></div>
+  </div>
+</div>
+
+<section id="reel">
+  <div class="wrap">
+    <div class="reel-head reveal">
+      <div>
+        <div class="kicker">the reel</div>
+        <h2>Every frame here came from <em>one piece of software.</em></h2>
+      </div>
+      <div class="sound-note">sound off by default. tap a clip to hear its score.</div>
+    </div>
+    <div class="reel">
+      <figure class="clip wide reveal">
+        <canvas class="ph" data-seed="3" aria-hidden="true"></canvas>
+        <video class="asset" src="assets/into-the-centre.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="missing">assets/into-the-centre.mp4</span>
+        <figcaption><span>into the centre</span><button class="snd" type="button">sound on</button></figcaption>
+      </figure>
+      <figure class="clip tall reveal">
+        <canvas class="ph" data-seed="7" data-warm="1" aria-hidden="true"></canvas>
+        <video class="asset" src="assets/glass-hour.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="missing">assets/glass-hour.mp4</span>
+        <figcaption><span>glass hour</span><button class="snd" type="button">sound on</button></figcaption>
+      </figure>
+      <figure class="clip half reveal">
+        <canvas class="ph" data-seed="11" data-warm="1" aria-hidden="true"></canvas>
+        <video class="asset" src="assets/the-beam.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="missing">assets/the-beam.mp4</span>
+        <figcaption><span>the beam</span><button class="snd" type="button">sound on</button></figcaption>
+      </figure>
+      <figure class="clip half reveal">
+        <canvas class="ph" data-seed="17" aria-hidden="true"></canvas>
+        <video class="asset" src="assets/zappy-plays.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="missing">assets/zappy-plays.mp4</span>
+        <figcaption><span>zappy plays</span><button class="snd" type="button">sound on</button></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">how it works</div>
+      <h2>Write the shot. Trace the light. <em>Develop the film.</em></h2>
+      <p class="lede">Slayer works like a camera with a darkroom attached. A scene is a set, a shot is a job, and nothing about either needs you to write Go.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">01 / write</div>
+        <h3>Describe the scene</h3>
+        <p>A <b>set</b> is a world in YAML: geometry, materials, lights, volumes and sky, measured in metres. A <b>job</b> is the photograph or film: camera, size, samples, time, soundtrack and outputs.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">02 / trace</div>
+        <h3>Let the light run</h3>
+        <p>Run <code>draw</code> on a job. Stills run on the CPU with no special hardware, and <code>renderer: gpu</code> switches to Metal on a Mac. Long renders pick up where they left off if interrupted.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">03 / develop</div>
+        <h3>Get the finished piece</h3>
+        <p>Out comes a PNG, an MP4 with a synthesized score, or a raw PFM of linear light you can re-expose later without re-tracing. Portrait framing is built in, ready for Shorts and Reels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="wrap agent">
+    <div class="reveal">
+      <div class="kicker">agent-native</div>
+      <h2>Your agent <em>already speaks slayer.</em></h2>
+      <p class="lede">Everything Slayer needs is plain text and a command line. That makes it a natural tool for Claude, Codex, or any agent that can edit a file and run a shell.</p>
+      <ul>
+        <li><b>Plain-text scenes.</b> Sets and jobs are YAML, so an agent can write a shot the same way it writes code.</li>
+        <li><b>Errors that point.</b> Unknown keys are refused at their exact source location, so an agent can fix its own mistakes.</li>
+        <li><b>A catalogue it can read.</b> <span class="mono">list</span> shows every scene, smoke, preset, stock, tune and voicing available.</li>
+        <li><b>Runs locally.</b> No render farm, no API bill. Your laptop is the studio.</li>
+      </ul>
+    </div>
+    <div class="term reveal" role="img" aria-label="Terminal session running slayer commands">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="c"># what can i film?</span>
+<span class="p">$</span> game run slayer -- list
+
+<span class="c"># check the job before spending any light on it</span>
+<span class="p">$</span> game run slayer -- assess jobs/first-picture.yaml
+
+<span class="c"># a still, on the cpu</span>
+<span class="p">$</span> game run slayer -- draw jobs/first-picture.yaml
+
+<span class="c"># re-develop the raw light without re-tracing</span>
+<span class="p">$</span> game run slayer -- develop jobs/first-picture.yaml out/first-picture.pfm
+
+<span class="c"># a short film, scored</span>
+<span class="p">$</span> game run slayer -- draw jobs/first-film.yaml
+<span class="ok">→ out/first-film/  frames + mp4</span></pre>
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">inside the box</div>
+      <h2>Built like a photographer, <em>checked like a physicist.</em></h2>
+    </div>
+    <div class="feats">
+      <div class="feat reveal"><div class="tag">darkroom</div><h3>Light first, look later</h3><p>Linear light is kept apart from development, so a saved frame can be re-exposed or re-white-balanced without tracing it again.</p></div>
+      <div class="feat reveal"><div class="tag">ninjafilm</div><h3>Real film stock</h3><p>Photographic stock, optics and grain are modelled, so every frame carries the character of a real camera.</p></div>
+      <div class="feat reveal"><div class="tag">manufactory</div><h3>Worlds on demand</h3><p>Rocks, trees, houses and the rest of what you'd find outside, all generated procedurally.</p></div>
+      <div class="feat reveal"><div class="tag">synth</div><h3>Scored in sync</h3><p>A built-in synthesizer writes the soundtrack and keeps the music in time with the picture.</p></div>
+      <div class="feat reveal"><div class="tag">sky</div><h3>The cosmos, to scale</h3><p>Volumetric light and astronomical scenes, from a hillside at moonrise to a star wrapped in a Dyson swarm.</p></div>
+      <div class="feat reveal"><div class="tag">burning-trousers</div><h3>Physics, verified</h3><p>An independent validation harness checks the physics, so pretty and correct stay the same thing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap start">
+    <div class="reveal">
+      <div class="kicker">start</div>
+      <h2>Your first picture <em>in a few commands.</em></h2>
+      <p class="lede">Build Slayer from source, then render the demo still. No GPU needed for that first frame.</p>
+      <div class="reqs">
+        <div class="req"><b>build</b><span>Follow the Building Slayer guide in the repo for tools and dependencies.</span></div>
+        <div class="req"><b>first still</b><span>Runs on the CPU. No Metal device or terrain data needed.</span></div>
+        <div class="req"><b>films</b><span><span class="mono">ffmpeg</span> on your PATH.</span></div>
+        <div class="req"><b>gpu</b><span>Optional. macOS with Metal.</span></div>
+      </div>
+      <div class="ctas"><a class="btn primary" href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md">getting started guide ↗</a></div>
+    </div>
+    <div class="term reveal" role="img" aria-label="Commands to render a first picture and first film">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="c"># from the root of your checkout</span>
+<span class="p">$</span> game run slayer -- draw jobs/first-picture.yaml
+
+<span class="c"># then a three-second film</span>
+<span class="p">$</span> game run slayer -- draw jobs/first-film.yaml
+
+<span class="c"># portrait, fire, film stock and a title card</span>
+<span class="p">$</span> game run slayer -- draw jobs/short-fire-night.yaml
+
+<span class="c"># a job's scene can be a demo or your own set</span>
+<span class="k">scene:</span> {smoke: 1}
+<span class="k">renderer:</span> gpu</pre>
+    </div>
+  </div>
+</section>
+
+<section id="maker">
+  <div class="wrap maker reveal">
+    <div class="orb" aria-hidden="true"></div>
+    <div>
+      <div class="kicker">who made this</div>
+      <h2>Built by <em>Jane Arc.</em></h2>
+      <p>Jane builds scientific software with a production engineer's standards: physics and maths for astronomy, observatories, renderers, and the tools around them. Slayer is her third attempt at a renderer like this, and the one that stuck.</p>
+      <div class="also">
+        <a href="https://github.com/janearc/celestial">celestial ↗<span>astronomy, cosmology + radiation maths</span></a>
+        <a href="https://github.com/janearc/nilgai">nilgai ↗<span>x-ray, gamma-ray + neutrino observatory</span></a>
+        <a href="https://github.com/janearc">github.com/janearc ↗<span>everything else</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>slayer · apache-2.0 · pre-release, changing fast</span>
+    <span><a href="https://github.com/janearc/slayer">github.com/janearc/slayer</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // seeded random so each placeholder looks distinct but stable
+  function rng(seed){ var s = seed >>> 0 || 1; return function(){ s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
+
+  // a small procedural sky: stars plus one lit body. used for the hero and as a stand-in until videos load.
+  function sky(canvas, seed, warm, animate){
+    var ctx = canvas.getContext('2d'); if(!ctx) return;
+    var r = rng(seed), stars = [], w, h, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var body = { x: .25 + r() * .5, y: .25 + r() * .3, rad: .16 + r() * .14 };
+    for (var i = 0; i < 260; i++) stars.push({ x: r(), y: r(), z: r(), t: r() * 6.28 });
+    function size(){ w = canvas.clientWidth; h = canvas.clientHeight; canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+    function frame(t){
+      t = (t || 0) / 1000;
+      ctx.fillStyle = '#06060a'; ctx.fillRect(0, 0, w, h);
+      for (var i = 0; i < stars.length; i++){
+        var s = stars[i], tw = .55 + .45 * Math.sin(t * (0.6 + s.z) + s.t);
+        var x = ((s.x + t * 0.004 * s.z) % 1) * w, y = s.y * h;
+        ctx.globalAlpha = (0.25 + 0.75 * s.z) * tw;
+        ctx.fillStyle = s.z > .93 ? (warm ? '#ffd2b0' : '#cfeeff') : '#ece6da';
+        ctx.fillRect(x, y, s.z * 1.8 + .4, s.z * 1.8 + .4);
+      }
+      ctx.globalAlpha = 1;
+      var bx = body.x * w, by = body.y * h, br = body.rad * Math.min(w, h) * 1.6;
+      var halo = ctx.createRadialGradient(bx, by, br * .6, bx, by, br * 2.6);
+      halo.addColorStop(0, warm ? 'rgba(255,122,61,.22)' : 'rgba(127,212,255,.16)'); halo.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(bx, by, br * 2.6, 0, 6.29); ctx.fill();
+      var lx = Math.cos(t * .05) * .35 - .35, ly = -.35;
+      var g = ctx.createRadialGradient(bx + lx * br, by + ly * br, br * .05, bx, by, br);
+      if (warm){ g.addColorStop(0, '#ffe2c8'); g.addColorStop(.35, '#ff8a4a'); g.addColorStop(.8, '#5a1d0a'); g.addColorStop(1, '#120603'); }
+      else { g.addColorStop(0, '#e9f6ff'); g.addColorStop(.35, '#6aa7c9'); g.addColorStop(.8, '#142a3a'); g.addColorStop(1, '#05080c'); }
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(bx, by, br, 0, 6.29); ctx.fill();
+      if (animate && !reduce) requestAnimationFrame(frame);
+    }
+    size(); window.addEventListener('resize', function(){ size(); if (reduce || !animate) frame(0); });
+    animate && !reduce ? requestAnimationFrame(frame) : frame(0);
+  }
+
+  sky(document.getElementById('sky'), 42, true, true);
+  document.querySelectorAll('canvas.ph').forEach(function(c){ sky(c, +c.dataset.seed, !!c.dataset.warm, false); });
+
+  // videos sit on top of their canvas. if a file is missing, hide it and keep the canvas.
+  document.querySelectorAll('video.asset').forEach(function(v){
+    var fig = v.closest('figure');
+    v.style.opacity = 0; v.style.transition = 'opacity .6s';
+    v.addEventListener('loadeddata', function(){ v.style.opacity = 1; if (fig){ var m = fig.querySelector('.missing'); if (m) m.remove(); } });
+    v.addEventListener('error', function(){ v.remove(); }, true);
+    var src = v.getAttribute('src'); if (src) { v.removeAttribute('src'); var s = document.createElement('source'); s.src = src; s.type = 'video/mp4'; s.addEventListener('error', function(){ v.remove(); }); v.appendChild(s); v.load(); }
+  });
+
+  // play reel clips only while on screen
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ var v = e.target.querySelector('video'); if (!v) return; if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } else v.pause(); }); }, { threshold: .35 });
+    document.querySelectorAll('.clip').forEach(function(c){ io.observe(c); });
+    var ro = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } }); }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // sound toggles: one clip audible at a time
+  document.querySelectorAll('.snd').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.closest('figure').querySelector('video'); if (!v) { b.textContent = 'no file yet'; return; }
+      var turnOn = v.muted;
+      document.querySelectorAll('.clip video').forEach(function(o){ o.muted = true; });
+      document.querySelectorAll('.snd').forEach(function(o){ o.textContent = 'sound on'; });
+      if (turnOn){ v.muted = false; var p = v.play(); if (p && p.catch) p.catch(function(){}); b.textContent = 'sound off'; }
+    });
+  });
+})();
+</script>
+</body>
+</html>
