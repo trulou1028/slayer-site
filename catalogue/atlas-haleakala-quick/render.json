@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "atlas-haleakala",
+      "group": "Haleakala families",
+      "about": "A short wide-field camera on a counterweighted mount.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://fallingstar.com/specifications.php"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "atlas-haleakala-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228975,
+      "Candidates": 192744,
+      "Refined": 192744,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 345929875,
+    "Encode": 21604125,
+    "Compile": 2717416,
+    "BakeWall": 583,
+    "BakeGPU": 0,
+    "DispatchWall": 173457751,
+    "TraceGPU": 79852960,
+    "Finish": 31855208,
+    "AccelerationWall": 103363875,
+    "AccelerationGPU": 45662874,
+    "InputBytes": 415940,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -2.8,
+      "Y": 0,
+      "Z": -2.8
+    },
+    "Max": {
+      "X": 2.8,
+      "Y": 5,
+      "Z": 2.8
+    }
+  },
+  "stored-faces": 4572,
+  "seed": 5,
+  "image-sha256": "2218362604652447dca14e4c8b113763efcf7652afc226071151e3106f057884",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 42313834
+}

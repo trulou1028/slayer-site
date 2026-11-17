@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "daf-xf",
+      "group": "Vehicles",
+      "about": "A DAF XF tractor unit, two axles, its wheelbase 3.8 m, its Super Space Cab tall and flat-fronted, a fifth wheel for a trailer.",
+      "notes": "The wheelbase as published; the cab's height, the length and the tyres are picked.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "daf-xf-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 161001,
+      "Refined": 161001,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 285272500,
+    "Encode": 4747416,
+    "Compile": 1795417,
+    "BakeWall": 584,
+    "BakeGPU": 0,
+    "DispatchWall": 141086083,
+    "TraceGPU": 77952958,
+    "Finish": 28471459,
+    "AccelerationWall": 93663166,
+    "AccelerationGPU": 58898459,
+    "InputBytes": 94140,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.275,
+      "Y": 0,
+      "Z": -3.05
+    },
+    "Max": {
+      "X": 1.275,
+      "Y": 3.9499999999999997,
+      "Z": 3.05
+    }
+  },
+  "stored-faces": 684,
+  "seed": 5,
+  "image-sha256": "5d51e8ddcfb5aa17d266467666909e826cf5f7de35c2ffb3bec3e4bfddde2e6e",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 5274916
+}

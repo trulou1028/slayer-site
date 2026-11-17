@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "venera-lander",
+      "group": "Planetary landers",
+      "about": "The Venera 9 to 14 lander, standing on its impact ring, 1.97 m tall and 2.15 m across its drag plate, a placeholder.",
+      "notes": "The ring's radius, the payload's height and size, the plate's width, the eighteen legs and the heat shield's 2.4 m read from the Schroeder, Bayandor and Samareh report, and not yet pinned. The ring's tube, the legs' and the plate's thickness, the can and every finish are picked, and where the legs meet the module is picked; the vessel and the shield are held and not drawn.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NASA Technical Reports Server, 20170002533, Schroeder, Bayandor and Samareh",
+          "url": "https://ntrs.nasa.gov/citations/20170002533"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "venera-lander-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 74900,
+      "Refined": 74898,
+      "Fallbacks": 2
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 1328647000,
+    "Encode": 528219917,
+    "Compile": 2914750,
+    "BakeWall": 750,
+    "BakeGPU": 0,
+    "DispatchWall": 183217791,
+    "TraceGPU": 155979831,
+    "Finish": 17960251,
+    "AccelerationWall": 583633334,
+    "AccelerationGPU": 440325416,
+    "InputBytes": 8069036,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.6549999999999998,
+      "Y": 0,
+      "Z": -1.6549999999999998
+    },
+    "Max": {
+      "X": 1.6549999999999998,
+      "Y": 1.97,
+      "Z": 1.6549999999999998
+    }
+  },
+  "stored-faces": 86916,
+  "seed": 5,
+  "image-sha256": "d6a77e54b6500ce07fcf8555159b9a0396f9e91e59e35d4968d004d9ed6ea332",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 818155125
+}

@@ -1,0 +1,93 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "city-apartment",
+      "group": "City buildings",
+      "about": "A seeded four to eight storey apartment building with a flat roof.",
+      "notes": "Authored dimensions and materials; quick adds broad glazing bands.",
+      "details": [
+        "hull",
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "city-apartment-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 318794,
+      "Refined": 318794,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 269455458,
+    "Encode": 3264917,
+    "Compile": 3353500,
+    "BakeWall": 791,
+    "BakeGPU": 0,
+    "DispatchWall": 168386541,
+    "TraceGPU": 57138709,
+    "Finish": 36462500,
+    "AccelerationWall": 40121375,
+    "AccelerationGPU": 18928541,
+    "InputBytes": 42748,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -6.855995519259704,
+      "Y": 0,
+      "Z": -8.04134318566527
+    },
+    "Max": {
+      "X": 6.915995519259703,
+      "Y": 12.78545617919871,
+      "Z": 8.10134318566527
+    }
+  },
+  "stored-faces": 96,
+  "seed": 5,
+  "image-sha256": "8e94046de2a7ea45314439c1ddfbc37cb11ad63b8083db7ea6c909204660448a",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 604250
+}

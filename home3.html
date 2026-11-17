@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<meta name="robots" content="noindex, nofollow">
+<title>slayer: physically accurate films, rendered on your laptop</title>
+<meta name="description" content="Slayer is a Go + Metal ray tracer for cosmology, astronomy and the outdoors. Write a scene in plain YAML, or let your agent write it, and Slayer traces the light into a finished film, score included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#06060a}
+a{color:#ece6da}a:hover{color:#ffb38a}
+.stars{background-image:radial-gradient(1px 1px at 12% 22%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 34% 70%,#ece6da 50%,transparent 51%),radial-gradient(1.5px 1.5px at 58% 14%,#ffd2b0 50%,transparent 51%),radial-gradient(1px 1px at 72% 48%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 88% 82%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 22% 88%,#cfeeff 50%,transparent 51%),radial-gradient(1px 1px at 46% 36%,#ece6da 50%,transparent 51%),radial-gradient(1.5px 1.5px at 94% 18%,#ece6da 50%,transparent 51%)}
+.grid{background-image:linear-gradient(#14141d 1px,transparent 1px),linear-gradient(90deg,#14141d 1px,transparent 1px);background-size:40px 40px}
+</style>
+<style>
+html{scroll-behavior:smooth}
+img,video{max-width:100%}
+video.film{background:#0a0a10}
+:focus-visible{outline:2px solid #ffb38a;outline-offset:3px}
+@media (max-width:640px){
+  h1{font-size:40px!important;letter-spacing:-.06em!important;line-height:1.1!important}
+  h2{font-size:30px!important}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.switcher{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 32px);box-sizing:border-box;padding:6px;border:1px solid #2c2c3a;border-radius:999px;background:rgba(9,9,14,.9);backdrop-filter:blur(10px);font:500 12px/1 'JetBrains Mono',monospace}
+.switcher a{color:#b8b2a7;text-decoration:none;padding:9px 12px;border-radius:999px}
+.switcher a[aria-current]{background:#ff7a3d;color:#160a04}
+.switcher span{color:#b8b2a7;padding:0 10px}
+#hero-film{filter:brightness(.6)}
+.film-pick{text-shadow:0 2px 24px rgba(0,0,0,.9)}
+@media (max-width:640px){
+  nav a[href="#how"]{display:none}
+  .switcher{left:8px;right:8px;bottom:8px;transform:none;max-width:none;flex-wrap:nowrap;overflow-x:auto;border-radius:12px;justify-content:flex-start}
+  .switcher a{padding:9px 10px;flex:0 0 auto}
+  .switcher span{display:none}
+  footer{padding-bottom:96px!important}
+}
+
+.lockup{display:inline-flex;align-items:center;gap:2px;text-decoration:none}
+.lockup img{display:block;width:34px;height:34px;margin-left:-4px}
+.lockup span{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:21px;letter-spacing:-.07em;line-height:1;
+  background:linear-gradient(90deg,#ff8a4a 0%,#ffb38a 45%,#ece6da 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+</style>
+</head>
+<body>
+<main id="top" class="grid" style="background-color: #06060a; color: #ece6da; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
+
+<nav style="border-bottom: 1px solid #23232f; background: rgba(6,6,10,.9)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+<a href="#top" class="lockup" aria-label="slayer, back to top"><img src="assets/brand/slayer-mark.png" alt="" width="34" height="34"><span>slayer</span></a>
+<div style="display: flex; gap: 22px; flex-wrap: wrap">
+<a href="#reel" style="text-decoration: none">reel</a>
+<a href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md" style="text-decoration: none">docs</a>
+<a href="https://github.com/janearc/slayer" style="text-decoration: none; color: #ff9a6a">github ↗</a>
+</div>
+</div>
+</nav>
+
+<header style="padding: 72px 0 40px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap">
+<h1 style="margin: 0; max-width: 780px; font-family: &quot;JetBrains Mono&quot;; font-weight: 400; font-size: 62px; line-height: 1.2; letter-spacing: -6px">Twelve lines of text in. <br><em style="color: rgb(255, 179, 138)">A finished film out.</em></h1>
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 360px">
+<p style="margin: 0; color: #b8b2a7">Slayer is a physically accurate ray tracer for cosmology, astronomy and the outdoors. Your agent writes the scene. Your laptop traces the light.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<a href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; border-radius: 8px; background: #ff7a3d; color: #160a04">get started</a>
+<a href="#reel" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; text-decoration: none; padding: 12px 18px; border-radius: 8px; border: 1px solid #3a3a4a">watch the reel</a>
+</div>
+</div>
+</div>
+</header>
+
+<section id="reel" style="padding: 0 0 96px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px">
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; overflow: hidden; background: #09090e; box-shadow: 0 60px 120px -50px rgba(255,122,61,.25)">
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-bottom: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 12px; flex-wrap: wrap">
+<div style="display: flex; gap: 4px; flex-wrap: wrap">
+<span style="padding: 6px 12px; border-radius: 6px; background: #14141d; color: #ece6da">jobs/glass-hour.yaml</span>
+<span style="padding: 6px 12px; border-radius: 6px; color: #b8b2a7">sets/hillside.yaml</span>
+</div>
+<span style="color: #b8b2a7">[illustrative job file: Jane to supply the real one]</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap">
+<pre style="flex: 1 1 420px; min-width: 0; margin: 0; padding: 22px 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d4cec3; border-right: 1px solid #23232f; overflow-x: auto"><span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">1</span><span style="color: #8a857c"># glass hour: a hillside at moonrise</span>
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">2</span><span style="color: #7fd4ff">scene:</span> sets/hillside.yaml
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">3</span><span style="color: #7fd4ff">renderer:</span> gpu
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">4</span><span style="color: #7fd4ff">camera:</span>
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">5</span>  <span style="color: #7fd4ff">lens:</span> 35mm
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">6</span>  <span style="color: #7fd4ff">stock:</span> [film stock name]
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">7</span><span style="color: #7fd4ff">size:</span> 1920x1080
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">8</span><span style="color: #7fd4ff">samples:</span> [N]
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">9</span><span style="color: #7fd4ff">time:</span> 0s..12s
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">10</span><span style="color: #7fd4ff">soundtrack:</span> [tune]
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">11</span><span style="color: #7fd4ff">outputs:</span> [mp4, pfm]
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">12</span><span style="background: #ff7a3d; color: #160a04">&nbsp;</span></pre>
+
+<div class="stars" style="flex: 1 1 520px; min-width: 0; position: relative; min-height: 420px; background-color: #0a0605; overflow: hidden">
+<video id="film-1" class="film" src="assets/glass-hour.mp4" poster="assets/stills/glass-hour.jpg" muted loop playsinline preload="none" aria-label="Stand-in frame for Glass hour: a glass sphere on a hillside under a rising orange moon (AI-generated placeholder)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,10,.55) 0%, rgba(6,6,10,0) 18%, rgba(6,6,10,0) 70%, rgba(6,6,10,.8) 100%)"></div>
+<div style="position: absolute; top: 14px; left: 16px; right: 16px; display: flex; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #d4cec3">
+<span>frame [0247] / [0288]</span><span>linear light · re-exposable</span>
+</div>
+<div style="position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #d4cec3">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span>tracing on Metal</span><span>[render time] · [machine]</span></div>
+<div style="height: 3px; background: #2c2c3a; border-radius: 3px; overflow: hidden"><div style="width: 86%; height: 100%; background: #ff7a3d"></div></div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 8px 14px; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 12px; background: #0d0d14">
+<span><span style="background: #ff7a3d; color: #160a04; padding: 1px 8px; border-radius: 3px; font-weight: 700">DRAW</span>  <span style="color: #b8b2a7">$ game run slayer -- draw jobs/glass-hour.yaml</span></span>
+<span style="color: #9be29b">→ out/glass-hour/  frames + mp4 + score</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="how" style="border-top: 1px solid #23232f; padding: 96px 0; background: rgba(6,6,10,.92)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: &quot;JetBrains Mono&quot;; font-weight: 400; font-size: 42px; line-height: 1.02; max-width: 640px; letter-spacing: -2px">Built for the agent loop.</h2>
+<p style="margin: 0; max-width: 380px; color: #b8b2a7">Plain text in, plain errors back. An agent that can edit a file and run a shell can direct a film.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; padding: 24px; background: #0d0d14; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff9a6a">1 · list</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -.03em">It reads the catalogue</div>
+<code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #d4cec3; background: #06060a; border: 1px solid #23232f; border-radius: 8px; padding: 12px">$ game run slayer -- list</code>
+<p style="margin: 0; color: #b8b2a7; font-size: 15px">Every scene, smoke, preset, stock, tune and voicing.</p>
+</div>
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; padding: 24px; background: #0d0d14; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff9a6a">2 · assess</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -.03em">It fixes its own mistakes</div>
+<code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffb38a; background: #06060a; border: 1px solid #23232f; border-radius: 8px; padding: 12px">[example error from assess, pointing at file:line:column]</code>
+<p style="margin: 0; color: #b8b2a7; font-size: 15px">Unknown keys are refused at their exact source location.</p>
+</div>
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; padding: 24px; background: #0d0d14; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff9a6a">3 · draw</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -.03em">It hands you the film</div>
+<code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9be29b; background: #06060a; border: 1px solid #23232f; border-radius: 8px; padding: 12px">→ out/first-film/  frames + mp4</code>
+<p style="margin: 0; color: #b8b2a7; font-size: 15px">No render farm, no API bill. Your laptop is the studio.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="border-top: 1px solid #23232f; padding: 96px 0; background: rgba(6,6,10,.92)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 42px; line-height: 1.04; letter-spacing: -2px">Spec sheet</h2>
+<p style="margin: 0; color: #b8b2a7">Built like a photographer, checked like a physicist. By Jane Arc.</p>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: 180px 1fr; font-size: 15px">
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">darkroom</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Re-expose a saved frame without tracing it again</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">ninjafilm</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Real photographic stock, optics and grain</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">manufactory</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Rocks, trees and houses, generated procedurally</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">synth</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">A score written in time with the picture</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">sky</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Volumetric light and the cosmos, to scale</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; border-bottom: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">burning-trousers</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; border-bottom: 1px solid #23232f; color: #d4cec3">An independent harness that checks the physics</dd>
+</dl>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #23232f; padding: 36px 0 56px; background: #06060a">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8a857c">
+<span>slayer · apache 2.0 · 500k+ lines of go · pre-release</span>
+<a href="https://github.com/janearc/slayer" style="color: #b8b2a7">github.com/janearc/slayer</a>
+</div>
+</footer>
+</main>
+<nav class="switcher" aria-label="Design versions"><a href="/home1">home1</a><a href="/home2">home2</a><a href="/home3" aria-current="page">home3</a><a href="/home4">home4</a><a href="/home5">home5</a><span>C · source to frame · stand-in images are AI-generated</span></nav>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // films play only while on screen; if a file is missing the still (poster) stays.
+  var vids = document.querySelectorAll('video.film');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ var v = e.target;
+      if (e.isIntersecting) { if (v.preload === 'none') { v.preload = 'auto'; } var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      else v.pause(); }); }, { threshold: .3 });
+    vids.forEach(function(v){ io.observe(v); });
+  }
+  // "play with score": one film audible at a time.
+  document.querySelectorAll('[data-sound]').forEach(function(b){
+    b.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var v = document.getElementById(b.getAttribute('data-sound'));
+      if (!v || v.networkState === 3 || v.readyState === 0) { b.textContent = 'film coming soon'; return; }
+      var on = v.muted;
+      vids.forEach(function(o){ o.muted = true; });
+      document.querySelectorAll('[data-sound]').forEach(function(o){ o.textContent = '▶ play with score'; });
+      if (on) { v.muted = false; v.play(); b.textContent = '■ sound off'; }
+    });
+  });
+  // film index picker (home2)
+  var hero = document.getElementById('hero-film');
+  document.querySelectorAll('[data-film]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-film');
+      hero.poster = 'assets/stills/' + f + '.jpg'; hero.src = 'assets/' + f + '.mp4';
+      hero.setAttribute('aria-label', btn.getAttribute('data-label'));
+      var p = hero.play(); if (p && p.catch) p.catch(function(){});
+      document.querySelectorAll('[data-film]').forEach(function(o){
+        var picked = o === btn; o.style.color = picked ? '#ece6da' : '#8a857c'; o.style.fontStyle = picked ? 'italic' : 'normal';
+        o.setAttribute('aria-pressed', picked ? 'true' : 'false'); });
+      var n = document.getElementById('slate-num'); if (n) n.textContent = btn.getAttribute('data-num');
+      var s = document.querySelector('[data-sound]'); if (s) s.setAttribute('data-sound', 'hero-film');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

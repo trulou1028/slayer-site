@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "uh-88",
+      "group": "Maunakea families",
+      "about": "A closed optical tube and yoke inside a small summit dome.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://about.ifa.hawaii.edu/facility/maunakea-telescopes/"
+        }
+      ],
+      "view-yaw-deg": 20,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "uh-88-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228910,
+      "Candidates": 212026,
+      "Refined": 212026,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 356920417,
+    "Encode": 28382541,
+    "Compile": 2148583,
+    "BakeWall": 291,
+    "BakeGPU": 0,
+    "DispatchWall": 162331082,
+    "TraceGPU": 137521791,
+    "Finish": 28020502,
+    "AccelerationWall": 113361500,
+    "AccelerationGPU": 60347708,
+    "InputBytes": 508100,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -6.5,
+      "Y": 0,
+      "Z": -6.5
+    },
+    "Max": {
+      "X": 6.5,
+      "Y": 16,
+      "Z": 6.5
+    }
+  },
+  "stored-faces": 5660,
+  "seed": 5,
+  "image-sha256": "d0fe48818e219792d07e5b077370e7bb673696488da4642784a45ead111cb8ed",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 43775167
+}

@@ -1,0 +1,142 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "webb",
+      "group": "Observatories",
+      "about": "A gold segmented primary on a tower above five aluminium sunshield layers, its bus and solar panels on the sun's side.",
+      "notes": "Referenced aperture, counts, shield lengths and secondary; gold and aluminium by their optical constants; authored figure, gaps and sizes of the bus, tower and instrument module.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NASA, Webb telescope overview",
+          "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/telescope-overview/"
+        },
+        {
+          "title": "NASA, Webb sunshield",
+          "url": "https://science.nasa.gov/mission/webb/webbs-sunshield/"
+        }
+      ],
+      "view-yaw-deg": 180,
+      "view-elevation-deg": -30,
+      "staging": {
+        "sky": {
+          "Horizon": {
+            "R": 0,
+            "G": 0,
+            "B": 0
+          },
+          "Zenith": {
+            "R": 0,
+            "G": 0,
+            "B": 0
+          },
+          "Ground": {
+            "R": 0,
+            "G": 0,
+            "B": 0
+          },
+          "Up": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          }
+        },
+        "sources": [
+          {
+            "toward": {
+              "X": 0,
+              "Y": -0.7071067811865476,
+              "Z": 0.7071067811865476
+            },
+            "strength": {
+              "R": 2.4,
+              "G": 2.3,
+              "B": 2.1
+            }
+          }
+        ]
+      }
+    },
+    "detail": "quick",
+    "folder": "webb-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1294762,
+      "Candidates": 113335,
+      "Refined": 113335,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 340985584,
+    "Encode": 26819000,
+    "Compile": 2289792,
+    "BakeWall": 458,
+    "BakeGPU": 0,
+    "DispatchWall": 180008626,
+    "TraceGPU": 140295376,
+    "Finish": 22589749,
+    "AccelerationWall": 96210167,
+    "AccelerationGPU": 61201999,
+    "InputBytes": 488360,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -7.081,
+      "Y": -1.9139999999999997,
+      "Z": -10.5985
+    },
+    "Max": {
+      "X": 7.081,
+      "Y": 9.7284,
+      "Z": 10.5985
+    }
+  },
+  "stored-faces": 5524,
+  "seed": 5,
+  "image-sha256": "e3706501d218b215ae7d49f93fb8329f2dfbc760467314d63aeb024862087996",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 39553458
+}

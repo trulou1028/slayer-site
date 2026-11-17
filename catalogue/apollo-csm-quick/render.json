@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "apollo-csm",
+      "group": "Crewed spacecraft",
+      "about": "The Apollo command and service module, standing on its engine bell, 10.11 m tall and 3.91 m across.",
+      "notes": "Diameters and lengths read from NASA's Apollo 204 spacecraft page, NSSDCA and Wikipedia, and not yet pinned; the bell's top, the command module's apex and every look are picked.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NASA, Apollo 204 Review Board, the spacecraft",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/spacecraft.html"
+        },
+        {
+          "title": "NSSDCA, Apollo 7 command and service module",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1968-089A"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "apollo-csm-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1383080,
+      "Candidates": 154280,
+      "Refined": 154280,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 271779125,
+    "Encode": 4805875,
+    "Compile": 2234417,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 182511749,
+    "TraceGPU": 77664501,
+    "Finish": 24399876,
+    "AccelerationWall": 45350166,
+    "AccelerationGPU": 10723083,
+    "InputBytes": 81148,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.955,
+      "Y": 0,
+      "Z": -1.955
+    },
+    "Max": {
+      "X": 1.955,
+      "Y": 10.11,
+      "Z": 1.955
+    }
+  },
+  "stored-faces": 576,
+  "seed": 5,
+  "image-sha256": "5698abfd78cbdd74582abef4491095d0f460a55f6dc618baa866377c81fea187",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 3545917
+}

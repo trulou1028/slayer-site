@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "human-scale-2m",
+      "group": "Scale references",
+      "about": "A standing two-meter human scale mannequin made mathematically.",
+      "notes": "Exactly two metres from the soles to the crown. Authored body proportions and neutral stance, with aluminium optics; no measured anatomy or skin.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 12
+    },
+    "detail": "quick",
+    "folder": "human-scale-2m-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1323951,
+      "Candidates": 106746,
+      "Refined": 106746,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 513572375,
+    "Encode": 218787291,
+    "Compile": 2079041,
+    "BakeWall": 583,
+    "BakeGPU": 0,
+    "DispatchWall": 148049336,
+    "TraceGPU": 77937875,
+    "Finish": 41742498,
+    "AccelerationWall": 82434792,
+    "AccelerationGPU": 63501750,
+    "InputBytes": 2378484,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.41,
+      "Y": 0,
+      "Z": -0.22
+    },
+    "Max": {
+      "X": 0.41,
+      "Y": 2,
+      "Z": 0.13
+    }
+  },
+  "stored-faces": 32448,
+  "seed": 5,
+  "image-sha256": "9dbdd69c0b723729d2b67b5980002319d2b3ddc8235a2fa8ce4f212b39a18149",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 311964083
+}

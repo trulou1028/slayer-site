@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "unimog",
+      "group": "Vehicles",
+      "about": "The Unimog U 5023, 5.95 by 2.4 by 2.87 m, its axles 3.85 m apart and 460 mm clear underneath, its cab behind a short bonnet, with a short bed.",
+      "notes": "Size, wheelbase, clearance and tyres as Mercedes-Benz publishes them; the track, bonnet and bed are picked.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "unimog-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 160841,
+      "Refined": 160841,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 285738584,
+    "Encode": 4579917,
+    "Compile": 1756000,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 119390291,
+    "TraceGPU": 75527209,
+    "Finish": 26370126,
+    "AccelerationWall": 120388583,
+    "AccelerationGPU": 71400125,
+    "InputBytes": 88660,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.201,
+      "Y": 0,
+      "Z": -2.975
+    },
+    "Max": {
+      "X": 1.201,
+      "Y": 2.873,
+      "Z": 2.975
+    }
+  },
+  "stored-faces": 612,
+  "seed": 5,
+  "image-sha256": "2fc7fb76594f60a41b80b2d4fbbe2cd0757d8c335716f91b43537c5541fc1872",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 3906583
+}

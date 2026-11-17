@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "stage-tower",
+      "group": "Buildings",
+      "about": "A show's tower, about 10 by 5 by 20 m, with laser heads, flame units, moving heads, hung speaker columns and road cases on its decks.",
+      "notes": "The gear is black housings only, nothing lit; it faces the tower's front, the side its heading turns to the audience.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "stage-tower-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 81012,
+      "Refined": 81010,
+      "Fallbacks": 2
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 188739459,
+    "Encode": 4744042,
+    "Compile": 2355125,
+    "BakeWall": 416,
+    "BakeGPU": 0,
+    "DispatchWall": 126645544,
+    "TraceGPU": 101164250,
+    "Finish": 17674122,
+    "AccelerationWall": 23897750,
+    "AccelerationGPU": 2313252,
+    "InputBytes": 114396,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -5.164,
+      "Y": -0.024,
+      "Z": -2.594
+    },
+    "Max": {
+      "X": 5.164,
+      "Y": 21.024,
+      "Z": 3.295
+    }
+  },
+  "stored-faces": 232,
+  "seed": 5,
+  "image-sha256": "83e3c02a891fca8688479139cab0f4dd6c942a4cee5b441c4411eac4ff058bf0",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 5787458
+}

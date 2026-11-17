@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "mcrn-larson-landed",
+      "group": "Visitors",
+      "about": "The MCRN Larson landed, on three legs, its stairs down from the belly.",
+      "notes": "The same saucer with its gear down. The legs and the stairs are picked by eye; the stairs are built by the stairs constructor, and each part's look is made from the material and the finish it names.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Gary Larson, The Far Side",
+          "url": "https://www.thefarside.com/"
+        },
+        {
+          "title": "James S. A. Corey, The Expanse",
+          "url": "https://en.wikipedia.org/wiki/The_Expanse_(novel_series)"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "mcrn-larson-landed-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1452766,
+      "Candidates": 208311,
+      "Refined": 208311,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 544597583,
+    "Encode": 46520125,
+    "Compile": 2256625,
+    "BakeWall": 791,
+    "BakeGPU": 0,
+    "DispatchWall": 291433668,
+    "TraceGPU": 356352374,
+    "Finish": 21019873,
+    "AccelerationWall": 170736000,
+    "AccelerationGPU": 113523665,
+    "InputBytes": 776620,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -6,
+      "Y": 0,
+      "Z": -6
+    },
+    "Max": {
+      "X": 6,
+      "Y": 6.884,
+      "Z": 6
+    }
+  },
+  "stored-faces": 9324,
+  "seed": 5,
+  "image-sha256": "2b58cc469def47a2b6ad9a00a585401940c5eefe6cce58c6c2b45cce62caaf56",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 74814917
+}

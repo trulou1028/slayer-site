@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "norway",
+      "group": "Conifers",
+      "about": "A taller spruce with hanging branchlets.",
+      "notes": "The hanging branchlet scaffold now carries draft recursive needle shoots. Needle dimensions and arrangement are authored scenery; this is not a growth or phyllotaxis model. Geometry, appearance and CPU/Metal checks await the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Oregon State University, Norway spruce foliage and branch habit",
+          "url": "https://landscapeplants.oregonstate.edu/plants/picea-abies"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "norway-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 82691,
+      "Refined": 82602,
+      "Fallbacks": 89
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 2802314541,
+    "Encode": 807727250,
+    "Compile": 21757667,
+    "BakeWall": 1125,
+    "BakeGPU": 0,
+    "DispatchWall": 1487304210,
+    "TraceGPU": 2373403042,
+    "Finish": 36185790,
+    "AccelerationWall": 434140375,
+    "AccelerationGPU": 340239417,
+    "InputBytes": 9503388,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -4.162419419507874,
+      "Y": -0.279350568610816,
+      "Z": -3.5594666591778297
+    },
+    "Max": {
+      "X": 4.013477174641307,
+      "Y": 12.264712602197044,
+      "Z": 3.9500706028231973
+    }
+  },
+  "stored-faces": 99140,
+  "seed": 5,
+  "image-sha256": "e15d85d8724b7723db8ed0bba6bbef13c420fd3d19d0ed1b5a1b309cd30b321e",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 87432417
+}

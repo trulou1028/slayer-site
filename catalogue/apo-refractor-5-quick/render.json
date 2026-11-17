@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "apo-refractor-5",
+      "group": "Personal telescopes",
+      "about": "A 5-inch apochromatic-refractor scenery on a counterweighted tripod.",
+      "notes": "Requested 5-inch aperture. Long tube, dew shield, rings, focuser, diagonal and finder. The objective is an opaque polished proxy; no glass prescription or colour-correction calculation is implemented.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Explore Scientific, 127 mm triplet construction reference",
+          "url": "https://explorescientific.com/products/127mm-fcd100-apochromatic-refractor"
+        }
+      ],
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "apo-refractor-5-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228870,
+      "Candidates": 22424,
+      "Refined": 22424,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 284409750,
+    "Encode": 19844166,
+    "Compile": 2437292,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 159959209,
+    "TraceGPU": 103514292,
+    "Finish": 34954833,
+    "AccelerationWall": 50584292,
+    "AccelerationGPU": 29209833,
+    "InputBytes": 374352,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.635,
+      "Y": 0,
+      "Z": -0.889
+    },
+    "Max": {
+      "X": 0.635,
+      "Y": 2.3114,
+      "Z": 0.635
+    }
+  },
+  "stored-faces": 4248,
+  "seed": 5,
+  "image-sha256": "d02014dc4b1032f520c2de44b5d655d00f622614c37d7b961025ea0cca9a9551",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 30953666
+}

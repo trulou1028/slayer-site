@@ -1,0 +1,94 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "macro-twisted-spires",
+      "group": "Macrostructures and landforms",
+      "about": "Three unequal twisted spires with open cores, ribs and planted sky bridges.",
+      "notes": "Authored metre dimensions, mathematical scenery and a bounded native mesh representation. No structural engineering or geological simulation.",
+      "details": [
+        "hull",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 35
+    },
+    "detail": "quick",
+    "folder": "macro-twisted-spires-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1268585,
+      "Candidates": 97632,
+      "Refined": 97632,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 258278583,
+    "Encode": 22628417,
+    "Compile": 2381167,
+    "BakeWall": 667,
+    "BakeGPU": 0,
+    "DispatchWall": 166816664,
+    "TraceGPU": 154208958,
+    "Finish": 18113628,
+    "AccelerationWall": 34406042,
+    "AccelerationGPU": 17082542,
+    "InputBytes": 361872,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -750,
+      "Y": 0,
+      "Z": -750
+    },
+    "Max": {
+      "X": 750,
+      "Y": 4000.0000000000005,
+      "Z": 750
+    }
+  },
+  "stored-faces": 4236,
+  "seed": 5,
+  "image-sha256": "36df6f6b6be8e0de6d52b5198ac2b1956ea301a6c97e926030ae9325a605a1df",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 35832916
+}

@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "log",
+      "group": "Wood and stone",
+      "about": "A fallen log with broken branch stubs.",
+      "notes": "Bark on the whole surface; exposed end grain is not implemented.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "log-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 67630,
+      "Refined": 67630,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 235911750,
+    "Encode": 4228500,
+    "Compile": 1940083,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 150390084,
+    "TraceGPU": 68147041,
+    "Finish": 29616416,
+    "AccelerationWall": 36648000,
+    "AccelerationGPU": 15652500,
+    "InputBytes": 41940,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.868698678963758,
+      "Y": 0.00742123502008904,
+      "Z": -0.2442229391883396
+    },
+    "Max": {
+      "X": 1.868698678963758,
+      "Y": 0.48213248074389187,
+      "Z": 0.2442229391883396
+    }
+  },
+  "stored-faces": 90,
+  "seed": 5,
+  "image-sha256": "31ae0026481135e099b707f4bd059858e1ff11a8f1dea6741e3f307234fa4b67",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 866750
+}

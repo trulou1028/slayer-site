@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "faulkes-north",
+      "group": "Haleakala families",
+      "about": "An open reflector beneath a broadly opened clamshell proxy.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://lco.global/observatory/telescopes/2m0/"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "faulkes-north-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1232325,
+      "Candidates": 166826,
+      "Refined": 166823,
+      "Fallbacks": 3
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 704825959,
+    "Encode": 35768084,
+    "Compile": 2327542,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 500024414,
+    "TraceGPU": 422996209,
+    "Finish": 11720753,
+    "AccelerationWall": 145642458,
+    "AccelerationGPU": 60480040,
+    "InputBytes": 608592,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -6.5,
+      "Y": 0,
+      "Z": -6.5
+    },
+    "Max": {
+      "X": 6.5,
+      "Y": 10,
+      "Z": 6.5
+    }
+  },
+  "stored-faces": 6824,
+  "seed": 5,
+  "image-sha256": "4c35127aef1dc4f83dcf5ca51cc56e39e7a2b74c8894e2e95d57e332f07c3bc1",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 52788917
+}

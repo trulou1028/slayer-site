@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "slab",
+      "group": "Wood and stone",
+      "about": "A thin, broken basalt plate of the kind Venera 13 found lying on the plain.",
+      "notes": "Red and green reflectance read from Pieters and others 1987 (NTRS 19870013979, pages 165 and 166); size, thinness, wear and bedding are picked by eye from the lander's panoramas.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "slab-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 85540,
+      "Refined": 85540,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 213663667,
+    "Encode": 9049917,
+    "Compile": 1861959,
+    "BakeWall": 708,
+    "BakeGPU": 0,
+    "DispatchWall": 125381874,
+    "TraceGPU": 63788959,
+    "Finish": 28532084,
+    "AccelerationWall": 34552625,
+    "AccelerationGPU": 15169875,
+    "InputBytes": 145140,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.4106096036891274,
+      "Y": -0.10182439437605222,
+      "Z": -0.3401319196749249
+    },
+    "Max": {
+      "X": 0.4106096036891274,
+      "Y": 0.06784846489867258,
+      "Z": 0.3523227630060427
+    }
+  },
+  "stored-faces": 1280,
+  "seed": 5,
+  "image-sha256": "6542b409088243c4e4cac5cd40793b61e76fb8528de6bdeb2feae46a5d5b7fef",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 15126000
+}

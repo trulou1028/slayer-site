@@ -1,0 +1,94 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "macro-inhabited-bridge",
+      "group": "Macrostructures and landforms",
+      "about": "An inhabited bridge on paired parabolic arches and vertical spandrels.",
+      "notes": "Authored metre dimensions, mathematical scenery and a bounded native mesh representation. No structural engineering or geological simulation.",
+      "details": [
+        "hull",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 35
+    },
+    "detail": "quick",
+    "folder": "macro-inhabited-bridge-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1241014,
+      "Candidates": 95694,
+      "Refined": 95694,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 187444834,
+    "Encode": 6399916,
+    "Compile": 2513000,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 117938915,
+    "TraceGPU": 68153251,
+    "Finish": 17430335,
+    "AccelerationWall": 28894500,
+    "AccelerationGPU": 11059749,
+    "InputBytes": 125328,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -3000,
+      "Y": 0,
+      "Z": -600
+    },
+    "Max": {
+      "X": 3000,
+      "Y": 1500,
+      "Z": 600
+    }
+  },
+  "stored-faces": 1084,
+  "seed": 5,
+  "image-sha256": "726c5e00e3644b646db06a9a28b79008ecfac2f2f7184def6feb087070dc0f80",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 7441500
+}

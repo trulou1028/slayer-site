@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "elt",
+      "group": "Ground observatories",
+      "about": "A dense segmented primary and open truss with five mirror roles.",
+      "notes": "Nominal 39 m primary and 798 installed panels from ESO. The central opening, panel positions, secondary and relay dimensions, supports and 96 m by 90 m enclosure are authored approximations. The mirror figures do not implement a calibrated optical prescription.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "ESO, ELT facts",
+          "url": "https://elt.eso.org/about/facts/"
+        },
+        {
+          "title": "ESO, ELT primary mirror technical concept",
+          "url": "https://elt.eso.org/mirror/M1/"
+        }
+      ],
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 55
+    },
+    "detail": "quick",
+    "folder": "elt-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1247825,
+      "Candidates": 192949,
+      "Refined": 192948,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 740002959,
+    "Encode": 262570375,
+    "Compile": 2319208,
+    "BakeWall": 792,
+    "BakeGPU": 0,
+    "DispatchWall": 294217209,
+    "TraceGPU": 276613749,
+    "Finish": 35708790,
+    "AccelerationWall": 131324250,
+    "AccelerationGPU": 107244040,
+    "InputBytes": 3014028,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -48,
+      "Y": 0,
+      "Z": -48
+    },
+    "Max": {
+      "X": 48,
+      "Y": 90,
+      "Z": 48
+    }
+  },
+  "stored-faces": 36792,
+  "seed": 5,
+  "image-sha256": "eb7bc7b069cc392369562d01dfb0682296d9cf84108cdd396f2b9ef7b6dafd98",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 581421583
+}

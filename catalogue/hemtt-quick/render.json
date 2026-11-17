@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "hemtt",
+      "group": "Vehicles",
+      "about": "Oshkosh's HEMTT, the M977 A4 eight-wheel-drive cargo truck, 10.39 by 2.44 by 3.0 m, its spare tyre lying behind the cab.",
+      "notes": "Length, width, height, track, wheelbase and tyres from Oshkosh's brochure; each pair's axle spacing, the cab and the bed are picked to look right.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "hemtt-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 109028,
+      "Refined": 109028,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 373902041,
+    "Encode": 4556000,
+    "Compile": 2611958,
+    "BakeWall": 416,
+    "BakeGPU": 0,
+    "DispatchWall": 175688289,
+    "TraceGPU": 91636085,
+    "Finish": 45710461,
+    "AccelerationWall": 123674334,
+    "AccelerationGPU": 95695999,
+    "InputBytes": 90512,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.219,
+      "Y": 0,
+      "Z": -5.1945
+    },
+    "Max": {
+      "X": 1.219,
+      "Y": 3.003,
+      "Z": 5.1945
+    }
+  },
+  "stored-faces": 612,
+  "seed": 5,
+  "image-sha256": "68b7209d6b702705c224a3a9fe69cd71f3898d122bd1333a7d79df704ed28868",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 4633250
+}

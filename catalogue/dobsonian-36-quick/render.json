@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "dobsonian-36",
+      "group": "Personal telescopes",
+      "about": "A 36-inch Newtonian on a timber rocker and large altitude bearings.",
+      "notes": "Requested 36-inch aperture. Mirror box, paired V trusses, upper cage, side focuser and a flat folding secondary. All proportions and materials are authored scenery; this is not a working optical prescription.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Obsession, mirror box, rocker and bearings",
+          "url": "https://www.obsessiontelescopes.com/why_buy/"
+        }
+      ],
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "dobsonian-36-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1234522,
+      "Candidates": 46327,
+      "Refined": 46327,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 518698625,
+    "Encode": 23107166,
+    "Compile": 1658541,
+    "BakeWall": 459,
+    "BakeGPU": 0,
+    "DispatchWall": 384969587,
+    "TraceGPU": 475095126,
+    "Finish": 32074662,
+    "AccelerationWall": 63573375,
+    "AccelerationGPU": 36852499,
+    "InputBytes": 428880,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.9601200000000001,
+      "Y": 0,
+      "Z": -2.9260800000000002
+    },
+    "Max": {
+      "X": 0.9601200000000001,
+      "Y": 4.572,
+      "Z": 1.09728
+    }
+  },
+  "stored-faces": 5000,
+  "seed": 5,
+  "image-sha256": "ab3bd1a28380299904ccea5b75906e83c5d40c26121b8028ace71de84f44ddae",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 37651000
+}

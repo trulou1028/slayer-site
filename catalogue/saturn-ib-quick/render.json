@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "saturn-ib",
+      "group": "Launchers",
+      "about": "The Saturn IB launch vehicle, its two stages and instrument unit, 43.16 m tall and 6.61 m across, with no spacecraft on top.",
+      "notes": "Stage lengths and diameters are as Wikipedia's Saturn IB page gives them, read 2026-11-12, and are not pinned; its infobox and its text disagree by eight centimetres on the second stage's width, and the text's is used. No fins, no engines, and plain white where the first stage's tanks were black and white.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Wikipedia, Saturn IB",
+          "url": "https://en.wikipedia.org/wiki/Saturn_IB"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "saturn-ib-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 95654,
+      "Refined": 95654,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 422260250,
+    "Encode": 4664500,
+    "Compile": 2257250,
+    "BakeWall": 459,
+    "BakeGPU": 0,
+    "DispatchWall": 340074586,
+    "TraceGPU": 200123668,
+    "Finish": 28286998,
+    "AccelerationWall": 34059750,
+    "AccelerationGPU": 10570415,
+    "InputBytes": 81148,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -3.305,
+      "Y": 0,
+      "Z": -3.305
+    },
+    "Max": {
+      "X": 3.305,
+      "Y": 43.16,
+      "Z": 3.305
+    }
+  },
+  "stored-faces": 576,
+  "seed": 5,
+  "image-sha256": "eca69efc8c51536cf4b0b02392e616d24e92cdcff9938ca85959de2060239009",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 3607541
+}
