@@ -1,0 +1,29 @@
+/*
+ * theme.css: the slayer site's colours, and nothing else.
+ *
+ * The values start from Chroma's vaporwave colourway
+ * (github.com/janearc/chroma, colourways/sources/vaporwave.css), the
+ * palette of the printed slayer visual guide. Each text colour was moved
+ * onto the reader's band by `libreadme fix`, hue and saturation kept.
+ * Text is drawn on --ground and --code-ground only; CI holds every text
+ * colour in the band against both with `libreadme check`
+ * (.github/workflows/readable.yml).
+ *
+ * When a check fails, the colour changes, not the threshold.
+ */
+:root {
+  --ground: #160d2b;
+  --panel: #2a1a4d;
+  --code-ground: #221540;
+  --surface-1: #3a2260;
+  --border: #432c6b;
+
+  --ink: #d6cedf;
+  --dim: #dec7ff;
+  --heading: #ffbbff;
+  --link: #0ce6ff;
+  --code: #b3dbbb;
+  --accent: #ffbfe1;
+  --string: #e9ce9b;
+  --strong: #d6cdea;
+}

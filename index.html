@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>slayer</title>
+<meta name="description" content="Build worlds, render films and compose their soundtracks on your laptop. Slayer is an open-source renderer written in Go with Metal GPU support.">
+<link rel="icon" href="assets/brand/slayer-icon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/brand/slayer-icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/slayer-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Nunito+Sans:wght@400;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/theme.css">
+<style>
+/*
+ * layout and type. every colour is a token from theme.css, except the
+ * sunset's two warm stops, which carry no text and come from the guide's
+ * cover. the type follows the reader profile libreadme holds: body 24px, line height 1.75, nothing under 16px, no capitals for
+ * prose, monospace for identifiers only, ligatures off.
+ *
+ * faces: Avenir Next, Iowan Old Style and Iosevka are the visual guide's,
+ * and are on every Apple device; elsewhere the Google faces stand in.
+ */
+:root {
+  --display: "Avenir Next", "Nunito Sans", "Helvetica Neue", sans-serif;
+  --text: "Iowan Old Style", "Source Serif 4", Georgia, serif;
+  --mono: "Iosevka", "JetBrains Mono", Menlo, monospace;
+  --measure: 34em;
+  --gutter: clamp(16px, 5vw, 56px);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--ground); scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 24px/1.75 var(--text);
+  letter-spacing: 0.015em;
+  font-variant-ligatures: none;
+  -webkit-text-size-adjust: 100%;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+strong { color: var(--strong); font-weight: 600; }
+code, pre { font-family: var(--mono); letter-spacing: 0; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  color: var(--heading);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.06; }
+h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.12; }
+h3 { font-size: 26px; line-height: 1.25; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
+
+/* the bar */
+.bar { border-bottom: 1px solid var(--border); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
+.lockup { display: flex; align-items: center; gap: 10px; color: var(--heading); text-decoration: none; font: 800 26px/1 var(--display); }
+.lockup img { width: 32px; height: 32px; border-radius: 7px; }
+.bar nav { display: flex; gap: 24px; flex-wrap: wrap; font: 400 18px/1.4 var(--display); }
+.bar nav a { color: var(--ink); text-decoration: none; }
+.bar nav a:hover { color: var(--link); }
+
+/* the cover: a real render across the top, the sunset and its lines below */
+.opening { margin: 0; background: var(--ground); }
+.opening video { display: block; background: #000; width: 100%; height: auto; max-height: 76vh; object-fit: cover; }
+.cover-title { padding: 64px 0 40px; }
+.cover-title p { max-width: var(--measure); margin: 28px 0 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 36px; font: 400 20px/1.4 var(--display); }
+.sunset {
+  height: 180px;
+  background-color: var(--ground);
+  background-image:
+    repeating-linear-gradient(to bottom, rgb(255 161 255 / 0.55) 0 1.5px, transparent 1.5px 22px),
+    linear-gradient(to bottom, var(--ground) 0%, var(--surface-1) 45%, #7a2f86 80%, #ffa4d4 100%);
+}
+
+/* sections */
+section { padding: 96px 0; }
+section + section { border-top: 1px solid var(--border); }
+.lede { max-width: var(--measure); margin: 20px 0 0; }
+
+/* source to frame */
+.pair { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; margin-top: 48px; align-items: start; }
+.source { background: var(--code-ground); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.source .name { padding: 12px 18px; border-bottom: 1px solid var(--border); font: 400 16px/1.5 var(--mono); color: var(--dim); }
+.source pre { margin: 0; padding: 18px; overflow-x: auto; font-size: 17px; line-height: 1.7; color: var(--code); counter-reset: line; }
+.source pre > span { display: block; white-space: pre; }
+.source pre > span::before { counter-increment: line; content: counter(line); display: inline-block; width: 2.2em; margin-right: 1em; text-align: right; color: var(--dim); }
+.source .k { color: var(--accent); }
+.source .run { padding: 12px 18px; border-top: 1px solid var(--border); font: 400 17px/1.5 var(--mono); color: var(--ink); overflow-x: auto; white-space: nowrap; }
+figure { margin: 0; }
+figure img, figure video { width: 100%; border-radius: 4px; background: var(--panel); }
+figcaption { margin-top: 12px; font-size: 18px; line-height: 1.6; color: var(--dim); }
+
+/* the contact sheet */
+.sheet { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; margin-top: 48px; }
+.sheet figure img, .sheet figure video { aspect-ratio: 16 / 9; object-fit: cover; }
+.sheet .tall { grid-row: span 2; }
+.sheet .tall iframe { width: 100%; max-width: 495px; margin: 0 auto; }
+.sheet .tall video { aspect-ratio: 9 / 16; object-fit: contain; width: 100%; max-width: 495px; height: auto; margin: 0 auto; background: #000; }
+.sheet h3 { margin-top: 16px; font-size: 24px; }
+a.full { display: block; border-radius: 4px; }
+a.full img { transition: filter 0.2s; }
+a.full:hover img { filter: brightness(1.12); }
+@media (prefers-reduced-motion: reduce) { a.full img { transition: none; } }
+.sub { margin-top: 72px; font-size: 32px; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
+.trio img { aspect-ratio: 16 / 9; object-fit: cover; }
+.music { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 32px; margin-top: 28px; align-items: start; }
+.short iframe { display: block; width: 100%; aspect-ratio: 9 / 16; border: 0; border-radius: 4px; background: var(--panel); }
+.sheet figcaption { margin-top: 6px; }
+
+/* the agent loop */
+.steps { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; counter-reset: step; }
+.steps li { display: flex; flex-direction: column; gap: 12px; }
+.steps code { display: block; padding: 12px 16px; background: var(--code-ground); border: 1px solid var(--border); border-radius: 6px; font-size: 17px; color: var(--code); overflow-x: auto; white-space: nowrap; }
+.steps p { margin: 0; }
+.aside { max-width: var(--measure); margin: 40px 0 0; }
+
+/* the spec sheet */
+.spec { margin: 48px 0 0; display: grid; grid-template-columns: minmax(0, 14em) minmax(0, 1fr); border-top: 1px solid var(--border); }
+.spec dt, .spec dd { margin: 0; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.spec dt { font: 400 20px/1.6 var(--mono); color: var(--code); padding-right: 24px; }
+.spec dd { max-width: var(--measure); }
+.window { margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+@media (max-width: 900px) { .window { grid-template-columns: minmax(0, 1fr); } }
+.counts { display: flex; flex-wrap: wrap; gap: 24px 64px; margin-top: 56px; }
+.counts div { display: flex; flex-direction: column; }
+.counts b { font: 800 clamp(40px, 5vw, 60px)/1.1 var(--display); color: var(--heading); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.counts span { color: var(--dim); font-size: 20px; }
+
+footer { border-top: 1px solid var(--border); padding: 40px 0 56px; font-size: 18px; color: var(--dim); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+
+@media (max-width: 900px) {
+  .trio, .music { grid-template-columns: minmax(0, 1fr); }
+  .pair, .sheet, .steps { grid-template-columns: minmax(0, 1fr); }
+  .spec { grid-template-columns: minmax(0, 1fr); }
+  .spec dt { padding-bottom: 0; border-bottom: 0; }
+  section { padding: 72px 0; }
+}
+@media (max-width: 560px) {
+  body { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="lockup" href="#top"><img src="assets/brand/slayer-icon-64.png" alt="" width="32" height="32">slayer</a>
+    <nav aria-label="Site">
+      <a href="#source">how it works</a>
+      <a href="#frames">frames</a>
+      <a href="docs/visual-guide.html">guide</a>
+      <a href="https://github.com/janearc/slayer">github</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <figure class="opening">
+    <video src="assets/films/opening-loop.mp4" poster="assets/frames/opening.jpg" width="1080" height="608"
+           autoplay muted loop playsinline aria-label="The opening: violet and gold strands sweeping round a dark centre, among stars, turning slowly."></video>
+  </figure>
+
+  <div class="wrap cover-title">
+      <h1>a scene in yaml.<br>a finished frame out.</h1>
+      <p>Build worlds, render films and compose their soundtracks on your
+      laptop. Slayer brings procedural models, physically grounded light
+      transport and music into one open-source system.</p>
+      <p>Describe a scene in plain text, explore it in Ferruccio, or work
+      with a coding agent. Slayer renders on the CPU or on your Mac’s GPU
+      through Metal. The scene stays yours to inspect, edit and build on.</p>
+      <div class="actions">
+        <a href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md">get started</a>
+        <a href="https://github.com/janearc/slayer">read the source</a>
+      </div>
+  </div>
+  <div class="sunset" aria-hidden="true"></div>
+
+  <section id="source">
+    <div class="wrap">
+      <h2>source to frame</h2>
+      <p class="lede">A <strong>job</strong> names a scene, a film and a
+      moment. This job places the camera on Mauna Kea at dusk, using NOAA
+      elevation data, with the two Keck domes above the clouds. The YAML
+      below is the job used to render the image beside it.</p>
+
+      <div class="pair">
+        <div class="source">
+          <div class="name">f05-maunakea-cinder-2k.yaml</div>
+<pre><span><span class="k">$schema:</span> https://github.com/janearc/slayer/schemas/job-v1.json</span><span><span class="k">scene:</span></span><span>  <span class="k">named:</span> heard</span><span>  <span class="k">with:</span></span><span>    <span class="k">stage:</span></span><span>      <span class="k">kind:</span> kecks</span><span>      <span class="k">eye:</span> [100, 45, 210]</span><span>      <span class="k">end-eye:</span> [90, 44, 200]</span><span>      <span class="k">look:</span> [-30, 13, 0]</span><span>      <span class="k">wide:</span> 68</span><span>      <span class="k">exposure:</span> 1.4</span><span>      <span class="k">aim:</span> [180, 180]</span><span>      <span class="k">elevation:</span> [0, 0]</span><span>      <span class="k">sun:</span> [2.5, 1.5]</span><span>      <span class="k">sky-hours:</span> [0, 0.3]</span><span>      <span class="k">interior:</span> false</span><span>      <span class="k">terrain:</span> /Users/jane/mesh/the-vorrh/data/slayer/terrain/hawaii/noaa-crm/noaa-hawaii-crm2023-big-island-float.tif</span><span>    <span class="k">from:</span> 61.81818181818181</span><span>    <span class="k">until:</span> 65.45454545454545</span><span>    <span class="k">bpm:</span> 66</span><span><span class="k">film:</span> {width: 2048, height: 1152, rays: 4, wide: 68, exposure: 1.4}</span><span><span class="k">renderer:</span> gpu</span><span><span class="k">at:</span> {value: 64, unit: s}</span><span><span class="k">outputs:</span></span><span>  <span class="k">picture:</span> /Users/jane/mesh/the-vorrh/renders/frames/2026-11-15-quell-f05-maunakea-cinder-2k/proof.png</span></pre>
+          <div class="run">$ slayer draw f05-maunakea-cinder-2k.yaml</div>
+        </div>
+        <figure>
+          <a class="full" href="assets/full/maunakea-summit.jpg" title="open the full-size render"><img src="assets/frames/maunakea-summit.jpg" width="2048" height="1152" loading="lazy"
+               alt="The summit of Mauna Kea at dusk: the two Keck domes open and lit from inside, the buildings between them, the cloud deck glowing below, dark cinder ground in front."></a>
+          <figcaption>proof.png: the Keck domes open at dusk, the cloud deck
+          lit below the summit, and cinder underfoot. Not a tree in sight,
+          which is right at 4,145 meters.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="frames">
+    <div class="wrap">
+      <h2>the contact sheet</h2>
+      <p class="lede">Every frame on this page came out of slayer, and so did
+      the music: the score for Into the Centre and Moth Light farther
+      down, were composed by jane michelle arc and played by cheeptune, slayer's
+      own synthesizer, from scores written as text.
+      Play the clips to hear the scores and see the scenes in motion.</p>
+
+      <div class="sheet">
+        <figure class="tall short">
+          <iframe src="https://www.youtube-nocookie.com/embed/p2rQXFUFLus" title="Into the centre: grissom's short on YouTube"
+                  loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h3>into the centre</h3>
+          <figcaption>Grissom's first film: a dive toward the galactic centre,
+          the sky divided into finer triangles as the camera approaches.
+          A vertical short with an original score; turn the sound on.</figcaption>
+        </figure>
+        <figure class="tall">
+          <video class="film" src="assets/films/fire.mp4" poster="assets/frames/fire.jpg"
+                 width="1080" height="1920" muted loop playsinline preload="none"
+                 aria-label="Flames rising from a fire at night, sparks drifting up into the dark."></video>
+          <h3>fire</h3>
+          <figcaption>Fire is hard: light that moves, comes from a volume and
+          lights everything around it. 62 frames, looped.</figcaption>
+        </figure>
+        <figure>
+          <video class="film" src="assets/films/retreat.mp4" poster="assets/frames/retreat.jpg"
+                 width="1080" height="960" muted playsinline preload="none" controls
+                 aria-label="One retreat: the camera pulls back from nearby stars to the galaxy, then to violet strands sweeping round a dark opening."></video>
+          <h3>one retreat</h3>
+          <figcaption>Nearby stars, the galaxy, the strands, the opening: 655
+          frames drawn in seven and a half minutes, with its score. Turn the
+          sound on.</figcaption>
+        </figure>
+        <figure>
+          <video class="film" src="assets/films/lantern.mp4" poster="assets/frames/lantern-first.jpg"
+                 width="1080" height="960" muted loop playsinline preload="none" controls
+                 aria-label="Lantern: a star inside a swarm of gold and dark panels, the panels flickering as it thinks."></video>
+          <h3>lantern</h3>
+          <figcaption>A star inside a swarm of panels, thinking. 87 frames,
+          traced in 37 seconds.</figcaption>
+        </figure>
+        <figure>
+          <video class="film" src="assets/films/zappy.mp4" poster="assets/frames/zappy.jpg"
+                 width="1080" height="960" muted loop playsinline preload="none"
+                 aria-label="Zappy: a blue-white light breaking through a dark shell of broken panels, turning."></video>
+          <h3>zappy</h3>
+          <figcaption>The magnetar at the orbital's heart, breaking through its
+          shell of panels. 22 frames, looped.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/orbital.jpg" title="open the full-size render"><img src="assets/frames/orbital.jpg" width="2048" height="1152" loading="lazy"
+               alt="Two broad rings, mottled in rust and blue, cross around a magnetar against a field of stars."></a>
+          <h3>the orbital</h3>
+          <figcaption>Two rings around a magnetar, 3.6 million km across, from
+          far enough out to see all of it.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/orbital-cities.jpg" title="open the full-size render"><img src="assets/frames/orbital-cities.jpg" width="2048" height="1152" loading="lazy"
+               alt="Night on the inside of the orbital: a grid of lit city blocks runs to the horizon, with towers standing beyond it."></a>
+          <h3>the orbital, at street level</h3>
+          <figcaption>The same orbital, close enough to see its streets. Its
+          cities are built procedurally and recursively, so the camera can go
+          from the whole ring down to one building.</figcaption>
+        </figure>
+        <figure>
+          <video class="film" src="assets/films/earth-turning.mp4" poster="assets/frames/earth-night.jpg"
+                 width="1400" height="1000" muted loop playsinline preload="none" controls
+                 aria-label="The Earth turning once, from night over Europe and Africa."></video>
+          <h3>the earth, turning</h3>
+          <figcaption>Sixty frames at twenty a second, from grissom, which draws
+          the earth as triangles on Metal rather than tracing it.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/beam.jpg" title="open the full-size render"><img src="assets/frames/beam.jpg" width="2048" height="1152" loading="lazy"
+               alt="An observatory dome at night in thin haze, its slit open and four orange guide-star laser beams rising from it, dark trees beside it."></a>
+          <h3>the beam</h3>
+          <figcaption>Guide-star lasers leaving a dome into the haze, at 4K.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/multitude.jpg" title="open the full-size render"><img src="assets/frames/multitude.jpg" width="2048" height="1152" loading="lazy"
+               alt="A great oval crowd of small colored forms, pink, green, blue and gold, scattered across black space with a few bright lights among them."></a>
+          <h3>the multitude</h3>
+          <figcaption>A crowd of authored forms, every one of them its own
+          shape, at 4K.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/owl.jpg" title="open the full-size render"><img src="assets/frames/owl.jpg" width="2048" height="1152" loading="lazy"
+               alt="A giant open-frame telescope beside its sliding shelter at night, with low buildings around it."></a>
+          <h3>owl</h3>
+          <figcaption>The hundred-metre telescope ESO designed and never built,
+          standing in the open beside its shelter.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/rubin.jpg" title="open the full-size render"><img src="assets/frames/rubin.jpg" width="2048" height="1152" loading="lazy"
+               alt="The Rubin Observatory building at night: a long lit facility with the telescope's tall enclosure at one end."></a>
+          <h3>rubin</h3>
+          <figcaption>The Vera C. Rubin Observatory at night, its long building
+          lit and the enclosure standing over it.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/alfa.jpg" title="open the full-size render"><img src="assets/frames/alfa.jpg" width="960" height="540" loading="lazy"
+               alt="A submarine surfaced on open water at dusk, its long dark hull and sail low in the waves, the sky fading from violet to a pale peach horizon with one bright star."></a>
+          <h3>alfa, surfaced</h3>
+          <figcaption>A submarine on open water at dusk, the sea drawn from its
+          wave spectrum, every glint on it traced.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/alfa-under.jpg" title="open the full-size render"><img src="assets/frames/alfa-under.jpg" width="960" height="540" loading="lazy"
+               alt="The same submarine seen from below in dark blue water, its whole hull in profile, the broken underside of the sea surface above it."></a>
+          <h3>alfa, from below</h3>
+          <figcaption>The same hull from ninety-five meters down, looking up at
+          the underside of the sea. The water and its light here are authored,
+          not measured: a fill set by hand so the hull reads.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/venus-across.jpg" title="open the full-size render"><img src="assets/frames/venus-across.jpg" width="2048" height="1152" loading="lazy"
+               alt="A Venera lander stands alone on a plain of broken rock slabs under a hazy orange and yellow sky."></a>
+          <h3>venera, on venus</h3>
+          <figcaption>A Venera lander alone on a plain of broken rock slabs,
+          under a hazy orange and yellow sky.</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="sub">in orbit</h3>
+      <div class="trio">
+        <figure>
+          <a class="full" href="assets/full/hubble.jpg" title="open the full-size render"><img src="assets/frames/hubble.jpg" width="928" height="522" loading="lazy" alt="The Hubble Space Telescope seen from above its open aperture door, looking down the bright metal tube to the secondary mirror, its blue solar wings across it, stars behind."></a>
+          <figcaption>Hubble, its door wide open.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/webb.jpg" title="open the full-size render"><img src="assets/frames/webb.jpg" width="928" height="522" loading="lazy" alt="The James Webb Space Telescope from above its sunshield, the layered shield bright in hard light, the dark segmented mirror and its struts above it, stars behind."></a>
+          <figcaption>Webb, whose eyes were sensitive to the dark.</figcaption>
+        </figure>
+        <figure>
+          <a class="full" href="assets/full/spitzer.jpg" title="open the full-size render"><img src="assets/frames/spitzer.jpg" width="928" height="522" loading="lazy" alt="The Spitzer Space Telescope seen from above its open tube, its flat solar panel beside it catching the light, stars behind."></a>
+          <figcaption>Spitzer, forgotten, but loved.</figcaption>
+        </figure>
+      </div>
+      <p class="aside">Each is the manufactory's own model at its highest detail,
+      lit by one hard light, with real stars behind it from Gaia, and the
+      <a href="catalogue/">catalogue</a> lists the sources each was built
+      from.</p>
+    </div>
+  </section>
+
+  <section id="loop">
+    <div class="wrap">
+      <h2>built for the agent loop</h2>
+      <p class="lede">Plain text in, plain words back. An agent that can edit
+      a file and run a shell can direct a film, and
+      <code>slayer --agent-help</code> gives it the verb map, written for it.
+      Small models running locally, like Qwen3 14B, have learned to drive it
+      without much trouble.</p>
+
+      <ol class="steps">
+        <li>
+          <h3>it reads the catalogue</h3>
+          <code>$ slayer list presets</code>
+          <p>Scenes, film presets, stocks, scores and voicings, by name.</p>
+        </li>
+        <li>
+          <h3>it checks its work</h3>
+          <code>$ slayer assess job.yaml</code>
+          <p>Validate the scene before spending time on a render.</p>
+        </li>
+        <li>
+          <h3>it hands you the picture</h3>
+          <code>$ slayer draw job.yaml</code>
+          <p>Render frames, a film and its soundtrack from the same job.</p>
+        </li>
+      </ol>
+      <p class="aside">Rendering runs locally. Your laptop is the studio.</p>
+    </div>
+  </section>
+
+  <section id="spec">
+    <div class="wrap">
+      <h2>built like a photographer, checked like a physicist</h2>
+
+      <dl class="spec">
+        <dt>ninjafilm</dt>
+        <dd>Photographic stock, optics and grain. Its darkroom re-exposes a
+        saved frame without tracing it again. Render in landscape or
+        portrait, then choose output settings for your destination,
+        including YouTube. Configurable quality options let you balance
+        detail, render time and file size.</dd>
+        <dt>manufactory</dt>
+        <dd>Spruces, stones and ferns grown from a seed. The same seed makes
+        the same thing, bit for bit. <a href="catalogue/">The catalogue</a>
+        draws 121 of the kinds it makes, with the sources each was built
+        from.</dd>
+        <dt>cheeptune</dt>
+        <dd>A score rendered ahead of time and timed to the picture. Slayer
+        ships with 37 original tracks, Apache licensed like the rest of it.</dd>
+        <dt>sky</dt>
+        <dd>Volumetric light and the cosmos, to scale.</dd>
+        <dt>burning-trousers</dt>
+        <dd>An independent test harness. Its expected results come from
+        physics, published data or its own arithmetic, never from the
+        renderer under test.</dd>
+        <dt>grissom</dt>
+        <dd>The survey viewer: sky surveys laid onto the sky's triangles, the
+        earth beside them, and the sky as seen from any place on it. It draws
+        on Metal directly, without the ray tracer, so it moves as fast as you
+        do.</dd>
+        <dt>ferruccio</dt>
+        <dd>A native workspace for building scenes. Drag objects in the
+        working view, orbit the camera or move through the scene with two
+        trackballs, then render the finished image with Slayer. Ferruccio
+        uses wgpu on Metal; working-view performance depends on the scene.
+        Its colors come from Chroma, just like this page.
+        <a href="docs/ferruccio.html">How it works, and why.</a></dd>
+        <dt>azazel</dt>
+        <dd>Slayer's own job queue. Agents submit slayer commands to one durable
+        queue, and a single worker admits them, watches them and keeps what
+        came of them. Few ray tracers ship with one. It is still being
+        validated.</dd>
+        <dt>game</dt>
+        <dd>What builds, checks and releases slayer: tests, mutation tests,
+        lint, and lanes that take turns on one machine, so heavy work waits
+        instead of colliding.</dd>
+      </dl>
+
+      <div class="window">
+        <figure>
+          <img src="assets/frames/ferruccio-play.jpg" loading="lazy" alt="Ferruccio in Play: a rendered ship and a two-meter visitor fill the view, with the Orbit and Travel trackballs and mode buttons around it.">
+          <figcaption>Play, rendered: a flying saucer and a two-meter visitor,
+          with the Orbit and Travel trackballs.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/frames/ferruccio-wire.jpg" loading="lazy" alt="Ferruccio in Play with the Wireframe display: the ship and visitor as line drawings, the same trackballs beside them.">
+          <figcaption>Play, in wireframe: the live working geometry.</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="sub" id="music">music, drawn as it plays</h3>
+      <div class="music">
+        <figure>
+          <video class="song" src="assets/films/moth-light-visualizer.mp4" poster="assets/frames/moth-light-visualizer.jpg"
+                 width="720" height="726" muted playsinline preload="none" controls
+                 aria-label="Moth Light with each instrument drawn as it plays: lead, bass, chip pad, hats and drums."></video>
+          <figcaption>Moth Light: lead, bass, chip pad, hats and drums, each
+          drawn as it plays, in three-four at seventy.</figcaption>
+        </figure>
+        <figure class="short">
+          <iframe src="https://www.youtube-nocookie.com/embed/SC68rnj8thQ" title="Moon Lake, explained: the portrait short on YouTube"
+                  loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <figcaption>Moon Lake, explained: the same song as a portrait short,
+          <a href="https://www.youtube.com/watch?v=SC68rnj8thQ">on YouTube</a>.</figcaption>
+        </figure>
+      </div>
+
+      <div class="counts">
+        <div><b>297k</b><span>lines of Go</span></div>
+        <div><b>310k</b><span>lines of tests</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>slayer, by jane michelle arc. Apache 2.0.
+      <a href="https://github.com/janearc/slayer">github.com/janearc/slayer</a></span>
+    <span>Built and checked with <a href="https://github.com/janearc/game">game</a>.</span>
+  </div>
+</footer>
+
+<script>
+// the film plays only while it is on screen, and never on its own for a
+// reader who has asked for less motion; its controls are always there.
+(function () {
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) {
+    document.querySelectorAll("video[autoplay]").forEach(function (v) {
+      v.removeAttribute("autoplay"); v.pause(); v.controls = true;
+    });
+  }
+  if (still || !('IntersectionObserver' in window)) return;
+  var films = document.querySelectorAll('video.film');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.play().catch(function () {}); }
+      else { e.target.pause(); }
+    });
+  }, { threshold: 0.4 });
+  films.forEach(function (v) { io.observe(v); });
+})();
+</script>
+</body>
+</html>
