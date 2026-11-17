@@ -1,4 +1,6 @@
-# Upload only the page and its videos. Everything else in this folder stays on the Mac.
+# Upload only the pages and their media. Everything else in this folder stays on the Mac.
 /*
 !index.html
+!home*.html
 !assets
+!vercel.json
