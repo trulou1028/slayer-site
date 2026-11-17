@@ -13,9 +13,8 @@
 <style>
 body{margin:0;background:#06060a}
 a{color:#ece6da}a:hover{color:#ffb38a}
-.stars{background-image:radial-gradient(1px 1px at 12% 22%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 34% 70%,#ece6da 50%,transparent 51%),radial-gradient(1.5px 1.5px at 58% 14%,#ffd2b0 50%,transparent 51%),radial-gradient(1px 1px at 72% 48%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 88% 82%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 22% 88%,#cfeeff 50%,transparent 51%),radial-gradient(1px 1px at 46% 36%,#ece6da 50%,transparent 51%),radial-gradient(1.5px 1.5px at 94% 18%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 8% 60%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 64% 92%,#ece6da 50%,transparent 51%)}
-.film{transition:color .25s ease}
-.film:hover{color:#ece6da}
+.stars{background-image:radial-gradient(1px 1px at 12% 22%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 34% 70%,#ece6da 50%,transparent 51%),radial-gradient(1.5px 1.5px at 58% 14%,#ffd2b0 50%,transparent 51%),radial-gradient(1px 1px at 72% 48%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 88% 82%,#ece6da 50%,transparent 51%),radial-gradient(1px 1px at 22% 88%,#cfeeff 50%,transparent 51%),radial-gradient(1px 1px at 46% 36%,#ece6da 50%,transparent 51%),radial-gradient(1.5px 1.5px at 94% 18%,#ece6da 50%,transparent 51%)}
+.grid{background-image:linear-gradient(#14141d 1px,transparent 1px),linear-gradient(90deg,#14141d 1px,transparent 1px);background-size:40px 40px}
 </style>
 <style>
 html{scroll-behavior:smooth}
@@ -32,8 +31,6 @@ video.film{background:#0a0a10}
 .switcher a[aria-current]{background:#ff7a3d;color:#160a04}
 .switcher span{color:#b8b2a7;padding:0 10px}
 #hero-film{filter:brightness(.6)}
-.film-pick[aria-pressed="false"]{color:#c9c3b8!important}
-@media (max-width:640px){#hero-film{filter:brightness(.42)}}
 .film-pick{text-shadow:0 2px 24px rgba(0,0,0,.9)}
 @media (max-width:640px){
   nav a[href="#how"]{display:none}
@@ -50,76 +47,128 @@ video.film{background:#0a0a10}
 </style>
 </head>
 <body>
-<main id="top" style="background: #06060a; color: #ece6da; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
+<main id="top" class="grid" style="background-color: #06060a; color: #ece6da; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
 
-<header id="reel" class="stars" style="position: relative; min-height: 860px; overflow: hidden; display: flex; flex-direction: column; background-color: #06060a">
-<video id="hero-film" class="film" src="assets/into-the-centre.mp4" poster="assets/stills/into-the-centre.jpg" muted loop playsinline preload="none" aria-label="Stand-in frame for Into the centre (AI-generated placeholder)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
-<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,10,.55) 0%, rgba(6,6,10,0) 22%, rgba(6,6,10,0) 45%, rgba(6,6,10,.92) 100%)"></div>
-
-<nav style="position: relative; max-width: 1320px; width: 100%; margin: 0 auto; padding: 24px 28px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<nav style="border-bottom: 1px solid #23232f; background: rgba(6,6,10,.9)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
 <a href="#top" class="lockup" aria-label="slayer, back to top"><img src="assets/brand/slayer-mark.png" alt="" width="34" height="34"><span>slayer</span></a>
-<div style="display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; flex-wrap: wrap">
-<a href="#reel" style="text-decoration: none">films</a>
-<a href="#how" style="text-decoration: none">how it works</a>
-<a href="https://github.com/janearc/slayer" style="text-decoration: none">source ↗</a>
+<div style="display: flex; gap: 22px; flex-wrap: wrap">
+<a href="#reel" style="text-decoration: none">reel</a>
+<a href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md" style="text-decoration: none">docs</a>
+<a href="https://github.com/janearc/slayer" style="text-decoration: none; color: #ff9a6a">github ↗</a>
+</div>
 </div>
 </nav>
 
-<div style="position: relative; flex: 1; max-width: 1320px; width: 100%; margin: 0 auto; padding: 0 28px 56px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap">
-<div style="display: flex; flex-direction: column; gap: 6px">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #ffb38a; margin-bottom: 10px">now showing · every frame from one program</div>
-<button type="button" class="film-pick" data-film="into-the-centre" data-num="01" data-label="Stand-in frame for Into the centre (AI-generated placeholder)" aria-pressed="true" style="all: unset; cursor: pointer; display: flex; align-items: flex-start; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: clamp(34px, 5vw, 72px); line-height: 1.08; letter-spacing: -.08em; color: #ece6da; font-style: italic"><span>Into the centre</span><span style="font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 13px; letter-spacing: 0; margin-top: 14px; color: #b8b2a7">01</span></button>
-<button type="button" class="film-pick" data-film="glass-hour" data-num="02" data-label="Stand-in frame for Glass hour (AI-generated placeholder)" aria-pressed="false" style="all: unset; cursor: pointer; display: flex; align-items: flex-start; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: clamp(34px, 5vw, 72px); line-height: 1.08; letter-spacing: -.08em; color: #8a857c; font-style: normal"><span>Glass hour</span><span style="font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 13px; letter-spacing: 0; margin-top: 14px; color: #b8b2a7">02</span></button>
-<button type="button" class="film-pick" data-film="the-beam" data-num="03" data-label="Stand-in frame for The beam (AI-generated placeholder)" aria-pressed="false" style="all: unset; cursor: pointer; display: flex; align-items: flex-start; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: clamp(34px, 5vw, 72px); line-height: 1.08; letter-spacing: -.08em; color: #8a857c; font-style: normal"><span>The beam</span><span style="font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 13px; letter-spacing: 0; margin-top: 14px; color: #b8b2a7">03</span></button>
-<button type="button" class="film-pick" data-film="zappy-plays" data-num="04" data-label="Stand-in frame for Zappy plays (AI-generated placeholder)" aria-pressed="false" style="all: unset; cursor: pointer; display: flex; align-items: flex-start; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: clamp(34px, 5vw, 72px); line-height: 1.08; letter-spacing: -.08em; color: #8a857c; font-style: normal"><span>Zappy plays</span><span style="font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 13px; letter-spacing: 0; margin-top: 14px; color: #b8b2a7">04</span></button>
-</div>
-
-<aside style="width: 340px; max-width: 100%; background: rgba(10,10,16,.78); border: 1px solid #2c2c3a; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 14px; backdrop-filter: blur(8px)">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #b8b2a7; display: flex; justify-content: space-between; gap: 12px"><span>slate</span><span id="slate-num">01</span></div>
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 19px; line-height: 1.3; letter-spacing: -.03em">Physically accurate films, rendered on your laptop, <em style="color: #ffb38a">directed by your agent.</em></p>
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #b8b2a7">stand-in frame · the film lands here soon</p>
+<header style="padding: 72px 0 40px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap">
+<h1 style="margin: 0; max-width: 780px; font-family: &quot;JetBrains Mono&quot;; font-weight: 400; font-size: 62px; line-height: 1.2; letter-spacing: -6px">Twelve lines of text in. <br><em style="color: rgb(255, 179, 138)">A finished film out.</em></h1>
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 360px">
+<p style="margin: 0; color: #b8b2a7">Slayer is a physically accurate ray tracer for cosmology, astronomy and the outdoors. Your agent writes the scene. Your laptop traces the light.</p>
 <div style="display: flex; gap: 10px; flex-wrap: wrap">
-<a href="#top" data-sound="hero-film" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; border-radius: 999px; background: #ff7a3d; color: #160a04">▶ play with score</a>
-<a href="https://github.com/janearc/slayer" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; text-decoration: none; padding: 12px 18px; border-radius: 999px; border: 1px solid #3a3a4a">source ↗</a>
+<a href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; border-radius: 8px; background: #ff7a3d; color: #160a04">get started</a>
+<a href="#reel" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; text-decoration: none; padding: 12px 18px; border-radius: 8px; border: 1px solid #3a3a4a">watch the reel</a>
 </div>
-</aside>
+</div>
 </div>
 </header>
 
-<section id="how" style="padding: 120px 28px; border-top: 1px solid #23232f">
-<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #ffb38a">credits</div>
-<div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; row-gap: 18px; width: 100%; align-items: baseline">
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">written in</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">plain YAML</span>
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">directed by</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">you, Claude or Codex</span>
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">light traced in</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">Go, and Metal on a Mac</span>
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">film stock by</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">ninjafilm</span>
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">score by</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">the built-in synth</span>
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">physics checked by</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">burning-trousers</span>
-<span style="text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">render farm</span><span style="text-align: left; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px; letter-spacing: -.04em">your laptop</span>
+<section id="reel" style="padding: 0 0 96px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px">
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; overflow: hidden; background: #09090e; box-shadow: 0 60px 120px -50px rgba(255,122,61,.25)">
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-bottom: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 12px; flex-wrap: wrap">
+<div style="display: flex; gap: 4px; flex-wrap: wrap">
+<span style="padding: 6px 12px; border-radius: 6px; background: #14141d; color: #ece6da">jobs/glass-hour.yaml</span>
+<span style="padding: 6px 12px; border-radius: 6px; color: #b8b2a7">sets/hillside.yaml</span>
 </div>
-<div style="width: 1px; height: 64px; background: #3a3a4a"></div>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b8b2a7">a renderer by</span>
-<span style="font-family: 'JetBrains Mono', monospace; font-style: italic; font-size: 56px; line-height: 1.05; letter-spacing: -.08em; color: #ffb38a">Jane Arc</span>
+<span style="color: #b8b2a7">example job file</span>
 </div>
-<p style="margin: 0; color: #b8b2a7; max-width: 520px">Scientific software with a production engineer's standards. Her third renderer, and the one that stuck.</p>
+
+<div style="display: flex; flex-wrap: wrap">
+<pre style="flex: 1 1 420px; min-width: 0; margin: 0; padding: 22px 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d4cec3; border-right: 1px solid #23232f; overflow-x: auto"><span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">1</span><span style="color: #8a857c"># glass hour: a hillside at moonrise</span>
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">2</span><span style="color: #7fd4ff">scene:</span> sets/hillside.yaml
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">3</span><span style="color: #7fd4ff">renderer:</span> gpu
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">4</span><span style="color: #7fd4ff">camera:</span>
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">5</span>  <span style="color: #7fd4ff">lens:</span> 35mm
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">6</span>  <span style="color: #7fd4ff">stock:</span> …
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">7</span><span style="color: #7fd4ff">size:</span> 1920x1080
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">8</span><span style="color: #7fd4ff">samples:</span> …
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">9</span><span style="color: #7fd4ff">time:</span> 0s..12s
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">10</span><span style="color: #7fd4ff">soundtrack:</span> …
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">11</span><span style="color: #7fd4ff">outputs:</span> [mp4, pfm]
+<span style="display: inline-block; width: 44px; text-align: right; padding-right: 16px; color: #8a857c">12</span><span style="background: #ff7a3d; color: #160a04">&nbsp;</span></pre>
+
+<div class="stars" style="flex: 1 1 520px; min-width: 0; position: relative; min-height: 420px; background-color: #0a0605; overflow: hidden">
+<video id="film-1" class="film" src="assets/glass-hour.mp4" poster="assets/stills/glass-hour.jpg" muted loop playsinline preload="none" aria-label="Stand-in frame for Glass hour: a glass sphere on a hillside under a rising orange moon (AI-generated placeholder)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,10,.55) 0%, rgba(6,6,10,0) 18%, rgba(6,6,10,0) 70%, rgba(6,6,10,.8) 100%)"></div>
+<div style="position: absolute; top: 14px; left: 16px; right: 16px; display: flex; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #d4cec3">
+<span>stand-in frame · film coming soon</span><span>linear light · re-exposable</span>
+</div>
+<div style="position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #d4cec3">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span>tracing on Metal</span><span>on your laptop</span></div>
+<div style="height: 3px; background: #2c2c3a; border-radius: 3px; overflow: hidden"><div style="width: 86%; height: 100%; background: #ff7a3d"></div></div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 8px 14px; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 12px; background: #0d0d14">
+<span><span style="background: #ff7a3d; color: #160a04; padding: 1px 8px; border-radius: 3px; font-weight: 700">DRAW</span>  <span style="color: #b8b2a7">$ game run slayer -- draw jobs/glass-hour.yaml</span></span>
+<span style="color: #9be29b">→ out/glass-hour/  frames + mp4 + score</span>
+</div>
+</div>
 </div>
 </section>
 
-<section style="padding: 0 28px 120px">
-<div style="max-width: 1320px; margin: 0 auto; border: 1px solid #23232f; border-radius: 14px; padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; background: #0a0a10">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 34px; line-height: 1.12; letter-spacing: -.06em">Shoot your first picture tonight.</h2>
-<p style="margin: 0; color: #b8b2a7">Build from source. The first still runs on the CPU, no GPU needed.</p>
+<section id="how" style="border-top: 1px solid #23232f; padding: 96px 0; background: rgba(6,6,10,.92)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: &quot;JetBrains Mono&quot;; font-weight: 400; font-size: 42px; line-height: 1.02; max-width: 640px; letter-spacing: -2px">Built for the agent loop.</h2>
+<p style="margin: 0; max-width: 380px; color: #b8b2a7">Plain text in, plain errors back. An agent that can edit a file and run a shell can direct a film.</p>
 </div>
-<code style="font-family: 'JetBrains Mono', monospace; font-size: 14px; background: #06060a; border: 1px solid #2c2c3a; border-radius: 10px; padding: 16px 20px; color: #d4cec3"><span style="color: #ff9a6a">$</span> game run slayer -- draw jobs/first-picture.yaml</code>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; padding: 24px; background: #0d0d14; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff9a6a">1 · list</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -.03em">It reads the catalogue</div>
+<code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #d4cec3; background: #06060a; border: 1px solid #23232f; border-radius: 8px; padding: 12px">$ game run slayer -- list</code>
+<p style="margin: 0; color: #b8b2a7; font-size: 15px">Every scene, smoke, preset, stock, tune and voicing.</p>
+</div>
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; padding: 24px; background: #0d0d14; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff9a6a">2 · assess</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -.03em">It fixes its own mistakes</div>
+<code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffb38a; background: #06060a; border: 1px solid #23232f; border-radius: 8px; padding: 12px">$ game run slayer -- assess jobs/first-picture.yaml</code>
+<p style="margin: 0; color: #b8b2a7; font-size: 15px">Unknown keys are refused at their exact source location.</p>
+</div>
+<div style="border: 1px solid #2c2c3a; border-radius: 12px; padding: 24px; background: #0d0d14; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff9a6a">3 · draw</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -.03em">It hands you the film</div>
+<code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9be29b; background: #06060a; border: 1px solid #23232f; border-radius: 8px; padding: 12px">→ out/first-film/  frames + mp4</code>
+<p style="margin: 0; color: #b8b2a7; font-size: 15px">No render farm, no API bill. Your laptop is the studio.</p>
+</div>
+</div>
 </div>
 </section>
 
-<footer style="border-top: 1px solid #23232f; padding: 36px 28px 56px">
-<div style="max-width: 1320px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8a857c">
-<span>slayer · apache 2.0 · pre-release, changing fast</span>
+<section style="border-top: 1px solid #23232f; padding: 96px 0; background: rgba(6,6,10,.92)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 42px; line-height: 1.04; letter-spacing: -2px">Spec sheet</h2>
+<p style="margin: 0; color: #b8b2a7">Built like a photographer, checked like a physicist. By Jane Arc.</p>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: 180px 1fr; font-size: 15px">
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">darkroom</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Re-expose a saved frame without tracing it again</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">ninjafilm</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Real photographic stock, optics and grain</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">manufactory</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Rocks, trees and houses, generated procedurally</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">synth</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">A score written in time with the picture</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">sky</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; color: #d4cec3">Volumetric light and the cosmos, to scale</dd>
+<dt style="padding: 14px 0; border-top: 1px solid #23232f; border-bottom: 1px solid #23232f; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff9a6a">burning-trousers</dt><dd style="margin: 0; padding: 14px 0; border-top: 1px solid #23232f; border-bottom: 1px solid #23232f; color: #d4cec3">An independent harness that checks the physics</dd>
+</dl>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #23232f; padding: 36px 0 56px; background: #06060a">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8a857c">
+<span>slayer · apache 2.0 · 500k+ lines of go · pre-release</span>
 <a href="https://github.com/janearc/slayer" style="color: #b8b2a7">github.com/janearc/slayer</a>
 </div>
 </footer>
