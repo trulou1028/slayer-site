@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <meta name="robots" content="noindex, nofollow">
 <title>slayer: physically accurate films, rendered on your laptop</title>
 <meta name="description" content="Slayer is a Go + Metal ray tracer for cosmology, astronomy and the outdoors. Write a scene in plain YAML, or let your agent write it, and Slayer traces the light into a finished film, score included.">
@@ -37,6 +39,11 @@ video.film{background:#0a0a10}
   .switcher span{display:none}
   footer{padding-bottom:96px!important}
 }
+
+.lockup{display:inline-flex;align-items:center;gap:2px;text-decoration:none}
+.lockup img{display:block;width:34px;height:34px;margin-left:-4px}
+.lockup span{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:21px;letter-spacing:-.07em;line-height:1;
+  background:linear-gradient(90deg,#ff8a4a 0%,#ffb38a 45%,#ece6da 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 </style>
 </head>
 <body>
@@ -44,7 +51,7 @@ video.film{background:#0a0a10}
 
 <nav style="border-bottom: 1px solid #23232f; background: rgba(6,6,10,.9)">
 <div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
-<a href="#top" style="font-weight: 700; font-size: 16px; text-decoration: none">~/slayer</a>
+<a href="#top" class="lockup" aria-label="slayer, back to top"><img src="assets/brand/slayer-mark.png" alt="" width="34" height="34"><span>slayer</span></a>
 <div style="display: flex; gap: 22px; flex-wrap: wrap">
 <a href="#reel" style="text-decoration: none">reel</a>
 <a href="https://github.com/janearc/slayer/blob/main/doc/getting-started.md" style="text-decoration: none">docs</a>
