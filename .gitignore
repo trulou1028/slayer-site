@@ -1,0 +1,7 @@
+.DS_Store
+.vercel
+.env*
+# private documents stay on Louie's Mac, never in this public repo
+*.pdf
+.claude/
+logo-explorations/

@@ -1,0 +1,10 @@
+# Upload only the pages and their media. Everything else in this folder stays on the Mac.
+/*
+!index.html
+!v1.html
+!home*.html
+!assets
+!vercel.json
+!catalogue
+!docs
+docs/src

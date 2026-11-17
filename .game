@@ -1,0 +1,24 @@
+# game: the slayer site
+#
+# a static page with no build step. game holds the two things a person
+# runs here, so they are said once and the same way everywhere:
+#
+#   game run readable   the theme against the reader's contrast band
+#   game run preview    the site at http://localhost:4174, as Vercel serves it
+#
+# readable is the line CI runs (.github/workflows/readable.yml); libreadme
+# is pinned to the same commit in both places. preview is tools/preview, a
+# small Go server that never lets the browser cache, so what it shows is
+# always what is on disk.
+name slayer-site
+
+run readable . :: go run github.com/janearc/libreadme/cmd/libreadme@d5c63f2162ae check assets/css/theme.css -text ink,dim,heading,link,code,accent,string,strong -surfaces ground,code-ground
+
+run preview . :: go run tools/preview/main.go
+
+# game run docs   slayer's own documents, copied into docs/src at the
+#                 commit each page names, made into reading pages in the
+#                 site's design. pandoc and tools/docs: one template, one
+#                 link filter, one small file of metadata per page.
+run docs . :: pandoc docs/src/visual-guide.md --from gfm --to html5 --standalone --template tools/docs/template.html --lua-filter tools/docs/links.lua --metadata-file tools/docs/visual-guide.yaml --toc --toc-depth 2 --syntax-highlighting none --output docs/visual-guide.html
+run docs . :: pandoc docs/pages/ferruccio.md --from gfm --to html5 --standalone --template tools/docs/template.html --lua-filter tools/docs/links.lua --metadata-file tools/docs/ferruccio.yaml --syntax-highlighting none --output docs/ferruccio.html
