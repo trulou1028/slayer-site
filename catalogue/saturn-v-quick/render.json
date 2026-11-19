@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "saturn-v",
+      "group": "Launchers",
+      "about": "The Saturn V launch vehicle, its three stages and instrument unit, 85.6 m tall and 10.06 m across, without the Apollo spacecraft on top.",
+      "notes": "Stage lengths and diameters are NASA's, as a search of nasa.gov relayed them; how the third stage is shared with its skirt is picked. No fins, no engines, and not its white and black paint.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NASA, Apollo 4 press kit",
+          "url": "https://ntrs.nasa.gov/api/citations/19670031260/downloads/19670031260.pdf"
+        },
+        {
+          "title": "NASA, The Enduring Legacy of Saturn V Launch Vehicle Flight",
+          "url": "https://ntrs.nasa.gov/api/citations/20200002830/downloads/20200002830.pdf"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "saturn-v-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 68887,
+      "Refined": 68887,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 234750584,
+    "Encode": 5678667,
+    "Compile": 2300416,
+    "BakeWall": 709,
+    "BakeGPU": 0,
+    "DispatchWall": 174830252,
+    "TraceGPU": 104857916,
+    "Finish": 18494665,
+    "AccelerationWall": 20483541,
+    "AccelerationGPU": 2792958,
+    "InputBytes": 112388,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -5.0292,
+      "Y": 0,
+      "Z": -5.0292
+    },
+    "Max": {
+      "X": 5.0292,
+      "Y": 85.61832,
+      "Z": 5.0292
+    }
+  },
+  "stored-faces": 960,
+  "seed": 5,
+  "image-sha256": "3ca86353fe06510d0954fafcae46a229b6b8932a8b239a50c58b40d507a7206c",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 5861708
+}

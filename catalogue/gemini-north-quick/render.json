@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "gemini-north",
+      "group": "Maunakea families",
+      "about": "An open reflector beneath a tall vented enclosure.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://www.gemini.edu/images/pio/handouts/gn_telescope_handout.pdf"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "gemini-north-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228892,
+      "Candidates": 194746,
+      "Refined": 194746,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 364445583,
+    "Encode": 40441833,
+    "Compile": 9408083,
+    "BakeWall": 417,
+    "BakeGPU": 0,
+    "DispatchWall": 173523790,
+    "TraceGPU": 148548335,
+    "Finish": 30702251,
+    "AccelerationWall": 96494750,
+    "AccelerationGPU": 64563250,
+    "InputBytes": 620996,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -19.5,
+      "Y": 0,
+      "Z": -19.5
+    },
+    "Max": {
+      "X": 26,
+      "Y": 46,
+      "Z": 19.5
+    }
+  },
+  "stored-faces": 6980,
+  "seed": 5,
+  "image-sha256": "d26a74ad93186ee20254a86563925c31664d98e31a557af04468ca9c0f94af59",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 149727959
+}

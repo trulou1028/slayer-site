@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "panstarrs-2",
+      "group": "Haleakala families",
+      "about": "The second survey-telescope family with a different authored annex.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://panstarrs.ifa.hawaii.edu/"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "panstarrs-2-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 181564,
+      "Refined": 181564,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 267768208,
+    "Encode": 23052792,
+    "Compile": 1929750,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 180061376,
+    "TraceGPU": 108571792,
+    "Finish": 17300165,
+    "AccelerationWall": 31856958,
+    "AccelerationGPU": 10288583,
+    "InputBytes": 474308,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -5.5,
+      "Y": 0,
+      "Z": -5.5
+    },
+    "Max": {
+      "X": 10,
+      "Y": 12.5,
+      "Z": 5.5
+    }
+  },
+  "stored-faces": 5300,
+  "seed": 5,
+  "image-sha256": "3fb92905fca53c6b9af790737df1bedaa07b888d466a1646b6bd623ff5d190de",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 34409833
+}

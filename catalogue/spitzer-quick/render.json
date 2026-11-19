@@ -1,0 +1,112 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "spitzer",
+      "group": "Observatories",
+      "about": "Spitzer gets to come too. Cryostat, baffle and a solar shield.",
+      "notes": "784 separate solar cells at published dimensions; authored packing and body. Overall-height discrepancy and layered materials remain under review.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Caltech/IPAC, Spitzer telescope",
+          "url": "https://www.spitzer.caltech.edu/mission/the-telescope"
+        },
+        {
+          "title": "Caltech/IPAC, Spitzer spacecraft",
+          "url": "https://www.spitzer.caltech.edu/mission/the-spacecraft"
+        },
+        {
+          "title": "Caltech/IPAC, Spitzer solar panel assembly",
+          "url": "https://www.spitzer.caltech.edu/mission/the-solar-panel-assembly"
+        },
+        {
+          "title": "Werner et al., on-orbit Spitzer performance (2022)",
+          "url": "https://doi.org/10.1117/1.JATIS.8.1.014002"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "spitzer-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1350771,
+      "Candidates": 140480,
+      "Refined": 140480,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 360751667,
+    "Encode": 75822542,
+    "Compile": 2331250,
+    "BakeWall": 458,
+    "BakeGPU": 0,
+    "DispatchWall": 144847251,
+    "TraceGPU": 89406125,
+    "Finish": 23469791,
+    "AccelerationWall": 100502292,
+    "AccelerationGPU": 63369916,
+    "InputBytes": 1147960,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -2.04,
+      "Y": 0,
+      "Z": -1.7331999999999999
+    },
+    "Max": {
+      "X": 2.04,
+      "Y": 4.9,
+      "Z": 0.8602
+    }
+  },
+  "stored-faces": 12912,
+  "seed": 5,
+  "image-sha256": "3b158dcd5cec2cb50b192652d97492a203422398f6109c3ac34cc7c3913174a4",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 101845625
+}

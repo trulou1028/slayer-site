@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "irtf",
+      "group": "Maunakea families",
+      "about": "A compact infrared reflector, yoke and service annex.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://about.ifa.hawaii.edu/facility/maunakea-telescopes/"
+        }
+      ],
+      "view-yaw-deg": 20,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "irtf-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1231757,
+      "Candidates": 197381,
+      "Refined": 197380,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 443636833,
+    "Encode": 32834834,
+    "Compile": 1849500,
+    "BakeWall": 500,
+    "BakeGPU": 0,
+    "DispatchWall": 259410668,
+    "TraceGPU": 212855959,
+    "Finish": 20365791,
+    "AccelerationWall": 116156084,
+    "AccelerationGPU": 77247833,
+    "InputBytes": 627024,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -9,
+      "Y": 0,
+      "Z": -9
+    },
+    "Max": {
+      "X": 14,
+      "Y": 21,
+      "Z": 9
+    }
+  },
+  "stored-faces": 7208,
+  "seed": 5,
+  "image-sha256": "046b790d4bc80f8c2374b8ebc7ed5cea95537f3fbda6b98fe452111750332b27",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 57591000
+}

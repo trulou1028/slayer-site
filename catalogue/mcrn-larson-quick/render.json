@@ -1,0 +1,142 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "mcrn-larson",
+      "group": "Visitors",
+      "about": "A flying saucer, the MCRN Larson, weathered titanium under a glass dome.",
+      "notes": "Patterned on the plain saucers Gary Larson drew in The Far Side, named as The Expanse names Mars's navy; our own geometry, picked by eye.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Gary Larson, The Far Side",
+          "url": "https://www.thefarside.com/"
+        },
+        {
+          "title": "James S. A. Corey, The Expanse",
+          "url": "https://en.wikipedia.org/wiki/The_Expanse_(novel_series)"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null,
+      "staging": {
+        "sky": {
+          "Horizon": {
+            "R": 0,
+            "G": 0,
+            "B": 0
+          },
+          "Zenith": {
+            "R": 0,
+            "G": 0,
+            "B": 0
+          },
+          "Ground": {
+            "R": 0,
+            "G": 0,
+            "B": 0
+          },
+          "Up": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          }
+        },
+        "sources": [
+          {
+            "toward": {
+              "X": -1,
+              "Y": 2,
+              "Z": -2
+            },
+            "strength": {
+              "R": 2.4,
+              "G": 2.3,
+              "B": 2.1
+            }
+          }
+        ]
+      }
+    },
+    "detail": "quick",
+    "folder": "mcrn-larson-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1466244,
+      "Candidates": 221130,
+      "Refined": 221130,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 320881250,
+    "Encode": 36118875,
+    "Compile": 2229667,
+    "BakeWall": 416,
+    "BakeGPU": 0,
+    "DispatchWall": 206735920,
+    "TraceGPU": 167475499,
+    "Finish": 22095413,
+    "AccelerationWall": 40876375,
+    "AccelerationGPU": 23126458,
+    "InputBytes": 512480,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -6,
+      "Y": -0.12,
+      "Z": -6
+    },
+    "Max": {
+      "X": 6,
+      "Y": 5.064,
+      "Z": 6
+    }
+  },
+  "stored-faces": 5952,
+  "seed": 5,
+  "image-sha256": "00569dba69682e2ca702c1239eeaee2b26600ea1a197eed52bf42e8826aab6de",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 50847583
+}

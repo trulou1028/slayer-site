@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "apollo-lunar-module",
+      "group": "Crewed spacecraft",
+      "about": "The Apollo lunar module on its four footpads, 7.04 m tall and 9.4 m across them, its descent stage in a gold blanket.",
+      "notes": "Heights, widths and the pads' span read from NASA's Apollo 204 spacecraft page, NSSDCA and Wikipedia, and not yet pinned. The ascent stage is one eight-sided prism and each leg one strut; the blanket is Kapton over aluminium by their optical constants.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NSSDCA, Apollo 11 lunar module",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+        },
+        {
+          "title": "NASA, Apollo 204 Review Board, the spacecraft",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/spacecraft.html"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "apollo-lunar-module-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1325238,
+      "Candidates": 99196,
+      "Refined": 99191,
+      "Fallbacks": 5
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 324768000,
+    "Encode": 10326750,
+    "Compile": 1950583,
+    "BakeWall": 583,
+    "BakeGPU": 0,
+    "DispatchWall": 145414206,
+    "TraceGPU": 39831706,
+    "Finish": 58825877,
+    "AccelerationWall": 63445375,
+    "AccelerationGPU": 39591083,
+    "InputBytes": 162556,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -4.7,
+      "Y": 0,
+      "Z": -4.7
+    },
+    "Max": {
+      "X": 4.7,
+      "Y": 7.04,
+      "Z": 4.7
+    }
+  },
+  "stored-faces": 1600,
+  "seed": 5,
+  "image-sha256": "a851b763f0345d253cdcdc7232b05d71769077a8e6cae93099165494286d3316",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 11757125
+}

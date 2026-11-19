@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "guide-star-launcher",
+      "group": "Observatory equipment",
+      "about": "An open launch tube with two collars and an attachment shoe.",
+      "notes": "Authored scenery; positive y is the outgoing axis, and the exit is at the upper bound.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "guide-star-launcher-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 110659,
+      "Refined": 110659,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 171964834,
+    "Encode": 6678500,
+    "Compile": 2283167,
+    "BakeWall": 583,
+    "BakeGPU": 0,
+    "DispatchWall": 92357291,
+    "TraceGPU": 40449375,
+    "Finish": 14964375,
+    "AccelerationWall": 44094083,
+    "AccelerationGPU": 27738958,
+    "InputBytes": 127496,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.4,
+      "Y": 0,
+      "Z": -0.4
+    },
+    "Max": {
+      "X": 0.4,
+      "Y": 3,
+      "Z": 0.4
+    }
+  },
+  "stored-faces": 1164,
+  "seed": 5,
+  "image-sha256": "56dfcf1d4d6575813914343dd08bed73eacd328de7c1e46a35f249af3441e8c5",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 8229208
+}

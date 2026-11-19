@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ferruccio · slayer</title>
+<link rel="icon" href="../assets/brand/slayer-icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/brand/slayer-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Nunito+Sans:wght@400;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="lockup" href="../"><img src="../assets/brand/slayer-icon-64.png" alt="" width="32" height="32">slayer</a>
+    <nav aria-label="Site">
+      <a href="visual-guide.html">guide</a>
+      <a href="ferruccio.html">ferruccio</a>
+      <a href="../#frames">frames</a>
+      <a href="https://github.com/janearc/slayer">github</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <article>
+<h1 id="ferruccio">ferruccio</h1>
+<p>Ferruccio is Slayer’s scene editor. You use it to place objects, move
+the camera and find the picture you want to render.</p>
+<p>Start with the Larson, a flying saucer with a person standing beside
+it for scale. Drag the ship, turn it, or move closer to see how it’s
+built. The idea comes from Bryce 3D: give someone a world they can play
+with, then let them get as technical as they like.</p>
+<p><img src="../assets/frames/ferruccio-play.jpg"
+alt="The Larson and a person for scale in Ferruccio’s Play view." /></p>
+<h2 id="get-the-shot">get the shot</h2>
+<p>The two trackballs control the camera. <strong>Orbit</strong> turns
+it around the subject. <strong>Travel</strong> moves it sideways,
+forward and back. <strong>Move</strong> and <strong>Turn</strong> let
+you change the objects themselves. Undo and redo let you try a different
+arrangement without starting over.</p>
+<p>Use the wireframe to work on a complicated scene, or switch to a
+solid view to judge its shape. <strong>Preview</strong> asks Slayer for
+a quick render. <strong>Render fully</strong> produces the finished
+image with Slayer’s ray tracer. The working view helps you compose; the
+render shows you the light.</p>
+<p><img src="../assets/frames/ferruccio-wire.jpg"
+alt="The same scene in wireframe." /></p>
+<h2 id="go-deeper-when-you-want-to">go deeper when you want to</h2>
+<p>In <strong>Play</strong>, the scene fills the window.
+<strong>Observe</strong> brings its YAML into view so you can read and
+edit the scene directly. <strong>Compose</strong> keeps the camera
+controls close while you work on framing.</p>
+<p>The scene is saved as a plain-text YAML file. You can keep working on
+it in Ferruccio, open it in another editor, or hand it to a coding
+agent. Examples open as copies, and a draft with an error stays
+available while you fix it.</p>
+<p><img src="../assets/frames/ferruccio-observe.jpg"
+alt="Observe view, with the scene list, YAML and image visible together." /></p>
+<h2 id="built-for-slayer">built for Slayer</h2>
+<p>Ferruccio is a native Go application. Its working view uses wgpu and
+Metal; Slayer handles the final render. Complex scenes can take longer
+to draw, which is why the editor offers simpler display modes.</p>
+<p>The interface uses Chroma’s themes, with adjustable text from 16 to
+24 points. You can choose the colors and type size that are comfortable
+for a long session.</p>
+<p><img src="../assets/frames/ferruccio-webb.jpg"
+alt="Webb at L2, rendered in Ferruccio." /></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>slayer, by jane michelle arc. Apache 2.0.
+      <a href="https://github.com/janearc/slayer">github.com/janearc/slayer</a></span>
+    <span>Built and checked with <a href="https://github.com/janearc/game">game</a>.</span>
+  </div>
+</footer>
+</body>
+</html>

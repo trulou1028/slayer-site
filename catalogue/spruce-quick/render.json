@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "spruce",
+      "group": "Conifers",
+      "about": "A whorled spruce with a clear trunk and radial branches.",
+      "notes": "Draft replacement of legacy sleeves with shared recursive shoots and physical needles around each twig. Four picked radial ranks alternate their phase; all dimensions remain authored. New views and appearance records are deferred to the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "spruce-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 55555,
+      "Refined": 55545,
+      "Fallbacks": 10
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 1339904042,
+    "Encode": 643589791,
+    "Compile": 2140417,
+    "BakeWall": 833,
+    "BakeGPU": 0,
+    "DispatchWall": 356874667,
+    "TraceGPU": 425103375,
+    "Finish": 32544959,
+    "AccelerationWall": 285443750,
+    "AccelerationGPU": 232259915,
+    "InputBytes": 8387692,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -3.1377378686553365,
+      "Y": -0.18863659918574194,
+      "Z": -2.5932704897487
+    },
+    "Max": {
+      "X": 2.7744698638885357,
+      "Y": 10.264712602197044,
+      "Z": 3.0997739737418497
+    }
+  },
+  "stored-faces": 99140,
+  "seed": 5,
+  "image-sha256": "2509d563d3140ce92fa14a86e0a1d31d636c3515e44c74dcc22fefb98a2e00e8",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 1019134875
+}

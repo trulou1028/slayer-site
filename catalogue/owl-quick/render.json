@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "owl",
+      "group": "Historical and unbuilt concepts",
+      "about": "The unbuilt 100-m OWL concept, observing in the open.",
+      "notes": "Selected 2005 Blue Book baseline: 3048 spherical primary panels and 216 flat secondary panels. Tapered modular space frame, deep mirror cell, azimuth rail, altitude cradle and four corrector roles are authored scenery. Panel positions are not an ESO segment survey. The roll-away shelter is independently placeable as owl-shelter.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "ESO OWL Blue Book overview, 2005",
+          "url": "https://www.eso.org/sci/facilities/eelt/owl/Blue_Book/2_Overview.pdf"
+        },
+        {
+          "title": "ESO OWL enclosure and infrastructure concept",
+          "url": "https://www.eso.org/sci/facilities/eelt/owl/Blue_Book/11_Enclosure_and_infrastructures.pdf"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "owl-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1262818,
+      "Candidates": 126771,
+      "Refined": 126761,
+      "Fallbacks": 10
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 1544693542,
+    "Encode": 721123167,
+    "Compile": 2285958,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 312286208,
+    "TraceGPU": 349599959,
+    "Finish": 12473667,
+    "AccelerationWall": 485968166,
+    "AccelerationGPU": 354620880,
+    "InputBytes": 9102424,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -86,
+      "Y": 0,
+      "Z": -90
+    },
+    "Max": {
+      "X": 86,
+      "Y": 145,
+      "Z": 90
+    }
+  },
+  "stored-faces": 112344,
+  "seed": 5,
+  "image-sha256": "ed28c9df2d2fe1553e6b8b081d76e3111569c68be1b50fc61946f964eb2401a6",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 686565333
+}

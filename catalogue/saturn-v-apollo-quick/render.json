@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "saturn-v-apollo",
+      "group": "Launchers",
+      "about": "The Apollo-Saturn V as it stood on the pad, with the Apollo spacecraft and its escape tower, 110.64 m tall, NASA's 363 feet.",
+      "notes": "The stages and the total height are NASA's; the lunar module adapter's length is unverified, and the escape tower's is what is left of the 363 feet. No fins, no engines, and not its black markings.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NASA, Apollo 4 press kit",
+          "url": "https://ntrs.nasa.gov/api/citations/19670031260/downloads/19670031260.pdf"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "saturn-v-apollo-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1230394,
+      "Candidates": 44019,
+      "Refined": 44018,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 453901791,
+    "Encode": 7668291,
+    "Compile": 2326167,
+    "BakeWall": 417,
+    "BakeGPU": 0,
+    "DispatchWall": 197171540,
+    "TraceGPU": 58777000,
+    "Finish": 132828043,
+    "AccelerationWall": 89611375,
+    "AccelerationGPU": 28710083,
+    "InputBytes": 174868,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -5.0292,
+      "Y": 0,
+      "Z": -5.0292
+    },
+    "Max": {
+      "X": 5.0292,
+      "Y": 110.64240000000001,
+      "Z": 5.0292
+    }
+  },
+  "stored-faces": 1728,
+  "seed": 5,
+  "image-sha256": "43191163c3f366c14c9a84ac377bfa831ac91f7dafa990df69b96c778367d996",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 10338625
+}

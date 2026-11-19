@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "space-observatory",
+      "group": "Observatories",
+      "about": "The default Spitzer template behind the custom spacecraft recipe.",
+      "notes": "This named convenience is an alias, not a fourth spacecraft design.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Caltech/IPAC, Spitzer telescope",
+          "url": "https://www.spitzer.caltech.edu/mission/the-telescope"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "space-observatory-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1350771,
+      "Candidates": 140480,
+      "Refined": 140480,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 415523042,
+    "Encode": 75879958,
+    "Compile": 3398875,
+    "BakeWall": 750,
+    "BakeGPU": 0,
+    "DispatchWall": 203155001,
+    "TraceGPU": 124585876,
+    "Finish": 38785416,
+    "AccelerationWall": 81403000,
+    "AccelerationGPU": 55892250,
+    "InputBytes": 1147960,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -2.04,
+      "Y": 0,
+      "Z": -1.7331999999999999
+    },
+    "Max": {
+      "X": 2.04,
+      "Y": 4.9,
+      "Z": 0.8602
+    }
+  },
+  "stored-faces": 12912,
+  "seed": 5,
+  "image-sha256": "3b158dcd5cec2cb50b192652d97492a203422398f6109c3ac34cc7c3913174a4",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 102746833
+}

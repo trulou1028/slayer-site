@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "coast-redwood",
+      "group": "Conifers",
+      "about": "Flared bark, a tall crown and recursively branched flat sprays.",
+      "notes": "Authored crown; leaf lengths have botanical references. Not a growth model.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Oregon State University, coast redwood foliage",
+          "url": "https://landscapeplants.oregonstate.edu/plants/sequoia-sempervirens"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "coast-redwood-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 59899,
+      "Refined": 59666,
+      "Fallbacks": 233
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 1820083542,
+    "Encode": 746335959,
+    "Compile": 3944167,
+    "BakeWall": 583,
+    "BakeGPU": 0,
+    "DispatchWall": 750204500,
+    "TraceGPU": 953034042,
+    "Finish": 58130542,
+    "AccelerationWall": 247553542,
+    "AccelerationGPU": 194641458,
+    "InputBytes": 14291564,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -11.226109600629929,
+      "Y": 0,
+      "Z": -10.193192400829227
+    },
+    "Max": {
+      "X": 10.070397642395498,
+      "Y": 39.76708037288205,
+      "Z": 11.303315690239284
+    }
+  },
+  "stored-faces": 56412,
+  "seed": 5,
+  "image-sha256": "f5a4264b504e348d89884c3a5145feade4cc5cd96a5aadd8eba956b4dacaf804",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 930139167
+}

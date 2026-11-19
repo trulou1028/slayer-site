@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "griffith",
+      "group": "Ground observatories",
+      "about": "A public observatory with a domed rotunda and two rooftop instruments.",
+      "notes": "The east refractor has the guide's nominal 12-inch objective. Wings, rotunda and rear planetarium follow the visitor map's layout in broad strokes. All building sizes, tube length and materials are authored. The west solar roof is closed; no working coelostat or lens prescription.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Griffith Observatory, student guide, page 17",
+          "url": "https://griffithobservatory.org/wp-content/uploads/2023/02/Module1_Student_Guide.pdf"
+        },
+        {
+          "title": "Griffith Observatory, visitor map, main level",
+          "url": "https://griffithobservatory.org/wp-content/uploads/2021/03/GOMap_03112021.pdf"
+        }
+      ],
+      "view-yaw-deg": 25,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "griffith-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228806,
+      "Candidates": 158680,
+      "Refined": 158680,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 204938209,
+    "Encode": 46224417,
+    "Compile": 2432042,
+    "BakeWall": 292,
+    "BakeGPU": 0,
+    "DispatchWall": 82942207,
+    "TraceGPU": 17007958,
+    "Finish": 23456210,
+    "AccelerationWall": 36163333,
+    "AccelerationGPU": 16676499,
+    "InputBytes": 698448,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -36,
+      "Y": 0,
+      "Z": -22
+    },
+    "Max": {
+      "X": 36,
+      "Y": 20,
+      "Z": 22
+    }
+  },
+  "stored-faces": 8184,
+  "seed": 5,
+  "image-sha256": "79ec84d74eb54d446f61574a6055f6188776091c1ff2e906a247baa5be681dd3",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 62933792
+}

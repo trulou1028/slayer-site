@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "giant-sequoia",
+      "group": "Conifers",
+      "about": "A broad flared trunk and dense sprays with scale-like foliage.",
+      "notes": "Authored crown; source-backed scale lengths do not calibrate the whole tree.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Oregon State University, giant sequoia foliage",
+          "url": "https://landscapeplants.oregonstate.edu/plants/sequoiadendron-giganteum"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "giant-sequoia-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 50067,
+      "Refined": 49889,
+      "Fallbacks": 178
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 2148040042,
+    "Encode": 1024924084,
+    "Compile": 2308792,
+    "BakeWall": 750,
+    "BakeGPU": 0,
+    "DispatchWall": 729851542,
+    "TraceGPU": 1120104374,
+    "Finish": 16795958,
+    "AccelerationWall": 360687583,
+    "AccelerationGPU": 310674165,
+    "InputBytes": 17209836,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -12.962613547917325,
+      "Y": 0,
+      "Z": -11.695917690377014
+    },
+    "Max": {
+      "X": 10.929913252309364,
+      "Y": 43.17571809005406,
+      "Z": 13.237084939348541
+    }
+  },
+  "stored-faces": 99012,
+  "seed": 5,
+  "image-sha256": "5dc15c80587499430797139f08b3bb67974e5cda83b760bdba222f7e211aa832",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 1306870042
+}

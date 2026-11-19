@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "optical-observatory",
+      "group": "Observatories",
+      "about": "A slitted dome, mount, open truss and primary mirror.",
+      "notes": "Visual assembly; not a calibrated optical bench or a real-site replica.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": -145,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "optical-observatory-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1239477,
+      "Candidates": 197637,
+      "Refined": 197637,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 348318292,
+    "Encode": 21612833,
+    "Compile": 2260833,
+    "BakeWall": 584,
+    "BakeGPU": 0,
+    "DispatchWall": 217398752,
+    "TraceGPU": 195108583,
+    "Finish": 19102623,
+    "AccelerationWall": 75344208,
+    "AccelerationGPU": 46640624,
+    "InputBytes": 340156,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -12,
+      "Y": 0,
+      "Z": -12
+    },
+    "Max": {
+      "X": 12,
+      "Y": 16.56,
+      "Z": 12
+    }
+  },
+  "stored-faces": 4052,
+  "seed": 5,
+  "image-sha256": "3f286b40ae70ca4420082bb4835b898d1bdeb0bc0f6e94ef442ea6e48e0b74eb",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 30879250
+}

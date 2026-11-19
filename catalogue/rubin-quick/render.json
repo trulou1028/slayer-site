@@ -1,0 +1,108 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "rubin",
+      "group": "Ground observatories",
+      "about": "A survey telescope, faceted enclosure and long tiered service wing.",
+      "notes": "Physical 8.4 m primary blank, 3.4 m secondary and 5 m tertiary surface from Rubin's mirror descriptions. The enclosure, supports, figures, camera housing and tiered service wing are authored scenery choices. Effective aperture is a different quantity from the physical blank.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Rubin Observatory, telescope key numbers",
+          "url": "https://rubinobservatory.org/for-scientists/rubin-101/key-numbers"
+        },
+        {
+          "title": "Rubin Observatory, mirrors",
+          "url": "https://rubinobservatory.org/explore/how-rubin-works/technology/mirrors"
+        },
+        {
+          "title": "Rubin Observatory, summit facility and service building",
+          "url": "https://rubinobservatory.org/explore/how-rubin-works/technology/summit-facility"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 18
+    },
+    "detail": "quick",
+    "folder": "rubin-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 126847,
+      "Refined": 126846,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 545009125,
+    "Encode": 111292667,
+    "Compile": 1873750,
+    "BakeWall": 667,
+    "BakeGPU": 0,
+    "DispatchWall": 211903166,
+    "TraceGPU": 128145500,
+    "Finish": 47255833,
+    "AccelerationWall": 159283250,
+    "AccelerationGPU": 124742666,
+    "InputBytes": 1781332,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -15,
+      "Y": 0,
+      "Z": -15
+    },
+    "Max": {
+      "X": 66,
+      "Y": 30,
+      "Z": 15
+    }
+  },
+  "stored-faces": 22796,
+  "seed": 5,
+  "image-sha256": "cfa19ad3989a5c3e5c6f491f76dd8fd0d9f5f9f2cd5fbb240a7efb90788a4359",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 181115500
+}

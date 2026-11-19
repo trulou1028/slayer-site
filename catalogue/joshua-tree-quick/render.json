@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "joshua-tree",
+      "group": "Desert and chaparral",
+      "about": "Forked stems ending in green blade rosettes and brown leaf skirts.",
+      "notes": "Terminal stiff blades and persistent old foliage follow the qualitative Joshua-tree habit. Dimensions, counts, branching and angles are picked. The old-leaf skirt is a separate material and downward arrangement. Code draft; geometry and CPU/Metal views await the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Oregon State University, Joshua-tree foliage habit",
+          "url": "https://landscapeplants.oregonstate.edu/plants/yucca-brevifolia"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "joshua-tree-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 29850,
+      "Refined": 29848,
+      "Fallbacks": 2
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 499094875,
+    "Encode": 192648333,
+    "Compile": 1630042,
+    "BakeWall": 375,
+    "BakeGPU": 0,
+    "DispatchWall": 68374833,
+    "TraceGPU": 36507166,
+    "Finish": 7968459,
+    "AccelerationWall": 220414458,
+    "AccelerationGPU": 201080624,
+    "InputBytes": 3358944,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.28343930853228416,
+      "Y": -0.2167690467597959,
+      "Z": -0.8532304327178477
+    },
+    "Max": {
+      "X": 2.5317960829915194,
+      "Y": 6.907250186103765,
+      "Z": 2.3429821457701507
+    }
+  },
+  "stored-faces": 39696,
+  "seed": 5,
+  "image-sha256": "7ce7415ab04813781afd0d8ea4e5b526bb3a7cba53ac66716123b80b043bf1bd",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 238004083
+}

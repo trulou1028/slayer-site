@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "tlrs-4",
+      "group": "Haleakala families",
+      "about": "A small ranging telescope and opaque corrector inside a dome.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://ilrs.gsfc.nasa.gov/network/stations/active/HA4T_station_info.html"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "tlrs-4-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228817,
+      "Candidates": 197611,
+      "Refined": 197610,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 271722334,
+    "Encode": 28950250,
+    "Compile": 2336125,
+    "BakeWall": 750,
+    "BakeGPU": 0,
+    "DispatchWall": 153177501,
+    "TraceGPU": 76706708,
+    "Finish": 14128291,
+    "AccelerationWall": 62091708,
+    "AccelerationGPU": 32299334,
+    "InputBytes": 489400,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -2.2,
+      "Y": 0,
+      "Z": -2.2
+    },
+    "Max": {
+      "X": 2.2,
+      "Y": 4,
+      "Z": 2.2
+    }
+  },
+  "stored-faces": 5480,
+  "seed": 5,
+  "image-sha256": "e0f93272d57caaf3dee19f59e26b2e87b14f85875cf11ad167cdba059a8d730a",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 41669875
+}
