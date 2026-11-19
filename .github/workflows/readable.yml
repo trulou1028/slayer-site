@@ -1,0 +1,28 @@
+# readable: every text colour on the site stays inside the reader's
+# measured contrast band, checked by libreadme on every push and pull
+# request. When it fails, change the colour in assets/css/theme.css, not
+# the check. `libreadme fix` with the same flags proposes the change.
+name: readable
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  libreadme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26.x"
+          cache: false
+      - name: check the theme (the same line as `game run readable`)
+        run: >-
+          go run github.com/janearc/libreadme/cmd/libreadme@d5c63f2162ae check assets/css/theme.css
+          -text ink,dim,heading,link,code,accent,string,strong
+          -surfaces ground,code-ground

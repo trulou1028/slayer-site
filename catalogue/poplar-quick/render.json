@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "poplar",
+      "group": "Broadleaf trees",
+      "about": "A tall leader-based crown with deltoid leaf outlines.",
+      "notes": "An authored poplar-family treatment with picked branching and colours. Leaf size stays fixed across specimen scale and detail. Winter drops the deciduous blades and keeps the woody twigs. Code draft; geometry and CPU/Metal views await the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "poplar-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 26420,
+      "Refined": 26407,
+      "Fallbacks": 13
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 967520750,
+    "Encode": 501345291,
+    "Compile": 3102625,
+    "BakeWall": 1084,
+    "BakeGPU": 0,
+    "DispatchWall": 308836164,
+    "TraceGPU": 392021542,
+    "Finish": 16277169,
+    "AccelerationWall": 126364875,
+    "AccelerationGPU": 82351374,
+    "InputBytes": 5179284,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -5.390783905035652,
+      "Y": -0.367193430907361,
+      "Z": -3.1153691479908425
+    },
+    "Max": {
+      "X": 4.0818053157556475,
+      "Y": 31.45140137854307,
+      "Z": 4.180049090153757
+    }
+  },
+  "stored-faces": 69680,
+  "seed": 5,
+  "image-sha256": "f93f05aaec8e838078a52abd334973fce00feaf431716bf00b59deea4bc9e635",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 460317167
+}

@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "owl-shelter",
+      "group": "Historical and unbuilt concepts",
+      "about": "A parked roll-away shelter for the OWL scenery family.",
+      "notes": "The Blue Book describes a hangar that moves away for observations. Four open arch modules, bogies and short parking rails form this authored interpretation. Span, wall section and parked positions are picked; hinge motion, travel and a surveyed enclosure are not modelled.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "ESO OWL enclosure and infrastructure concept",
+          "url": "https://www.eso.org/sci/facilities/eelt/owl/Blue_Book/11_Enclosure_and_infrastructures.pdf"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "owl-shelter-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 64448,
+      "Refined": 64448,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 181364042,
+    "Encode": 17682125,
+    "Compile": 2016625,
+    "BakeWall": 375,
+    "BakeGPU": 0,
+    "DispatchWall": 100079665,
+    "TraceGPU": 56665916,
+    "Finish": 15171209,
+    "AccelerationWall": 34669708,
+    "AccelerationGPU": 19572124,
+    "InputBytes": 409928,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -102,
+      "Y": 0,
+      "Z": -10
+    },
+    "Max": {
+      "X": 102,
+      "Y": 146,
+      "Z": 46
+    }
+  },
+  "stored-faces": 4744,
+  "seed": 5,
+  "image-sha256": "ec40dbc4f0b14f7b24cf1afba6225cd162c46d14d706937fa47f21508fb301a9",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 25386208
+}

@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "bonfire",
+      "group": "Fire and lamps",
+      "about": "A tall pyre of leaning logs.",
+      "notes": "Geometry only; scene fire is supplied separately. No attached lamp.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "bonfire-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 129594,
+      "Refined": 129594,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 215631375,
+    "Encode": 4532250,
+    "Compile": 2166875,
+    "BakeWall": 416,
+    "BakeGPU": 0,
+    "DispatchWall": 163147626,
+    "TraceGPU": 149625293,
+    "Finish": 14440540,
+    "AccelerationWall": 20835125,
+    "AccelerationGPU": 5305416,
+    "InputBytes": 69876,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -3.210313644673389,
+      "Y": -0.16564403539340836,
+      "Z": -3.2265583006740295
+    },
+    "Max": {
+      "X": 3.298475264847723,
+      "Y": 8.251283053646125,
+      "Z": 3.2408427167569864
+    }
+  },
+  "stored-faces": 480,
+  "seed": 5,
+  "image-sha256": "fd74e78f8989fbc9f6c23062db24b09ace74d4754ef98d1c93253985b748b109",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 3720583
+}

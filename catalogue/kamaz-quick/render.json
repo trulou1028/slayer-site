@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "kamaz",
+      "group": "Vehicles",
+      "about": "The KAMAZ-43118, a six-wheel-drive cargo truck, 9.27 by 2.55 by 3.11 m, its cab over its engine.",
+      "notes": "Size and tyres from listings, the wheelbase from a body-builder's catalogue; the cab and bed are picked.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "kamaz-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 118431,
+      "Refined": 118431,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 295902583,
+    "Encode": 4427000,
+    "Compile": 2199542,
+    "BakeWall": 875,
+    "BakeGPU": 0,
+    "DispatchWall": 107058873,
+    "TraceGPU": 51152708,
+    "Finish": 22764836,
+    "AccelerationWall": 144396083,
+    "AccelerationGPU": 111477625,
+    "InputBytes": 88404,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.275,
+      "Y": 0,
+      "Z": -4.635
+    },
+    "Max": {
+      "X": 1.275,
+      "Y": 3.11,
+      "Z": 4.635
+    }
+  },
+  "stored-faces": 600,
+  "seed": 5,
+  "image-sha256": "fdf809fb1d3c9346df753d6b8f2f5332513d35c6b407dd81055d91b6f0b3ad50",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 4273125
+}

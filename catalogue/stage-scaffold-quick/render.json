@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "stage-scaffold",
+      "group": "Buildings",
+      "about": "One tower of a festival stage's scaffolding, about 15 by 8 by 40 m, decked every fifth lift, for lasers and pyro to stand on.",
+      "notes": "A ringlock system's bay, lift and tube, from memory; which outer bays are braced is the seed's.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "stage-scaffold-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 79996,
+      "Refined": 79991,
+      "Fallbacks": 5
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 265278291,
+    "Encode": 8133917,
+    "Compile": 2252833,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 188523875,
+    "TraceGPU": 174467043,
+    "Finish": 19362374,
+    "AccelerationWall": 34030833,
+    "AccelerationGPU": 14965333,
+    "InputBytes": 243132,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -7.733999999999999,
+      "Y": -0.024,
+      "Z": -3.8789999999999996
+    },
+    "Max": {
+      "X": 7.733999999999999,
+      "Y": 41.024,
+      "Z": 3.8789999999999996
+    }
+  },
+  "stored-faces": 108,
+  "seed": 5,
+  "image-sha256": "0e67e93e3de812ed1e012bd29879e40af8d6d4ffbb4109cedd9cc95e7dfa8892",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 17730042
+}

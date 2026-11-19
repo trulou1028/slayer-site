@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "palomar",
+      "group": "Ground observatories",
+      "about": "A long optical tube carried by a tilted horseshoe mount.",
+      "notes": "Nominal 200-inch primary; Caltech's rounded 42 m dome diameter and 41 m height. The support proportions, slit and pointing are authored. This suggests the Hale telescope without an engineering replica.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Caltech, the Hale telescope",
+          "url": "https://sites.astro.caltech.edu/palomar/about/telescopes/hale.html"
+        }
+      ],
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 55
+    },
+    "detail": "quick",
+    "folder": "palomar-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1231104,
+      "Candidates": 170933,
+      "Refined": 170932,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 470292375,
+    "Encode": 102198208,
+    "Compile": 2404791,
+    "BakeWall": 667,
+    "BakeGPU": 0,
+    "DispatchWall": 198973375,
+    "TraceGPU": 168008917,
+    "Finish": 54558334,
+    "AccelerationWall": 89194958,
+    "AccelerationGPU": 63572916,
+    "InputBytes": 1350980,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -21,
+      "Y": 0,
+      "Z": -21
+    },
+    "Max": {
+      "X": 21,
+      "Y": 41,
+      "Z": 21
+    }
+  },
+  "stored-faces": 15884,
+  "seed": 5,
+  "image-sha256": "94bd517bf89a9582ae83d5d5461aeb0d971fe200c3950bd746937fa38db40ab8",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 127486625
+}

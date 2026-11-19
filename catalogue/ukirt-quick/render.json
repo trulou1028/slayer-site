@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "ukirt",
+      "group": "Maunakea families",
+      "about": "A small infrared reflector and dome; science closure was announced for 2026.",
+      "notes": "Source-labelled aperture; all other dimensions, poses and coatings are authored scenery. No calibrated optics or tracking. The announced science closure is September15,2026; this template does not imply continuing operations.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://about.ifa.hawaii.edu/ukirt/about-us/"
+        },
+        {
+          "title": "University of Hawaii, announced science closure",
+          "url": "https://www.hawaii.edu/news/2026/07/02/uh-continues-ukirt-decommissioning/"
+        }
+      ],
+      "view-yaw-deg": 20,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "ukirt-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1234267,
+      "Candidates": 222486,
+      "Refined": 222486,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 423327666,
+    "Encode": 41431459,
+    "Compile": 3028209,
+    "BakeWall": 667,
+    "BakeGPU": 0,
+    "DispatchWall": 273388001,
+    "TraceGPU": 272725875,
+    "Finish": 25017999,
+    "AccelerationWall": 67144791,
+    "AccelerationGPU": 26918958,
+    "InputBytes": 626448,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -9.5,
+      "Y": 0,
+      "Z": -9.5
+    },
+    "Max": {
+      "X": 9.5,
+      "Y": 21,
+      "Z": 9.5
+    }
+  },
+  "stored-faces": 7196,
+  "seed": 5,
+  "image-sha256": "f1fb767070b93986395506852527f3e755654d906c5bb6746bc8158e7de5881e",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 57069416
+}

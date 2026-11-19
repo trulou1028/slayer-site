@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "manzanita",
+      "group": "Desert and chaparral",
+      "about": "A red-barked multi-stem shrub with small oval blades.",
+      "notes": "Authored evergreen family scenery, without a particular species or measured growth model. Separate basal stems carry branching twigs and shared physical-size leaf cells. Code draft; geometry and CPU/Metal views await the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "manzanita-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 59607,
+      "Refined": 59600,
+      "Fallbacks": 7
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 619862667,
+    "Encode": 231747416,
+    "Compile": 2433458,
+    "BakeWall": 583,
+    "BakeGPU": 0,
+    "DispatchWall": 289074083,
+    "TraceGPU": 263076166,
+    "Finish": 15188959,
+    "AccelerationWall": 69668708,
+    "AccelerationGPU": 45613457,
+    "InputBytes": 2577412,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -2.0406689080957516,
+      "Y": -0.1057500571186749,
+      "Z": -2.141115644291307
+    },
+    "Max": {
+      "X": 2.08481917280496,
+      "Y": 3.1791226068310197,
+      "Z": 2.3033240314148906
+    }
+  },
+  "stored-faces": 31408,
+  "seed": 5,
+  "image-sha256": "2e14a9485f16b5815cff0a1a464b97d0ee4b1fd18cb266d59504fffa14c79c5d",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 231382291
+}

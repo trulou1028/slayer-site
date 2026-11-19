@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "valley-oak",
+      "group": "Broadleaf trees",
+      "about": "A spreading forked oak with lobed physical leaves.",
+      "notes": "Deciduous family scenery with a branching scaffold and fixed-size twig cells. All dimensions and colours are picked. Seasonal recipes can change the palette or remove leaves while retaining the wood. Code draft; geometry and CPU/Metal views await the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "UC ANR, California oak identification and ecology",
+          "url": "https://www.ucanr.edu/site/uc-oaks/california-oak-tree-species-id-and-ecology"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "valley-oak-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 35485,
+      "Refined": 35475,
+      "Fallbacks": 10
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 831123958,
+    "Encode": 518934375,
+    "Compile": 1610083,
+    "BakeWall": 417,
+    "BakeGPU": 0,
+    "DispatchWall": 203951249,
+    "TraceGPU": 176243000,
+    "Finish": 11968626,
+    "AccelerationWall": 83037708,
+    "AccelerationGPU": 67579666,
+    "InputBytes": 5134780,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -7.390461413740411,
+      "Y": -0.3968825276571231,
+      "Z": -4.097568741035705
+    },
+    "Max": {
+      "X": 7.46896913982787,
+      "Y": 15.020199497646054,
+      "Z": 7.612045479459583
+    }
+  },
+  "stored-faces": 69680,
+  "seed": 5,
+  "image-sha256": "726a6e0e48063a0f3efdfb7bcb054b284562e30e32c4f6876004355181014c4c",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 24666583
+}

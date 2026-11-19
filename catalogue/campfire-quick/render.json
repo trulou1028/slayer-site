@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "campfire",
+      "group": "Fire and lamps",
+      "about": "A stone ring, leaning sticks and an attached flickering light.",
+      "notes": "The named kind supplies geometry and light. A fire recipe supplies flames.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "campfire-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 58143,
+      "Refined": 58143,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 185223083,
+    "Encode": 20890750,
+    "Compile": 2319834,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 106310376,
+    "TraceGPU": 45839626,
+    "Finish": 18264666,
+    "AccelerationWall": 25343667,
+    "AccelerationGPU": 1570249,
+    "InputBytes": 298264,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.5200366793105915,
+      "Y": -0.03191600324041842,
+      "Z": -0.504222917229363
+    },
+    "Max": {
+      "X": 0.563667021662469,
+      "Y": 0.4617448630628152,
+      "Z": 0.5559118410871909
+    }
+  },
+  "stored-faces": 3344,
+  "seed": 5,
+  "image-sha256": "da0c672ffa589f658682b00a360e9ba31a439a4f71acf778cfafc9283c2937c4",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 42976416
+}

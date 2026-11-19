@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "mees-solar",
+      "group": "Haleakala families",
+      "about": "The Mees facility family with an explicitly picked small solar tube.",
+      "notes": "The quarter-metre tube is explicitly picked; the references establish the Mees facility, not this proxy aperture.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://about.ifa.hawaii.edu/facility/history-of-ifa-maui/"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 30
+    },
+    "detail": "quick",
+    "folder": "mees-solar-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228818,
+      "Candidates": 101048,
+      "Refined": 101048,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 206915750,
+    "Encode": 7595625,
+    "Compile": 2367000,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 115476543,
+    "TraceGPU": 62043000,
+    "Finish": 17730332,
+    "AccelerationWall": 50958791,
+    "AccelerationGPU": 33070875,
+    "InputBytes": 148484,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -9.5,
+      "Y": 0,
+      "Z": -9.5
+    },
+    "Max": {
+      "X": 21,
+      "Y": 9,
+      "Z": 9.5
+    }
+  },
+  "stored-faces": 1416,
+  "seed": 5,
+  "image-sha256": "b0b9ee4234333c4619c8e5c5d3402a061fa91cd360cd10972447a44fbcf6d917",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 9818750
+}

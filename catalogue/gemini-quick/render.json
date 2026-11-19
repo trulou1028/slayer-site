@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "gemini",
+      "group": "Crewed spacecraft",
+      "about": "The Gemini spacecraft, standing on its adapter, 5.736 m tall and 3.048 m across its base.",
+      "notes": "Sizes from a secondary page and the heat shield's width from NASA's familiarization manual, which gives a different overall length; every look is picked.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Gunter's Space Page, Gemini",
+          "url": "https://space.skyrocket.de/doc_sdat/gemini.htm"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "gemini-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1381366,
+      "Candidates": 152566,
+      "Refined": 152566,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 227113625,
+    "Encode": 4707000,
+    "Compile": 2316041,
+    "BakeWall": 417,
+    "BakeGPU": 0,
+    "DispatchWall": 157938168,
+    "TraceGPU": 35109875,
+    "Finish": 18597207,
+    "AccelerationWall": 30907709,
+    "AccelerationGPU": 2669041,
+    "InputBytes": 81148,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.524,
+      "Y": 0,
+      "Z": -1.524
+    },
+    "Max": {
+      "X": 1.524,
+      "Y": 5.736000000000001,
+      "Z": 1.524
+    }
+  },
+  "stored-faces": 576,
+  "seed": 5,
+  "image-sha256": "d6c90b34a281a911a04d230e5a31cb7021c4156bdaa630ad0c08016bc906c1b2",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 3554959
+}

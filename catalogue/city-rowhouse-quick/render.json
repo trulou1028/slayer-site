@@ -1,0 +1,93 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "city-rowhouse",
+      "group": "City buildings",
+      "about": "A seeded two or three storey house with a gabled roof.",
+      "notes": "Authored dimensions and materials; quick adds broad glazing bands.",
+      "details": [
+        "hull",
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "city-rowhouse-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 266206,
+      "Refined": 266206,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 229448041,
+    "Encode": 3222625,
+    "Compile": 2212750,
+    "BakeWall": 417,
+    "BakeGPU": 0,
+    "DispatchWall": 129909707,
+    "TraceGPU": 63873250,
+    "Finish": 29788627,
+    "AccelerationWall": 45650208,
+    "AccelerationGPU": 28310000,
+    "InputBytes": 40444,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -6.855995519259704,
+      "Y": 0,
+      "Z": -8.04134318566527
+    },
+    "Max": {
+      "X": 6.915995519259703,
+      "Y": 7.892728089599355,
+      "Z": 8.10134318566527
+    }
+  },
+  "stored-faces": 68,
+  "seed": 5,
+  "image-sha256": "258d3a04cb352fad95ccb8d9c62618af3b916bdab425a3e0eace568e54328d32",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 475000
+}

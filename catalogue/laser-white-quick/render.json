@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "laser-white",
+      "group": "Fire and lamps",
+      "about": "A show laser head mixing the red, green and blue lines from one mouth.",
+      "notes": "Power and beam numbers are authored to sound right; the lines share its power evenly.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "laser-white-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 27483,
+      "Refined": 27483,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 239697792,
+    "Encode": 3326667,
+    "Compile": 2244084,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 155185294,
+    "TraceGPU": 53639833,
+    "Finish": 31558081,
+    "AccelerationWall": 22722542,
+    "AccelerationGPU": 6299958,
+    "InputBytes": 41700,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.02,
+      "Y": 0,
+      "Z": -0.05
+    },
+    "Max": {
+      "X": 0.25446967443819035,
+      "Y": 1.249045982232983,
+      "Z": 0.05
+    }
+  },
+  "stored-faces": 80,
+  "seed": 5,
+  "image-sha256": "fbb93bb08adbc95c9a0c204f6cf59a3a6af2109cfe3916f1a52310080ddf3403",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 723083
+}

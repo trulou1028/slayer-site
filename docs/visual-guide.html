@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>a visual guide · slayer</title>
+<link rel="icon" href="../assets/brand/slayer-icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/brand/slayer-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Nunito+Sans:wght@400;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="lockup" href="../"><img src="../assets/brand/slayer-icon-64.png" alt="" width="32" height="32">slayer</a>
+    <nav aria-label="Site">
+      <a href="visual-guide.html">guide</a>
+      <a href="ferruccio.html">ferruccio</a>
+      <a href="../#frames">frames</a>
+      <a href="https://github.com/janearc/slayer">github</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <p class="provenance">Copied from <code>doc/visualguide/README.md</code> in slayer at
+  <code>b9e5ba20</code>. The repository is the authority; this page
+  is a reading copy.</p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+<ul>
+<li><a href="#slayer" id="toc-slayer">slayer</a>
+<ul>
+<li><a href="#what-you-need" id="toc-what-you-need">what you
+need</a></li>
+<li><a href="#get-it-and-build-it" id="toc-get-it-and-build-it">get it
+and build it</a></li>
+<li><a href="#ferruccio-the-friendly-way-in"
+id="toc-ferruccio-the-friendly-way-in">Ferruccio, the friendly way
+in</a></li>
+<li><a href="#the-front-door" id="toc-the-front-door">the front
+door</a></li>
+<li><a href="#your-first-picture-and-film"
+id="toc-your-first-picture-and-film">your first picture and
+film</a></li>
+<li><a href="#a-scene-in-yaml-step-by-step"
+id="toc-a-scene-in-yaml-step-by-step">a scene in YAML, step by
+step</a></li>
+<li><a href="#a-scene-in-go" id="toc-a-scene-in-go">a scene in
+Go</a></li>
+<li><a href="#grissom" id="toc-grissom">Grissom</a></li>
+<li><a href="#where-to-go-next" id="toc-where-to-go-next">where to go
+next</a></li>
+</ul></li>
+</ul>
+  </nav>
+  <article>
+<h1 id="slayer">slayer</h1>
+<p><img src="visual-guide/images/hero-orbital.jpg"
+alt="Two broad rings, mottled in rust and blue, cross around a small blue world against a field of stars." /></p>
+<p>slayer is a ray tracer written in Go. it follows light backwards from
+a camera through a scene, develops that light like film, and writes
+pictures and films. on a Mac it can trace on the GPU through Metal.</p>
+<p>the picture above is from the orbital scene. everything on this page
+was drawn by slayer at the 2k size (2048 by 1152), except the Ferruccio
+screenshots, the Grissom pictures, the small frames in step 7 and the
+two films. the source is <a
+href="https://github.com/janearc/slayer">github.com/janearc/slayer</a>.</p>
+<p>from the README, in the author's words:</p>
+<blockquote>
+<p>this is my third attempt at a ray tracing/rendering kit. it is my
+first with metal support, and it has the most ambitious efforts at math
+and physics. i use this software constantly, but i do not consider it
+"released" yet and i plan to change a lot about it.</p>
+</blockquote>
+<blockquote>
+<p>if you'd like help with using it or you have questions or patches,
+let me know. please expect that this will change substantially for a
+little while.</p>
+</blockquote>
+<blockquote>
+<p>12 november 2026: slayer is getting a little more robust and less
+difficult to use but it is still very complicated and not friendly. if
+you cna't figure it out today, that's okay, it will get better. but if
+you're not pretty skilled at golang, this is probably not the place to
+start your tracing journey.</p>
+</blockquote>
+<blockquote>
+<p>README.md, "pre-released"</p>
+</blockquote>
+<p><img src="visual-guide/images/venus-across.jpg"
+alt="A Venera lander stands alone on a plain of broken rock slabs under a hazy orange and yellow sky." /></p>
+<p><em>a Venera lander on the plains of Venus.</em></p>
+<p><img src="visual-guide/images/venus-lander.jpg"
+alt="Looking down from the lander&#39;s toothed landing ring at flat, cracked slabs of brown rock and scattered pebbles." /></p>
+<p><em>the same lander, looking down past its landing ring at the
+slabs.</em></p>
+<p>contents:</p>
+<ol type="1">
+<li><a href="#what-you-need">what you need</a></li>
+<li><a href="#get-it-and-build-it">get it and build it</a></li>
+<li><a href="#ferruccio-the-friendly-way-in">Ferruccio, the friendly way
+in</a></li>
+<li><a href="#the-front-door">the front door</a></li>
+<li><a href="#your-first-picture-and-film">your first picture and
+film</a></li>
+<li><a href="#a-scene-in-yaml-step-by-step">a scene in YAML, step by
+step</a></li>
+<li><a href="#a-scene-in-go">a scene in Go</a></li>
+<li><a href="#grissom">Grissom</a></li>
+<li><a href="#where-to-go-next">where to go next</a></li>
+</ol>
+<h2 id="what-you-need">what you need</h2>
+<ul>
+<li><strong>macOS with a Metal device</strong> for the GPU renderer,
+plus Git and the Xcode command-line tools
+(<code>xcode-select --install</code>). the CPU renderer works without
+Metal.</li>
+<li><strong>Go 1.27.3</strong>, the version named in
+<code>go.mod</code>.</li>
+<li><strong>Game</strong>, the project runner slayer builds with: <a
+href="https://github.com/janearc/game">github.com/janearc/game</a>,
+v0.5.0 or newer. it reads the checkout's <code>.game</code> file for
+build steps, named runs and checks.</li>
+<li><strong>ffmpeg</strong> on your PATH, for films made from jobs.
+pictures don't need it.</li>
+<li><strong>the source shelf</strong>: a folder of your own that holds
+the datasets slayer's scenes are built from. the next section fetches
+it.</li>
+</ul>
+<blockquote>
+<p><strong>today's state.</strong> building from a fresh clone of the
+current development line also needs two dependencies published first.
+<code>go.mod</code> points
+<code>github.com/janearc/celestial-data</code> and
+<code>github.com/scigolib/netcdf</code> at folders on the development
+machine until celestial-data's netcdf adapter and the netcdf fix are
+published; until then a fresh clone elsewhere stops at
+<code>go.mod</code>.</p>
+</blockquote>
+<blockquote>
+<p>doc/building.md says the same and will say when it changes.</p>
+</blockquote>
+<p>check your tools:</p>
+<pre class="sh"><code>command -v game
+game --age
+go version</code></pre>
+<p>some installations name the Game executable <code>game5</code>; use
+that name wherever this page says <code>game</code>.</p>
+<h2 id="get-it-and-build-it">get it and build it</h2>
+<pre class="sh"><code>git clone https://github.com/janearc/slayer.git
+cd slayer
+export GOWORK=off</code></pre>
+<p><code>GOWORK=off</code> keeps an enclosing Go workspace from quietly
+supplying different modules. every command from here on runs from the
+checkout root.</p>
+<h3 id="the-shelf">the shelf</h3>
+<p>the shelf holds the papers and datasets pinned in
+<code>sources.yaml</code>. a release doesn't include it, so name a
+folder of your own, outside any Git checkout, and set it <strong>in your
+shell</strong>:</p>
+<pre class="sh"><code>export SLAYER_SHELF=&quot;$HOME/slayer/sources&quot;
+game run sources-fetch
+game run sources-check
+game run sources-verify</code></pre>
+<p>the fetch is about 2 GB, most of it one elevation model of Kilauea,
+and keeps what it already has if you run it again. check holds the bytes
+to their hashes; verify also checks the source pages behind published
+values.</p>
+<p>put the <code>export</code> line in your shell's startup file so
+later builds find the shelf. setting it in Game's config instead doesn't
+reach these runs today; the shell does.</p>
+<h3 id="build">build</h3>
+<pre class="sh"><code>game build
+bin/slayer --age</code></pre>
+<p><code>game build</code> checks the shelf first, then builds stamped
+commands into <code>bin/</code>. <code>--age</code> says which build you
+have and where it came from. rebuild after you change Go code.</p>
+<h2 id="ferruccio-the-friendly-way-in">Ferruccio, the friendly way
+in</h2>
+<p>Ferruccio is a native workspace for writing slayer scenes. it opens a
+scene's YAML, shows the picture beside the source, lets you move, turn
+and look at things in the scene, and draws a real still through slayer.
+it's a separate Go module inside the checkout,
+<code>ferruccio/native</code>, with a GoGPU window on Metal.</p>
+<h3 id="build-it">build it</h3>
+<p>the plain root build doesn't build Ferruccio, and the two need
+different cgo settings: slayer needs cgo, Ferruccio's macOS bridge is
+pure Go and needs it off.</p>
+<pre class="sh"><code>export GOWORK=off
+CGO_ENABLED=1 game build
+cd ferruccio/native
+CGO_ENABLED=0 game build
+cd ../..</code></pre>
+<p>that gives you <code>bin/slayer</code> and
+<code>ferruccio/native/bin/ferruccio</code>.</p>
+<h3 id="open-it">open it</h3>
+<p><code>ferruccio</code> has three verbs: <code>open</code>,
+<code>proof</code> and <code>regress</code>. with nothing after it, at a
+terminal, it is <code>open</code>. the preview runs your slayer through
+Game, so tell it where both are, and give it a folder that already
+exists for the previews it draws:</p>
+<pre class="sh"><code>mkdir -p &quot;$HOME/ferruccio-previews&quot;
+ferruccio/native/bin/ferruccio open --dry-run
+ferruccio/native/bin/ferruccio open \
+  --slayer &quot;$PWD/bin/slayer&quot; \
+  --game &quot;$(command -v game)&quot; \
+  --game-home &quot;$GAME_HOME&quot; \
+  --evidence &quot;$HOME/ferruccio-previews&quot; \
+  --examples ferruccio/examples \
+  sets/ferruccio-playground.yaml</code></pre>
+<p><code>--dry-run</code> opens nothing; the second command opens the
+window and takes focus. <code>--game-home</code> is your Game
+configuration home, if you use one.
+<code>sets/ferruccio-playground.yaml</code> is a known good scene and
+reads no datasets; for scenes that do, add
+<code>--shelf "$SLAYER_SHELF"</code>.</p>
+<p>in the window: Move, Turn and Look modes (<code>M</code>,
+<code>T</code>, <code>L</code>), two trackballs (Orbit and Travel),
+Render fully, Preview, Source, Undo and Redo, a display selector
+(Wireframe, Solid, Edges, Rendered), a theme selector, and type from 16
+to 24 points. Play gives the picture the window, Observe puts the YAML
+beside it, and Compose enlarges it.</p>
+<p><img src="visual-guide/images/ferruccio-1-play.jpg"
+alt="Ferruccio&#39;s window in Play: a rendered ship and a two-metre visitor fill the view, with two trackballs and mode buttons around it." /></p>
+<p><em>Play: the Larson ship and a two-metre visitor, rendered, with the
+Orbit and Travel trackballs.</em></p>
+<p><img src="visual-guide/images/ferruccio-2-observe.jpg"
+alt="Ferruccio in Observe: a list of scenes on the left, the scene&#39;s YAML in the middle and the rendered picture beside it." /></p>
+<p><em>Observe: the same scene with its YAML beside the picture and the
+scene list on the left.</em></p>
+<p><img src="visual-guide/images/ferruccio-3-wire.jpg"
+alt="Ferruccio in Play with the Wireframe display: the ship and visitor as line drawings." /></p>
+<p><em>Play in Wireframe: the live working geometry.</em></p>
+<p><img src="visual-guide/images/ferruccio-4-webb.jpg"
+alt="Ferruccio in Play showing the webb-at-l2 scene rendered against black space." /></p>
+<p><em>Play with the <code>webb-at-l2</code> scene.</em></p>
+<h3 id="proof">proof</h3>
+<p><code>proof</code> draws the workspace without showing a window and
+exports it as a 1600 by 1000 PNG. the pictures above were made that
+way:</p>
+<pre class="sh"><code>ferruccio/native/bin/ferruccio proof --background \
+  --slayer &quot;$PWD/bin/slayer&quot; --game &quot;$(command -v game)&quot; \
+  --game-home &quot;$GAME_HOME&quot; --evidence &quot;$HOME/ferruccio-previews&quot; \
+  --file sets/ferruccio-playground.yaml --render \
+  --composition play --out play.png</code></pre>
+<p>change <code>--composition</code> to <code>observe</code> or
+<code>compose</code>, or drop <code>--render</code> and pass
+<code>--display wire</code> for the wireframe.</p>
+<h2 id="the-front-door">the front door</h2>
+<p><code>slayer</code> is one command with verbs. run it as
+<code>bin/slayer VERB</code>, or through Game as
+<code>game run slayer -- VERB</code>; the words after <code>--</code> go
+to slayer.</p>
+<ul>
+<li><code>draw</code> carries out a job and writes what it asks: a
+picture, frames, a film with its sound.</li>
+<li><code>list</code> says what there is to draw and to draw with:
+scenes, smokes, presets, stocks, tunes, voicings.</li>
+<li><code>assess</code> says whether a file will draw, drawing nothing,
+or judges a set or the smokes.</li>
+<li><code>develop</code> turns raw light already drawn into pictures
+through a job's print or stock.</li>
+<li><code>tunes</code> serves a tune library's audition page, or checks,
+films or pages its tunes.</li>
+<li><code>cache</code> says what the disk caches hold, or empties
+them.</li>
+<li><code>watch</code> draws a job live in the terminal as you edit
+it.</li>
+<li><code>edit</code> lays out watch, your editor and the agent console
+in tmux.</li>
+<li><code>schema</code> prints the job schema, or where its copy
+is.</li>
+</ul>
+<pre class="sh"><code>bin/slayer --help
+bin/slayer --agent-help
+bin/slayer draw --help
+bin/slayer list presets</code></pre>
+<p><code>--agent-help</code> gives the same verb map, written for a
+coding agent. each verb's own <code>--help</code> lists its arguments
+and flags. <code>slayer</code> with nothing after it, at a terminal, is
+<code>slayer edit</code>.</p>
+<p>there is also <code>slayer render FILE</code>, which draws a whole
+set file; the YAML walkthrough below uses it.</p>
+<h2 id="your-first-picture-and-film">your first picture and film</h2>
+<p>slayer has two kinds of YAML. a <strong>set</strong> describes the
+world: ground, things, lights, sky. a <strong>job</strong> describes the
+photograph or film: which scene, the camera, the size and rays, the
+time, the sound, and what comes out. the checkout comes with a first
+job, <code>jobs/first-picture.yaml</code>:</p>
+<p><code>jobs/first-picture.yaml</code></p>
+<pre class="yaml"><code>$schema: https://github.com/janearc/slayer/schemas/job-v1.json
+scene: {smoke: 1}
+renderer: cpu
+film: {width: 160, height: 90, rays: 1}
+at: {value: 0, unit: s}
+outputs:
+  picture: ../out/first-picture.png
+  raw: ../out/first-picture.pfm</code></pre>
+<p>it draws smoke 1, one of slayer's small numbered test scenes, at 160
+by 90 on the CPU. it needs no Metal and no terrain. check it, look at
+what it would do, then draw it:</p>
+<pre class="sh"><code>game run slayer -- assess jobs/first-picture.yaml
+game run slayer -- draw jobs/first-picture.yaml --dry-run
+game run slayer -- draw jobs/first-picture.yaml</code></pre>
+<p>assess checks the input without drawing. the dry run prints the job
+in its full form and every file it would write. the draw writes
+<code>out/first-picture.png</code> and
+<code>out/first-picture.pfm</code>. output paths in a job are relative
+to the job file, not to your terminal.</p>
+<p>try it bigger, with more rays:</p>
+<pre class="sh"><code>game run slayer -- draw jobs/first-picture.yaml --width 320 --height 180 --rays 2</code></pre>
+<p>rays are counted per side: 2 means four rays a pixel, 4 means
+sixteen. going from 2 to 4 is roughly four times the work. more rays
+help edges and noise; they can't fix a camera pointed the wrong way.</p>
+<p>the <code>.pfm</code> holds the linear light before development.
+change the job's print settings and develop it again without
+tracing:</p>
+<pre class="sh"><code>game run slayer -- develop jobs/first-picture.yaml out/first-picture.pfm</code></pre>
+<h3 id="first-film">first film</h3>
+<p><code>jobs/first-film.yaml</code></p>
+<pre class="yaml"><code>$schema: https://github.com/janearc/slayer/schemas/job-v1.json
+scene: {smoke: 1}
+renderer: cpu
+film: {width: 160, height: 90, rays: 1}
+fps: 6
+duration: {value: 3, unit: s}
+sound:
+  tune: ../cheeptune/examples/sunrun.json
+  voicing: &quot;@leap-dmg&quot;
+outputs:
+  frames: ../out/first-film
+  movie: ../out/first-film.mp4</code></pre>
+<p>three seconds at six frames a second, with a score played on slayer's
+own synth, <code>cheeptune</code>. the scene holds still; this one
+checks frames, sound and encoding. it needs ffmpeg.</p>
+<pre class="sh"><code>game run slayer -- draw jobs/first-film.yaml --dry-run
+game run slayer -- draw jobs/first-film.yaml</code></pre>
+<p>it writes <code>out/first-film.mp4</code> and numbered PNGs in
+<code>out/first-film/</code>. control-c stops between frames; running
+the same job again on the same build resumes where it stopped.</p>
+<h2 id="a-scene-in-yaml-step-by-step">a scene in YAML, step by step</h2>
+<p>seven steps, from bare ground to a short camera move over a real
+crater. the ground is the US Geological Survey's 2019 lidar elevation
+model of Kilauea Iki, the large dataset on the shelf. each set names the
+file it reads, <code>unpacked/kil_2019dem/kil_2019dem.tif</code> under
+the shelf. the trees and stones are grown by slayer's manufactory from a
+seed. no image files go in.</p>
+<p>put the sets inside the checkout, for example in
+<code>sets/guide/</code>: slayer looks for <code>sources.yaml</code>
+from the YAML's own folder upward. every step is a whole file you can
+render on its own.</p>
+<h3 id="step-1-ground-and-sky">step 1: ground and sky</h3>
+<p><code>sets/guide/step-1.yaml</code></p>
+<pre class="yaml"><code>scene:
+  name: step 1, ground and sky
+  light: sun
+  terrain:
+    from: usgs-kilauea-2019-dem
+    file: unpacked/kil_2019dem/kil_2019dem.tif
+    west: 263000
+    north: 2149000
+    across: 1800
+    down: 1300
+    step: 4
+  film:
+    width: 2048
+    height: 1152
+    rays: 2
+  cameras:
+    across:
+      orientation:
+        point_to: the far stone
+        alpha: -4
+      location:
+        loc_relative:
+          object: the lookout
+          standoff_x: 0
+          standoff_y: 0
+          standoff_z: 3
+  set:
+    things:
+      the lookout:
+        kind: cobble
+        seed: 5
+        east: 263850
+        north: 2148720
+      the far stone:
+        kind: cobble
+        seed: 6
+        east: 264450
+        north: 2148100</code></pre>
+<pre class="sh"><code>bin/slayer render sets/guide/step-1.yaml -out out/step-1.png</code></pre>
+<p><img src="visual-guide/images/yaml-step-1.jpg"
+alt="A wide grey-brown plain under a pale blue sky." /></p>
+<p><em>step 1. the ground and the default sky.</em></p>
+<p>the smallest set that draws. <code>terrain</code> cuts a window 1800
+by 1300 metres out of the elevation model, sampled every 4 metres. a set
+with no terrain is refused, so ground and sky come together.</p>
+<p>a camera in a set stands off a named thing and points at a named
+thing, so two plain stones (<code>cobble</code>) are here as its marks:
+it stands 3 m above <code>the lookout</code> and looks toward
+<code>the far stone</code>, 4 degrees below level. <code>rays: 2</code>
+is four rays a pixel.</p>
+<h3 id="step-2-the-sky-from-earths-air">step 2: the sky from earth's
+air</h3>
+<p>added under scene:</p>
+<pre class="yaml"><code>  air: earth
+  location:
+    lat: 19.4165
+    lon: -155.2485
+  timeofday: 1200
+  sun:
+    azimuth: 160
+    altitude: 60</code></pre>
+<pre class="sh"><code>bin/slayer render sets/guide/step-2.yaml -out out/step-2.png</code></pre>
+<p><img src="visual-guide/images/yaml-step-2.jpg"
+alt="The same plain, now under a deeper blue sky, the ground darker." /></p>
+<p><em>step 2. a noon sun, high in the south-south-east.</em></p>
+<p><code>air: earth</code> works the sky out from the standard
+atmosphere, the sun's place and where you stand on the earth, instead of
+painting it. the exposure is metered from that light, so the set doesn't
+say one. the ground reads dim because the meter puts a noon scene at mid
+grey. <code>air</code> needs <code>light: sun</code>.</p>
+<h3 id="step-3-one-made-thing">step 3: one made thing</h3>
+<p>added under set: things:</p>
+<pre class="yaml"><code>      the tree:
+        kind: spruce
+        seed: 3
+        east: 263920
+        north: 2148690
+        stands_in_for: &quot;ohia lehua, until the manufactory grows it&quot;</code></pre>
+<pre class="sh"><code>bin/slayer render sets/guide/step-3.yaml -out out/step-3.png</code></pre>
+<p><img src="visual-guide/images/yaml-step-3.jpg"
+alt="The plain under a blue sky, with a small spruce near the left edge." /></p>
+<p><em>step 3. a spruce, about 70 m off, at the left edge.</em></p>
+<p>the manufactory grows the tree from its seed; the set only says
+where, in the elevation model's metres. <code>stands_in_for</code> is
+free text kept with the thing. the tree is small here on purpose; step 5
+moves the camera to it.</p>
+<h3 id="step-4-late-afternoon">step 4: late afternoon</h3>
+<p>changed under scene:</p>
+<pre class="yaml"><code>  timeofday: 1630
+  sun:
+    azimuth: 250
+    altitude: 14</code></pre>
+<pre class="sh"><code>bin/slayer render sets/guide/step-4.yaml -out out/step-4.png</code></pre>
+<p><img src="visual-guide/images/yaml-step-4.jpg"
+alt="The plain in low warm light, with long shadows and a warmer sky." /></p>
+<p><em>step 4. the sun low in the west-south-west.</em></p>
+<p>the sun is 250 degrees clockwise from north and 14 degrees up, behind
+and to the right of the camera, so shadows run long to the left and the
+sky warms. the meter follows. it's the two <code>sun</code> numbers that
+do this: <code>timeofday</code> is read and kept, and nothing in this
+build uses it yet.</p>
+<h3 id="step-5-the-camera-placed-with-intent">step 5: the camera placed
+with intent</h3>
+<p>the cameras block, replaced:</p>
+<pre class="yaml"><code>  cameras:
+    past the tree:
+      orientation:
+        point_to: the far stone
+        alpha: -4
+      location:
+        loc_relative:
+          object: the tree
+          standoff_x: -30
+          standoff_y: 19
+          standoff_z: 2.5</code></pre>
+<pre class="sh"><code>bin/slayer render sets/guide/step-5.yaml -out out/step-5.png</code></pre>
+<p><img src="visual-guide/images/yaml-step-5.jpg"
+alt="A spruce left of centre with its shadow trailing left, and the crater wall beyond." /></p>
+<p><em>step 5. the tree left of centre, the crater beyond.</em></p>
+<p>only the cameras block changes. the camera now stands off the tree:
+<code>standoff_x</code> is metres east of it, <code>standoff_y</code>
+metres north, <code>standoff_z</code> metres up, so 30 m west, 19 m
+north and 2.5 m up. it still points at the far stone.</p>
+<p><code>alpha</code> is degrees up from level, not from the line to the
+target. expect to try a placement, look, and adjust; these numbers took
+two goes.</p>
+<h3 id="step-6-a-stand-of-trees">step 6: a stand of trees</h3>
+<p>added under set:</p>
+<pre class="yaml"><code>    stands:
+      trees on the rim:
+        kind: spruce
+        count: 160
+        seed: 11
+        above: 1150
+        stands_in_for: &quot;ohia lehua, until the manufactory grows it&quot;</code></pre>
+<pre class="sh"><code>bin/slayer render sets/guide/step-6.yaml -out out/step-6.png</code></pre>
+<p><img src="visual-guide/images/yaml-step-6.jpg"
+alt="The same view, with more spruces along the horizon and the far rim." /></p>
+<p><em>step 6. 160 spruces on the rim; most stand outside this
+frame.</em></p>
+<p>a stand is many of one kind, grown on the ground from one seed: here
+160 spruces wherever the ground is above 1150 m. the single tree stays
+and the stand grows round it. a few show on the horizon here; step 7
+rises to see more.</p>
+<h3 id="step-7-a-short-camera-move">step 7: a short camera move</h3>
+<p>this one is a job, not a set. it names the step 6 set, sizes the
+frames, and gives the camera a path.</p>
+<p><code>sets/guide/step-7.yaml</code></p>
+<pre class="yaml"><code>$schema: https://github.com/janearc/slayer/schemas/job-v1.json
+scene: {set: step-6.yaml}
+film: {preset: 320, rays: 1}
+fps: 4
+duration: {value: 2, unit: s}
+camera:
+  unit: m
+  look-at: {x: 1450, y: 15, z: 900}
+  moves:
+    - from: {x: 890, y: 131, z: 291}
+      to: {x: 890, y: 146, z: 291}
+      duration: {value: 2, unit: s}
+      ease: smooth
+outputs:
+  frames: step-7-frames</code></pre>
+<p>the set's path is relative to the job. <code>fps: 4</code> over 2
+seconds is eight frames at the <code>320</code> preset, 320 by 180. the
+camera looks at one fixed point on the crater floor and rises 15 m in
+two seconds; <code>ease: smooth</code> starts and stops it gently.</p>
+<p>points in a camera path are x east, y up and z south, in metres from
+the terrain window's north-west corner, with y measured from the
+window's lowest ground. there's no verb yet that prints the ground's
+height at a spot, so find a starting height by drawing a test frame and
+looking. 131 m came from doing that.</p>
+<p>the same move as one 2k still, drawn 1.5 seconds in:</p>
+<p><code>sets/guide/step-7-still.yaml</code></p>
+<pre class="yaml"><code>$schema: https://github.com/janearc/slayer/schemas/job-v1.json
+scene: {set: step-6.yaml}
+film: {preset: 2k, rays: 2}
+at: {value: 1.5, unit: s}
+camera:
+  unit: m
+  look-at: {x: 1450, y: 15, z: 900}
+  moves:
+    - from: {x: 890, y: 131, z: 291}
+      to: {x: 890, y: 146, z: 291}
+      duration: {value: 2, unit: s}
+      ease: smooth
+outputs:
+  picture: step-7-2k.png</code></pre>
+<pre class="sh"><code>bin/slayer draw sets/guide/step-7.yaml
+bin/slayer draw sets/guide/step-7-still.yaml</code></pre>
+<p>the frames land in <code>sets/guide/step-7-frames/</code> and the
+still in <code>sets/guide/step-7-2k.png</code>, beside the jobs. to draw
+frames again that slayer already holds, add <code>--fresh</code>.</p>
+<p><img src="visual-guide/images/yaml-step-7.jpg"
+alt="From the crater rim: the walls of Kilauea Iki, trees along the rim and long late-afternoon shadows." /></p>
+<p><em>step 7 at 2k: from the rim of Kilauea Iki, 1.5 seconds into the
+move.</em></p>
+<p><img src="visual-guide/images/yaml-step-7-frame-0.jpg"
+alt="Frame 1 of 8" /> <img
+src="visual-guide/images/yaml-step-7-frame-1.jpg" alt="Frame 2 of 8" />
+<img src="visual-guide/images/yaml-step-7-frame-2.jpg"
+alt="Frame 3 of 8" /> <img
+src="visual-guide/images/yaml-step-7-frame-3.jpg"
+alt="Frame 4 of 8" /></p>
+<p><img src="visual-guide/images/yaml-step-7-frame-4.jpg"
+alt="Frame 5 of 8" /> <img
+src="visual-guide/images/yaml-step-7-frame-5.jpg" alt="Frame 6 of 8" />
+<img src="visual-guide/images/yaml-step-7-frame-6.jpg"
+alt="Frame 7 of 8" /> <img
+src="visual-guide/images/yaml-step-7-frame-7.jpg"
+alt="Frame 8 of 8" /></p>
+<p><em>the eight frames of step 7 at 320 by 180, left to right, top to
+bottom. the 2k still is frame 7.</em></p>
+<h2 id="a-scene-in-go">a scene in Go</h2>
+<p>YAML says where things are. Go lets a rule say it: positions, sizes,
+colours and motion from a loop, so 12 balls and 377 balls are the same
+length of code. this example is five small programs, <code>step1</code>
+to <code>step5</code>, each a whole <code>package main</code> in its own
+folder of one module. it reads no data files and needs no shelf.</p>
+<p>layout:</p>
+<pre class="text"><code>example/
+  go.mod          module example.com/slayer-guide
+  step1/main.go
+  step2/main.go
+  step3/main.go
+  step4/main.go
+  step5/main.go</code></pre>
+<p>the module needs slayer itself. there isn't a published slayer
+version that builds as a library yet, so point at your clone with a
+<code>replace</code> line, as this example did:</p>
+<p><code>go.mod</code></p>
+<pre class="text"><code>module example.com/slayer-guide
+
+go 1.27.3
+
+require github.com/janearc/slayer v0.0.0
+
+replace github.com/janearc/slayer =&gt; ../slayer</code></pre>
+<p>then, from <code>example/</code>:</p>
+<pre class="sh"><code>export GOWORK=off
+go mod tidy
+go build -o bin/ ./...
+bin/step1 -out step1-2k.png</code></pre>
+<p>this was built against a local clone with Go's module cache already
+warm; a fresh machine with an empty cache hasn't been tried yet.</p>
+<p>every step takes <code>-out</code>, <code>-width</code>,
+<code>-height</code> and <code>-rays</code> (rays a side; the default 4
+is sixteen a pixel). the size defaults to 2048 by 1152, what slayer
+calls 2k. one unit is one metre, y is up, and the camera looks down
+negative z.</p>
+<h3 id="step-1-a-ball-on-a-floor">step 1: a ball on a floor</h3>
+<p><code>step1/main.go</code>: build and render</p>
+<pre class="go"><code>// build makes the world: a floor, a ball, a sun, a fill and a sky.
+func build() *thing.World {
+    world := thing.NewWorld()
+    world.Add(thing.Thing{
+        Shape:    shape.Plane{},
+        Material: thing.Diffuse(&quot;floor&quot;, maths.Grey(0.6)),
+        Motion:   thing.Still(maths.Local()),
+    })
+    world.Add(thing.Thing{
+        Shape:    shape.Sphere{Radius: ballRadius},
+        Material: thing.Diffuse(&quot;ball&quot;, maths.RGB(0.8, 0.25, 0.2)),
+        Motion: thing.Still(maths.Subspace{
+            Origin: maths.V(0, ballRadius, 0)}),
+    })
+    world.Lamp(thing.Sun(toSun.Unit(), maths.Grey(sunStrength)))
+    world.Lamp(film.Flood{Strength: maths.Grey(fillStrength)})
+    world.Sky = sky.Gradient{
+        Horizon: maths.RGB(0.7, 0.8, 0.95),
+        Zenith:  maths.RGB(0.25, 0.4, 0.8),
+        Ground:  maths.Grey(0.3),
+    }
+    return world
+}
+
+// render traces the world once and develops it into a picture.
+func render(world *thing.World, width, height, rays int, cpu bool,
+    at time.Duration) (*image.RGBA, error) {
+    lens, err := film.PinholeOf(lensDegrees * maths.Degree)
+    if err != nil {
+        return nil, err
+    }
+    place := maths.Subspace{Origin: eye,
+        Orientation: maths.LookAt(eye, target)}
+    draw := gpu.Sampled
+    if cpu {
+        draw = trace.Sampled
+    }
+    light, err := draw(world, place, *lens, at, width, height, rays)
+    if err != nil {
+        return nil, err
+    }
+    tone := colour.Tone{Exposure: exposure, Knee: knee, Top: top}
+    return tone.Develop(light), nil
+}</code></pre>
+<p><img src="visual-guide/images/go-step-1.jpg"
+alt="A single red ball on a pale grey floor under a blue gradient sky." /></p>
+<p><em>step 1. one ball, one floor, a sun and a fill light.</em></p>
+<p>the smallest working scene, so every later step is a small edit to
+it. a thing is a shape, a material and a motion;
+<code>thing.Still</code> is a motion that doesn't move.
+<code>gpu.Sampled</code> traces on Metal, <code>trace.Sampled</code> on
+the CPU, and <code>colour.Tone</code> develops the linear light into a
+picture.</p>
+<details>
+<summary>the whole file: step1/main.go</summary>
+
+<pre class="go"><code>// Command step1 draws one ball on a floor: the smallest scene built in Go.
+//
+// It is the first of four stills (step1 to step4) and a film (step5). Each
+// is a whole program; diff one against the next to see what a step adds.
+package main
+
+import (
+    &quot;flag&quot;
+    &quot;fmt&quot;
+    &quot;image&quot;
+    &quot;os&quot;
+    &quot;time&quot;
+
+    &quot;github.com/janearc/slayer/film&quot;
+    &quot;github.com/janearc/slayer/gpu&quot;
+    &quot;github.com/janearc/slayer/interfaces/file&quot;
+    &quot;github.com/janearc/slayer/maths&quot;
+    &quot;github.com/janearc/slayer/render/colour&quot;
+    &quot;github.com/janearc/slayer/scene/shape&quot;
+    &quot;github.com/janearc/slayer/scene/sky&quot;
+    &quot;github.com/janearc/slayer/scene/thing&quot;
+    &quot;github.com/janearc/slayer/trace&quot;
+)
+
+// The size slayer calls 2k: job/presets.yaml names it 2048 by 1152.
+const (
+    defaultWidth  = 2048 // pixels across, the &quot;2k&quot; preset
+    defaultHeight = 1152 // pixels down, the &quot;2k&quot; preset
+    defaultRays   = 4    // rays per axis per pixel: 4 means 16 per pixel
+)
+
+// The scene&#39;s numbers. One unit is one metre; y is up.
+const (
+    ballRadius   = 1.0  // picked: a one metre ball
+    lensDegrees  = 45.0 // picked: how much the pinhole sees across
+    sunStrength  = 3.0  // picked: bright enough for white paint to read white
+    fillStrength = 0.35 // picked: fill, so shadows are not black
+    exposure     = 1.0  // picked: the darkroom&#39;s multiplier
+    knee         = 0.8  // picked: where highlights start to roll off
+    top          = 8.0  // picked: the brightest light the picture holds
+)
+
+// eye and target are where the camera stands and what it looks at.
+var (
+    eye    = maths.V(0, 1.6, 6)   // picked: a little above the ball, back
+    target = maths.V(0, 0.8, 0)   // picked: the ball&#39;s middle
+    toSun  = maths.V(-0.5, 1, 0.6) // picked: where the sun is, up and left
+)
+
+// build makes the world: a floor, a ball, a sun, a fill and a sky.
+func build() *thing.World {
+    world := thing.NewWorld()
+    world.Add(thing.Thing{
+        Shape:    shape.Plane{},
+        Material: thing.Diffuse(&quot;floor&quot;, maths.Grey(0.6)),
+        Motion:   thing.Still(maths.Local()),
+    })
+    world.Add(thing.Thing{
+        Shape:    shape.Sphere{Radius: ballRadius},
+        Material: thing.Diffuse(&quot;ball&quot;, maths.RGB(0.8, 0.25, 0.2)),
+        Motion: thing.Still(maths.Subspace{
+            Origin: maths.V(0, ballRadius, 0)}),
+    })
+    world.Lamp(thing.Sun(toSun.Unit(), maths.Grey(sunStrength)))
+    world.Lamp(film.Flood{Strength: maths.Grey(fillStrength)})
+    world.Sky = sky.Gradient{
+        Horizon: maths.RGB(0.7, 0.8, 0.95),
+        Zenith:  maths.RGB(0.25, 0.4, 0.8),
+        Ground:  maths.Grey(0.3),
+    }
+    return world
+}
+
+// render traces the world once and develops it into a picture.
+func render(world *thing.World, width, height, rays int, cpu bool,
+    at time.Duration) (*image.RGBA, error) {
+    lens, err := film.PinholeOf(lensDegrees * maths.Degree)
+    if err != nil {
+        return nil, err
+    }
+    place := maths.Subspace{Origin: eye,
+        Orientation: maths.LookAt(eye, target)}
+    draw := gpu.Sampled
+    if cpu {
+        draw = trace.Sampled
+    }
+    light, err := draw(world, place, *lens, at, width, height, rays)
+    if err != nil {
+        return nil, err
+    }
+    tone := colour.Tone{Exposure: exposure, Knee: knee, Top: top}
+    return tone.Develop(light), nil
+}
+
+// main reads the flags, draws one frame and writes a PNG.
+func main() {
+    out := flag.String(&quot;out&quot;, &quot;step1.png&quot;, &quot;PNG to write&quot;)
+    width := flag.Int(&quot;width&quot;, defaultWidth, &quot;pixels across&quot;)
+    height := flag.Int(&quot;height&quot;, defaultHeight, &quot;pixels down&quot;)
+    rays := flag.Int(&quot;rays&quot;, defaultRays, &quot;rays per axis per pixel&quot;)
+    cpu := flag.Bool(&quot;cpu&quot;, false, &quot;trace on the CPU, not the GPU&quot;)
+    flag.Parse()
+    started := time.Now()
+    picture, err := render(build(), *width, *height, *rays, *cpu, 0)
+    if err == nil {
+        err = file.PNG(*out, picture, 1)
+    }
+    if err != nil {
+        fmt.Fprintln(os.Stderr, &quot;step1:&quot;, err)
+        os.Exit(1)
+    }
+    fmt.Printf(&quot;step1: %s in %s\n&quot;, *out, time.Since(started).Round(time.Millisecond))
+}</code></pre>
+</details>
+
+<h3 id="step-2-a-ring-placed-by-a-rule">step 2: a ring, placed by a
+rule</h3>
+<p><code>step2/main.go</code>: the one ball becomes ring(world, 12,
+3.0)</p>
+<pre class="go"><code>// hue is a fully saturated colour for a fraction of the way round the
+// colour wheel, from zero to one, scaled to a paint&#39;s reflectance.
+func hue(fraction float64) maths.Light {
+    const paint = 0.75 // picked: no paint gives back all of its light
+    channel := func(shift float64) float64 {
+        wave := 0.5 + 0.5*math.Cos(turn*(fraction-shift))
+        return paint * (0.15 + 0.85*wave)
+    }
+    return maths.RGB(channel(0), channel(1.0/3), channel(2.0/3))
+}
+
+// ring adds count balls on a circle of the given radius, resting on the
+// floor, each coloured by where it stands.
+func ring(world *thing.World, count int, radius float64) {
+    for number := range count {
+        fraction := float64(number) / float64(count)
+        angle := turn * fraction
+        world.Add(thing.Thing{
+            Shape:    shape.Sphere{Radius: ballRadius},
+            Material: thing.Diffuse(fmt.Sprintf(&quot;ball-%d&quot;, number), hue(fraction)),
+            Motion: thing.Still(maths.Subspace{Origin: maths.V(
+                radius*math.Cos(angle), ballRadius, radius*math.Sin(angle))}),
+        })
+    }
+}</code></pre>
+<pre class="sh"><code>bin/step2 -out step2-2k.png</code></pre>
+<p><img src="visual-guide/images/go-step-2.jpg"
+alt="Twelve balls in a ring on the floor, coloured round the colour wheel." /></p>
+<p><em>step 2. twelve balls, the colour following the angle.</em></p>
+<p>ball n stands at angle 2πn/12 and takes <code>hue(n/12)</code>, so
+one number drives both where it stands and what colour it is. the rest
+of the file is step 1's, with the camera raised to see the ring's shape
+(<code>eye = maths.V(0, 5.5, 8.5)</code>) and the new numbers named as
+constants.</p>
+<h3 id="step-3-a-sunflower-by-the-golden-angle-with-a-seed">step 3: a
+sunflower, by the golden angle, with a seed</h3>
+<p><code>step3/main.go</code>: ring becomes sunflower(world, 377,
+seed)</p>
+<pre class="go"><code>// goldenAngle is the angle that splits a turn in the golden ratio, about
+// 137.5 degrees: the angle between neighbouring seeds in a sunflower.
+var goldenAngle = math.Pi * (3 - math.Sqrt(5))
+
+// seedAt is where ball number n stands on the floor plan: its distance
+// from the middle and its angle round.
+func seedAt(number int) (distance, angle float64) {
+    return spacing * math.Sqrt(float64(number)), goldenAngle * float64(number)
+}
+
+// sunflower adds count balls by the golden angle. The seed varies their
+// sizes and colours and nothing else.
+func sunflower(world *thing.World, count int, seed uint64) {
+    edge, _ := seedAt(count)
+    for number := range count {
+        distance, angle := seedAt(number)
+        size := spacing * fitness * (1 + scatter*(2*noise.Hash2(seed, int64(number), sizeStream)-1))
+        fraction := colourTurns * distance / edge
+        fraction += hueScatter * (2*noise.Hash2(seed, int64(number), hueStream) - 1)
+        lift := mound * math.Exp(-moundWidth*(distance/edge)*(distance/edge))
+        world.Add(thing.Thing{
+            Shape:    shape.Sphere{Radius: size},
+            Material: thing.Diffuse(fmt.Sprintf(&quot;seed-%d&quot;, number), hue(fraction)),
+            Motion: thing.Still(maths.Subspace{Origin: maths.V(
+                distance*math.Cos(angle), size+lift, distance*math.Sin(angle))}),
+        })
+    }
+}</code></pre>
+<pre class="sh"><code>bin/step3 -out step3-2k.png -seed 11</code></pre>
+<p><img src="visual-guide/images/go-step-3.jpg"
+alt="A spiral sunflower of 377 coloured balls, raised in the middle, seen from above." /></p>
+<p><em>step 3. 377 balls, each turned 137.5 degrees from the
+last.</em></p>
+<p>a rule too long to type by hand. ball n is 0.32×√n metres out, turned
+n golden angles, and a Gaussian mound lifts the middle.
+<code>noise.Hash2</code> turns the seed and the ball's number into a
+steady small change in size and colour: the same seed gives the same
+flower, and <code>-seed</code> picks another one. the camera moves back
+and up to take it all in.</p>
+<h3 id="step-4-motion-from-maths">step 4: motion from maths</h3>
+<p><code>step4/main.go</code>: thing.Still gives way to a motion of our
+own</p>
+<pre class="go"><code>// Ripple is a motion: a ball that rests at Rest and rises and falls as a
+// wave runs outward from the vertical axis through Centre.
+type Ripple struct {
+    Rest   maths.Vec // where the ball stands when the wave is not there
+    Centre maths.Vec // where the wave starts from; only x and z are used
+}
+
+// At is the ball&#39;s place at elapsed time t. The wave&#39;s phase falls with
+// distance from the centre, so crests travel outward.
+func (r Ripple) At(t time.Duration) maths.Subspace {
+    across := math.Hypot(r.Rest.X-r.Centre.X, r.Rest.Z-r.Centre.Z)
+    phase := turn * (t.Seconds()/wavePeriod - across/waveLength)
+    rise := waveHeight * (1 + math.Sin(phase)) / 2
+    return maths.Subspace{Origin: r.Rest.Add(maths.V(0, rise, 0))}
+}
+
+// in sunflower, each ball now takes:
+//  Motion: Ripple{Rest: maths.V(distance*math.Cos(angle),
+//      size+lift, distance*math.Sin(angle))},</code></pre>
+<pre class="sh"><code>bin/step4 -out step4-2k.png -at 0.4</code></pre>
+<p><img src="visual-guide/images/go-step-4.jpg"
+alt="The sunflower of balls seen lower and from the side, the balls at uneven heights." /></p>
+<p><em>step 4. the wave at 0.4 seconds.</em></p>
+<p>a motion is any value with an <code>At(time)</code> method that says
+where a thing stands at that moment. slayer asks it once a frame, so one
+world serves every instant, and <code>-at</code> picks the instant. in a
+still the wave shows only as uneven heights; the film shows it
+moving.</p>
+<h3 id="step-5-a-film-with-music">step 5: a film, with music</h3>
+<p>step 5 is step 4 with a loop over time. frame n is drawn at n/24
+seconds, the camera goes a quarter turn round the flower by a rule of
+time, and each developed frame goes straight to slayer's movie writer.
+the soundtrack is a <code>cheeptune</code> score built into slayer.</p>
+<p>there are no frame files and no ffmpeg here: the writer encodes
+through AVFoundation, so it works on macOS only. it wants an even width,
+a height that's a multiple of 16 (352 is 22 × 16), and 24 or 30 frames a
+second.</p>
+<p><code>step5/main.go</code>: the camera, the sound, the film</p>
+<pre class="go"><code>// eyeAt is where the camera stands at a moment: round the flower by a rule
+// of time. It goes swing of a turn in the film&#39;s length and is a function
+// of time alone, so any frame can be drawn without the ones before it.
+func eyeAt(at time.Duration, length float64) maths.Vec {
+    angle := startAngle - turn*swing*at.Seconds()/length
+    return maths.V(eyeDistance*math.Cos(angle), eyeHeight,
+        eyeDistance*math.Sin(angle)+target.Z)
+}
+
+// soundtrack renders a score through a voicing and hands it to the movie
+// writer&#39;s own type: stereo samples, left then right, interleaved.
+func soundtrack(score, voicing string) (movie.Sound, error) {
+    piece, err := cheeptune.Open(score, voicing)
+    if err != nil {
+        return movie.Sound{}, err
+    }
+    mixed := make([]float32, 0, 2*len(piece.Left))
+    for at := range piece.Left {
+        mixed = append(mixed, piece.Left[at], piece.Right[at])
+    }
+    return movie.NewSound(piece.Rate, mixed)
+}
+
+// makeFilm draws every frame and writes them, with the sound, to a movie.
+func makeFilm(path string, world *thing.World, length float64, rate int,
+    sound movie.Sound, cpu bool) error {
+    frames := int(math.Round(length * float64(rate)))
+    settings, err := movie.NewSettings(movie.Request{Path: path,
+        Width: filmWidth, Height: filmHeight, Rate: rate, Frames: frames,
+        Sound: sound, Replace: true})
+    if err != nil {
+        return err
+    }
+    writer, err := movie.New(context.Background(), settings)
+    if err != nil {
+        return err
+    }
+    for number := range frames {
+        at := time.Duration(float64(number) / float64(rate) * float64(time.Second))
+        picture, err := render(world, [2]int{filmWidth, filmHeight}, filmRays, cpu, at, length)
+        if err == nil {
+            err = writer.Frame(number, picture)
+        }
+        if err != nil {
+            writer.Abort()
+            return err
+        }
+    }
+    return writer.Close()
+}</code></pre>
+<pre class="sh"><code>bin/step5 -out step5-film.mp4
+bin/step5 -still step5-2k.png -at 1.0</code></pre>
+<p><a href="visual-guide/film.mp4"><img
+src="visual-guide/images/go-step-5.jpg"
+alt="The rippling sunflower of coloured balls, seen from a camera partway round it." /></a></p>
+<p><em>step 5: three seconds, 72 frames at 640 by 352, with the
+<code>@leap</code> score on the <code>@leap-dmg</code> voicing. the
+sound starts when you press play. the picture links to the film, <a
+href="visual-guide/film.mp4">film.mp4</a>; GitHub doesn't play video
+from a page, so download it or open it directly.</em></p>
+<p><img src="visual-guide/images/go-step-5.jpg"
+alt="The rippling sunflower of coloured balls, seen from a camera partway round it." /></p>
+<p><em>step 5 as a 2k still, one second in.</em></p>
+<details>
+<summary>the whole file: step5/main.go</summary>
+
+<pre class="go"><code>// Command step5 makes the moving sunflower into a film with music.
+//
+// It is step4 with a loop over time. For each frame it asks the world for
+// its instant (frame number over frames a second), moves the camera round
+// by a rule of time as well, develops the frame, and hands it to the movie
+// writer. A score rendered by cheeptune is the soundtrack. With -still it
+// draws one frame, at -at seconds, to a PNG instead: the 2k picture.
+package main
+
+import (
+    &quot;context&quot;
+    &quot;flag&quot;
+    &quot;fmt&quot;
+    &quot;image&quot;
+    &quot;math&quot;
+    &quot;os&quot;
+    &quot;time&quot;
+
+    &quot;github.com/janearc/slayer/cheeptune&quot;
+    &quot;github.com/janearc/slayer/film&quot;
+    &quot;github.com/janearc/slayer/gpu&quot;
+    &quot;github.com/janearc/slayer/interfaces/file&quot;
+    &quot;github.com/janearc/slayer/interfaces/movie&quot;
+    &quot;github.com/janearc/slayer/maths&quot;
+    &quot;github.com/janearc/slayer/maths/noise&quot;
+    &quot;github.com/janearc/slayer/render/colour&quot;
+    &quot;github.com/janearc/slayer/scene/shape&quot;
+    &quot;github.com/janearc/slayer/scene/sky&quot;
+    &quot;github.com/janearc/slayer/scene/thing&quot;
+    &quot;github.com/janearc/slayer/trace&quot;
+)
+
+// The sizes. The film is small so that its frames are quick; the still is
+// the size slayer calls 2k (job/presets.yaml: 2048 by 1152). Heights are
+// multiples of 16, which the movie writer requires.
+const (
+    filmWidth  = 640  // picked: pixels across a film frame
+    filmHeight = 352  // picked: pixels down; 22 times 16
+    stillWidth = 2048 // pixels across, the &quot;2k&quot; preset
+    stillHigh  = 1152 // pixels down, the &quot;2k&quot; preset
+    filmRays   = 2    // picked: rays per axis per pixel in the film
+    stillRays  = 4    // picked: rays per axis per pixel in the still
+)
+
+// The film&#39;s numbers.
+const (
+    defaultSeconds = 3.0         // picked: length of the film
+    defaultRate    = 24          // frames a second; the movie writer offers 24 and 30
+    defaultScore   = &quot;@leap&quot;     // picked: a score built into cheeptune
+    defaultVoicing = &quot;@leap-dmg&quot; // picked: a voicing built into cheeptune
+    swing          = 0.25        // picked: share of a turn the camera goes round in the film
+)
+
+// The sunflower&#39;s numbers. One unit is one metre; y is up.
+const (
+    seedCount   = 377  // defined: a Fibonacci number
+    spacing     = 0.32 // picked: metres of radius per square root of a ball
+    fitness     = 0.42 // picked: a ball&#39;s radius over spacing
+    scatter     = 0.35 // picked: how far a seed may change a ball&#39;s size, as a share
+    mound       = 1.6  // picked: how high the middle is lifted, in metres
+    moundWidth  = 3.0  // picked: how quickly the lift falls off with distance
+    defaultSeed = 11   // picked: any number; the same number gives the same flower
+    colourTurns = 3.0  // picked: times the colour wheel goes round, middle to edge
+    sizeStream  = 0    // defined: which hash stream sets a ball&#39;s size
+    hueStream   = 1    // defined: which hash stream shifts a ball&#39;s colour
+    hueScatter  = 0.04 // picked: a ball&#39;s colour may wander this far round the wheel
+    waveHeight  = 0.55 // picked: how far a ball rises and falls, in metres
+    wavePeriod  = 1.5  // picked: seconds for a ball to go up and down once
+    waveLength  = 2.5  // picked: metres between crests, running outward
+)
+
+// The picture&#39;s numbers.
+const (
+    lensDegrees  = 50.0        // picked: how much the pinhole sees across
+    sunStrength  = 3.0         // picked: bright enough for white paint to read white
+    fillStrength = 0.35        // picked: fill, so shadows are not black
+    exposure     = 1.0         // picked: the darkroom&#39;s multiplier
+    knee         = 0.8         // picked: where highlights start to roll off
+    top          = 8.0         // picked: the brightest light the picture holds
+    turn         = 2 * math.Pi // defined: a full turn in radians
+    eyeHeight    = 8.0         // picked: the camera&#39;s height in metres, as step 4
+    eyeDistance  = 13.0        // picked: the camera&#39;s distance from the flower&#39;s middle, as step 4
+    startAngle   = math.Pi / 2 // picked: the camera starts on the +z side, where step 4 put it
+)
+
+// goldenAngle is the angle that splits a turn in the golden ratio.
+var goldenAngle = math.Pi * (3 - math.Sqrt(5))
+
+// target and toSun are what the camera looks at and where the sun is.
+var (
+    target = maths.V(0, 0.4, 0)    // picked: the flower&#39;s middle
+    toSun  = maths.V(-0.5, 1, 0.6) // picked: where the sun is, up and left
+)
+
+// Ripple is a motion: a ball that rests at Rest and rises and falls as a
+// wave runs outward from the vertical axis through Centre.
+type Ripple struct {
+    Rest   maths.Vec // where the ball stands when the wave is not there
+    Centre maths.Vec // where the wave starts from; only x and z are used
+}
+
+// At is the ball&#39;s place at elapsed time t.
+func (r Ripple) At(t time.Duration) maths.Subspace {
+    across := math.Hypot(r.Rest.X-r.Centre.X, r.Rest.Z-r.Centre.Z)
+    phase := turn * (t.Seconds()/wavePeriod - across/waveLength)
+    rise := waveHeight * (1 + math.Sin(phase)) / 2
+    return maths.Subspace{Origin: r.Rest.Add(maths.V(0, rise, 0))}
+}
+
+// hue is a fully saturated colour for a fraction of the way round the
+// colour wheel, scaled to a paint&#39;s reflectance.
+func hue(fraction float64) maths.Light {
+    const paint = 0.75 // picked: no paint gives back all of its light
+    channel := func(shift float64) float64 {
+        wave := 0.5 + 0.5*math.Cos(turn*(fraction-shift))
+        return paint * (0.15 + 0.85*wave)
+    }
+    return maths.RGB(channel(0), channel(1.0/3), channel(2.0/3))
+}
+
+// seedAt is where ball number n stands on the floor plan.
+func seedAt(number int) (distance, angle float64) {
+    return spacing * math.Sqrt(float64(number)), goldenAngle * float64(number)
+}
+
+// sunflower adds count balls by the golden angle, each with a Ripple.
+func sunflower(world *thing.World, count int, seed uint64) {
+    edge, _ := seedAt(count)
+    for number := range count {
+        distance, angle := seedAt(number)
+        size := spacing * fitness * (1 + scatter*(2*noise.Hash2(seed, int64(number), sizeStream)-1))
+        fraction := colourTurns * distance / edge
+        fraction += hueScatter * (2*noise.Hash2(seed, int64(number), hueStream) - 1)
+        lift := mound * math.Exp(-moundWidth*(distance/edge)*(distance/edge))
+        world.Add(thing.Thing{
+            Shape:    shape.Sphere{Radius: size},
+            Material: thing.Diffuse(fmt.Sprintf(&quot;seed-%d&quot;, number), hue(fraction)),
+            Motion: Ripple{Rest: maths.V(distance*math.Cos(angle),
+                size+lift, distance*math.Sin(angle))},
+        })
+    }
+}
+
+// build makes the world: a floor, the moving sunflower, lamps and a sky.
+func build(seed uint64) *thing.World {
+    world := thing.NewWorld()
+    world.Add(thing.Thing{
+        Shape:    shape.Plane{},
+        Material: thing.Diffuse(&quot;floor&quot;, maths.Grey(0.6)),
+        Motion:   thing.Still(maths.Local()),
+    })
+    sunflower(world, seedCount, seed)
+    world.Lamp(thing.Sun(toSun.Unit(), maths.Grey(sunStrength)))
+    world.Lamp(film.Flood{Strength: maths.Grey(fillStrength)})
+    world.Sky = sky.Gradient{
+        Horizon: maths.RGB(0.7, 0.8, 0.95),
+        Zenith:  maths.RGB(0.25, 0.4, 0.8),
+        Ground:  maths.Grey(0.3),
+    }
+    return world
+}
+
+// eyeAt is where the camera stands at a moment: round the flower by a rule
+// of time. It goes swing of a turn in the film&#39;s length and is a function
+// of time alone, so any frame can be drawn without the ones before it.
+func eyeAt(at time.Duration, length float64) maths.Vec {
+    angle := startAngle - turn*swing*at.Seconds()/length
+    return maths.V(eyeDistance*math.Cos(angle), eyeHeight,
+        eyeDistance*math.Sin(angle)+target.Z)
+}
+
+// render traces the world at one instant and develops it into a picture.
+func render(world *thing.World, size [2]int, rays int, cpu bool,
+    at time.Duration, length float64) (*image.RGBA, error) {
+    lens, err := film.PinholeOf(lensDegrees * maths.Degree)
+    if err != nil {
+        return nil, err
+    }
+    eye := eyeAt(at, length)
+    place := maths.Subspace{Origin: eye,
+        Orientation: maths.LookAt(eye, target)}
+    draw := gpu.Sampled
+    if cpu {
+        draw = trace.Sampled
+    }
+    light, err := draw(world, place, *lens, at, size[0], size[1], rays)
+    if err != nil {
+        return nil, err
+    }
+    tone := colour.Tone{Exposure: exposure, Knee: knee, Top: top}
+    return tone.Develop(light), nil
+}
+
+// soundtrack renders a score through a voicing and hands it to the movie
+// writer&#39;s own type: stereo samples, left then right, interleaved.
+func soundtrack(score, voicing string) (movie.Sound, error) {
+    piece, err := cheeptune.Open(score, voicing)
+    if err != nil {
+        return movie.Sound{}, err
+    }
+    mixed := make([]float32, 0, 2*len(piece.Left))
+    for at := range piece.Left {
+        mixed = append(mixed, piece.Left[at], piece.Right[at])
+    }
+    return movie.NewSound(piece.Rate, mixed)
+}
+
+// makeFilm draws every frame and writes them, with the sound, to a movie.
+func makeFilm(path string, world *thing.World, length float64, rate int,
+    sound movie.Sound, cpu bool) error {
+    frames := int(math.Round(length * float64(rate)))
+    settings, err := movie.NewSettings(movie.Request{Path: path,
+        Width: filmWidth, Height: filmHeight, Rate: rate, Frames: frames,
+        Sound: sound, Replace: true})
+    if err != nil {
+        return err
+    }
+    writer, err := movie.New(context.Background(), settings)
+    if err != nil {
+        return err
+    }
+    for number := range frames {
+        at := time.Duration(float64(number) / float64(rate) * float64(time.Second))
+        picture, err := render(world, [2]int{filmWidth, filmHeight}, filmRays, cpu, at, length)
+        if err == nil {
+            err = writer.Frame(number, picture)
+        }
+        if err != nil {
+            writer.Abort()
+            return err
+        }
+    }
+    return writer.Close()
+}
+
+// main reads the flags, then draws one 2k still or the whole film.
+func main() {
+    out := flag.String(&quot;out&quot;, &quot;step5.mp4&quot;, &quot;movie to write&quot;)
+    still := flag.String(&quot;still&quot;, &quot;&quot;, &quot;draw one 2k frame to this PNG instead of a film&quot;)
+    at := flag.Float64(&quot;at&quot;, 0, &quot;seconds into the film, for -still&quot;)
+    seconds := flag.Float64(&quot;seconds&quot;, defaultSeconds, &quot;length of the film&quot;)
+    rate := flag.Int(&quot;rate&quot;, defaultRate, &quot;frames a second: 24 or 30&quot;)
+    seed := flag.Uint64(&quot;seed&quot;, defaultSeed, &quot;seed for sizes and colours&quot;)
+    score := flag.String(&quot;score&quot;, defaultScore, &quot;cheeptune score&quot;)
+    voicing := flag.String(&quot;voicing&quot;, defaultVoicing, &quot;cheeptune voicing&quot;)
+    cpu := flag.Bool(&quot;cpu&quot;, false, &quot;trace on the CPU, not the GPU&quot;)
+    flag.Parse()
+    started := time.Now()
+    err := run(*out, *still, *at, *seconds, *rate, *seed, *score, *voicing, *cpu)
+    if err != nil {
+        fmt.Fprintln(os.Stderr, &quot;step5:&quot;, err)
+        os.Exit(1)
+    }
+    fmt.Printf(&quot;step5: done in %s\n&quot;, time.Since(started).Round(time.Millisecond))
+}
+
+// run is main&#39;s work, so that main can report one error.
+func run(out, still string, at, seconds float64, rate int, seed uint64,
+    score, voicing string, cpu bool) error {
+    world := build(seed)
+    if still != &quot;&quot; {
+        moment := time.Duration(at * float64(time.Second))
+        picture, err := render(world, [2]int{stillWidth, stillHigh}, stillRays, cpu, moment, seconds)
+        if err != nil {
+            return err
+        }
+        return file.PNG(still, picture, 1)
+    }
+    sound, err := soundtrack(score, voicing)
+    if err != nil {
+        return err
+    }
+    return makeFilm(out, world, seconds, rate, sound, cpu)
+}</code></pre>
+</details>
+
+<p>step 5's file holds everything steps 3 and 4 added. if you'd rather
+keep frame files and encode them yourself, write each frame with
+<code>file.PNG</code> and run ffmpeg over the folder; that's how
+slayer's own jobs make films.</p>
+<h2 id="grissom">Grissom</h2>
+<p>Grissom is a viewer for the sky, the earth, and the sky from a place
+on the earth. it draws triangles with Cocoa and Metal; it doesn't use
+slayer's ray tracer. it lives in <code>cmd/grissom</code>.</p>
+<p><img src="visual-guide/images/grissom-earth-night.jpg"
+alt="The Earth at night, Europe and Africa, the cities as points of gold light on a dark globe." /></p>
+<p><em>the Earth at night over Europe and Africa, drawn from the Black
+Marble city lights.</em></p>
+<pre class="sh"><code>grissom draw --earth-only --earth &quot;$GRISSOM_DATA/earth&quot; \
+  --colourways &quot;$GRISSOM_DATA/colourways&quot; --earth-depth 9 --distance 4.2 \
+  --no-hud --look 15,35 --earth-image 1 --shot out/night</code></pre>
+<p><img src="visual-guide/images/grissom-earth-day.jpg"
+alt="The whole Earth by day, centred on North America, green and brown land, white ice at the top, dark ocean." /></p>
+<p><em>the same Earth by day, centred on North America, from the Blue
+Marble photograph.</em></p>
+<pre class="sh"><code>grissom draw --earth-only --earth &quot;$GRISSOM_DATA/earth&quot; \
+  --colourways &quot;$GRISSOM_DATA/colourways&quot; --earth-depth 9 --distance 4.2 \
+  --no-hud --look -100,30 --shot out/day</code></pre>
+<p><img src="visual-guide/images/grissom-earth-with-display.jpg"
+alt="North America on the globe, with orange text labels listing layers and settings at the top left and keys along the foot." /></p>
+<p><em>Grissom's display: the layer list, the lightness, colour and
+background settings, and the key help at the foot.</em></p>
+<pre class="sh"><code>grissom draw --data &quot;$GRISSOM_DATA/sgra&quot; --earth &quot;$GRISSOM_DATA/earth&quot; \
+  --sky &quot;$GRISSOM_DATA/sky&quot; --colourways &quot;$GRISSOM_DATA/colourways&quot; \
+  --earth-depth 9 --distance 4.2 --view 1 --shot out/shown</code></pre>
+<p><a href="visual-guide/grissom-earth-turning.mp4"><img
+src="visual-guide/images/grissom-earth-night.jpg"
+alt="The Earth at night, the first frame of the film." /></a></p>
+<p><em>the Earth turning once, 60 frames at 20 a second (7 MB). select
+the picture to download the film; GitHub doesn't play video in
+Markdown.</em></p>
+<pre class="sh"><code>mkdir -p out/film
+grissom film --earth-only --earth &quot;$GRISSOM_DATA/earth&quot; \
+  --colourways &quot;$GRISSOM_DATA/colourways&quot; --earth-depth 7 --distance 4.2 \
+  --no-hud --frames 60 --turns 1 --tilt 25 --into out/film</code></pre>
+<p>the frames land in <code>out/film</code>; ffmpeg joins them into the
+mp4.</p>
+<p>the Earth imagery is NASA's Blue Marble and Black Marble, drawn by
+Grissom. these are pictures of the program running; the repository
+carries no survey imagery of its own.</p>
+<p>you fetch your own copy of the data (about 2 GiB) with
+<code>game run grissom-data</code> before it shows anything.
+doc/grissom-setup.md walks through the layout, the fetch, and four links
+the viewer still needs for older file names. <code>$GRISSOM_DATA</code>
+above is the data root that holds <code>sgra/</code>,
+<code>earth/</code>, <code>sky/</code> and <code>colourways/</code>.</p>
+<h3 id="build-it-1">build it</h3>
+<p>it needs cgo and the macOS frameworks. the ordinary root build makes
+it:</p>
+<pre class="sh"><code>CGO_ENABLED=1 game build</code></pre>
+<p>that writes <code>bin/grissom</code>. the data comes through <a
+href="https://github.com/janearc/celestial-data">celestial-data</a>,
+checked out beside slayer; the setup doc has the sibling layout and the
+<code>game run grissom-data</code> fetch.</p>
+<h3 id="run-it">run it</h3>
+<p>three verbs: <code>window</code> opens the viewer, <code>draw</code>
+writes PNGs offscreen, <code>film</code> draws the earth turning, frame
+by frame. flags are two dashes and whole words.
+<code>grissom --help</code> lists them all. a first, small check, from
+the setup doc:</p>
+<pre class="sh"><code>mkdir -p out
+game run grissom -- draw \
+  --data &quot;$GRISSOM_DATA/sgra&quot; --earth &quot;$GRISSOM_DATA/earth&quot; \
+  --sky &quot;$GRISSOM_DATA/sky&quot; --colourways &quot;$GRISSOM_DATA/colourways&quot; \
+  --depth 7 --earth-depth 4 --wide-depth 4 \
+  --shot &quot;$PWD/out/check&quot; --view -1</code></pre>
+<p><code>--shot</code> is a prefix: this writes
+<code>out/check-sky.png</code>, <code>out/check-earth.png</code> and
+<code>out/check-standing.png</code>. <code>--dry-run</code> lists them
+and writes nothing. the same data flags with <code>window</code> open
+the viewer.</p>
+<p>in the window, drag to turn and scroll to scale. <code>e</code>
+switches sky and earth, <code>p</code> places an observer at the
+crosshair, <code>f</code> stands there, comma and period move the clock
+an hour, <code>1</code> to <code>4</code> toggle the detail layers,
+<code>t</code> changes the colourway, and <code>q</code> quits.</p>
+<h2 id="where-to-go-next">where to go next</h2>
+<ul>
+<li>README: the map of everything.</li>
+<li>getting started and building slayer: the same ground as this page,
+kept current.</li>
+<li>how slayer works: scenes, tracing, the darkroom, output, and the
+front door.</li>
+<li>sets: what a set file says.</li>
+<li>jobs: every job key, with print and stock.</li>
+<li>camera motion: moves, speeds and holds.</li>
+<li>manufactory catalogue: the kinds slayer can make.</li>
+<li>modes: careful measurement and fast films.</li>
+<li>music: scores, voicings and the tune library.</li>
+<li>examples: more scenes and commands.</li>
+<li>package guide: what each Go package is for.</li>
+<li><a href="ferruccio.html">Ferruccio</a> and running Grissom.</li>
+</ul>
+<p>from <a
+href="https://github.com/janearc/slayer">github.com/janearc/slayer</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>slayer, by jane michelle arc. Apache 2.0.
+      <a href="https://github.com/janearc/slayer">github.com/janearc/slayer</a></span>
+    <span>Built and checked with <a href="https://github.com/janearc/game">game</a>.</span>
+  </div>
+</footer>
+</body>
+</html>

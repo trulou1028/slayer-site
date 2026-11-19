@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "service-truck",
+      "group": "Summit yard",
+      "about": "A closed service body, cab, bumper, wheels and roof rack.",
+      "notes": "Authored parked scenery in metres; no engineering or load rating.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": 20
+    },
+    "detail": "quick",
+    "folder": "service-truck-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 186963,
+      "Refined": 186963,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 307605583,
+    "Encode": 7569792,
+    "Compile": 7671167,
+    "BakeWall": 666,
+    "BakeGPU": 0,
+    "DispatchWall": 224569666,
+    "TraceGPU": 155846542,
+    "Finish": 32648751,
+    "AccelerationWall": 21008834,
+    "AccelerationGPU": 929499,
+    "InputBytes": 164304,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.4,
+      "Y": 0,
+      "Z": -3.5
+    },
+    "Max": {
+      "X": 1.4,
+      "Y": 3.35,
+      "Z": 3.4
+    }
+  },
+  "stored-faces": 1632,
+  "seed": 5,
+  "image-sha256": "4f0d17167c0eb254b68cd58e359daf9b876c58797ab3fd8424de2f39241795fc",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 12682250
+}

@@ -1,0 +1,95 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "chaparral-brush",
+      "group": "Desert and chaparral",
+      "about": "Low multi-stem brush with narrow evergreen blades.",
+      "notes": "A generic authored brush recipe rather than a botanical species. Short forks and small leaf cells supply a different architecture from the conifers. Dimensions, counts and colours are picked. Code draft; geometry and CPU/Metal views await the review break.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "chaparral-brush-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 54955,
+      "Refined": 54952,
+      "Fallbacks": 3
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 476604791,
+    "Encode": 141522458,
+    "Compile": 2003833,
+    "BakeWall": 250,
+    "BakeGPU": 0,
+    "DispatchWall": 225414919,
+    "TraceGPU": 234700293,
+    "Finish": 12135206,
+    "AccelerationWall": 85270250,
+    "AccelerationGPU": 63771958,
+    "InputBytes": 1985020,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.9939287099254138,
+      "Y": -0.023498334879370298,
+      "Z": -0.8613339793123467
+    },
+    "Max": {
+      "X": 1.028167465673013,
+      "Y": 1.4566602497692753,
+      "Z": 1.0788548258237594
+    }
+  },
+  "stored-faces": 23280,
+  "seed": 5,
+  "image-sha256": "a14248236692875b83382b6a2bfa92265319f863c8fe34536ed940df7b532a31",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 165963542
+}

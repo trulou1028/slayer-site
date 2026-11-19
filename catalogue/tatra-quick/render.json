@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "tatra",
+      "group": "Vehicles",
+      "about": "The Tatra T 815-7 eight-wheel-drive cargo truck, 10.72 by 2.5 by 3.42 m, on its backbone tube with swinging half-axles, 410 mm clear underneath.",
+      "notes": "Width, track, clearance, tyres and cab from Tatra's sheet; length, height and axle spacing from valka.cz; the bed is picked.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "tatra-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 113006,
+      "Refined": 113006,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 289844834,
+    "Encode": 4775750,
+    "Compile": 1846542,
+    "BakeWall": 750,
+    "BakeGPU": 0,
+    "DispatchWall": 123157002,
+    "TraceGPU": 80014248,
+    "Finish": 33558040,
+    "AccelerationWall": 112042458,
+    "AccelerationGPU": 84886833,
+    "InputBytes": 98196,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.25,
+      "Y": 0,
+      "Z": -5.36
+    },
+    "Max": {
+      "X": 1.25,
+      "Y": 3.42,
+      "Z": 5.36
+    }
+  },
+  "stored-faces": 696,
+  "seed": 5,
+  "image-sha256": "ad44a5c35796f888c75be050c6f9fe9fd709e716c8d87b8e2ce1b5f870c12a72",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 5186750
+}

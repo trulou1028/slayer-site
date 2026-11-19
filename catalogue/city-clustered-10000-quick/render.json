@@ -1,0 +1,93 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "city-clustered-10000",
+      "group": "City buildings",
+      "about": "Ten thousand cluster-weighted lots, continuous parks and an elevated freeway.",
+      "notes": "Finite Poisson district centres drive a Gaussian intensity field. Fixed building count, road lots, two large parks, separated carriageways and four ground ramps constrain the realization; this is not raw Thomas offspring. Authored metre dimensions and native material batches.",
+      "details": [
+        "hull",
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 55
+    },
+    "detail": "quick",
+    "folder": "city-clustered-10000-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1230253,
+      "Candidates": 272498,
+      "Refined": 272497,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 8265755459,
+    "Encode": 7293244708,
+    "Compile": 2315333,
+    "BakeWall": 541,
+    "BakeGPU": 0,
+    "DispatchWall": 319229543,
+    "TraceGPU": 285700877,
+    "Finish": 14842290,
+    "AccelerationWall": 623341292,
+    "AccelerationGPU": 527507833,
+    "InputBytes": 75122344,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -2608.9950041628126,
+      "Y": -0.6599999999999999,
+      "Z": -2567
+    },
+    "Max": {
+      "X": 2608.9950041628126,
+      "Y": 80.57313013858709,
+      "Z": 2567
+    }
+  },
+  "stored-faces": 991280,
+  "seed": 5,
+  "image-sha256": "52d70184f743f3c1513e9df6eaf69722b311330e3013c5a484d500836626f30b",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 7978401292
+}

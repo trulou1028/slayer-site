@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "can",
+      "group": "Props",
+      "about": "Somebody's aluminium can, upright or lying where it was left.",
+      "notes": "Fixed dimensions recalled from memory; no pull tab or label.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "can-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1478564,
+      "Candidates": 249764,
+      "Refined": 249764,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 218136833,
+    "Encode": 3270250,
+    "Compile": 1712167,
+    "BakeWall": 375,
+    "BakeGPU": 0,
+    "DispatchWall": 131779124,
+    "TraceGPU": 53929749,
+    "Finish": 34073793,
+    "AccelerationWall": 31583750,
+    "AccelerationGPU": 12322499,
+    "InputBytes": 39156,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.06111875,
+      "Y": 0.000427022301285683,
+      "Z": -0.03370422769871431
+    },
+    "Max": {
+      "X": 0.06111875,
+      "Y": 0.06783547769871433,
+      "Z": 0.03370422769871432
+    }
+  },
+  "stored-faces": 64,
+  "seed": 5,
+  "image-sha256": "d5b5d93c9bf40c0d4d2b1df485171992609f7c456c34cfc99bf53183b827600e",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 552292
+}

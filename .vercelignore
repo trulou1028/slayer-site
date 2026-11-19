@@ -5,3 +5,6 @@
 !home*.html
 !assets
 !vercel.json
+!catalogue
+!docs
+docs/src

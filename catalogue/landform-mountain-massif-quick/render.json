@@ -1,0 +1,94 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "landform-mountain-massif",
+      "group": "Macrostructures and landforms",
+      "about": "A seeded radial mountain with ridged flanks and a snow summit.",
+      "notes": "Authored metre dimensions, mathematical scenery and a bounded native mesh representation. No structural engineering or geological simulation.",
+      "details": [
+        "hull",
+        "quick",
+        "demo"
+      ],
+      "references": null,
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 35
+    },
+    "detail": "quick",
+    "folder": "landform-mountain-massif-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 148619,
+      "Refined": 148619,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 184000750,
+    "Encode": 7732625,
+    "Compile": 2466167,
+    "BakeWall": 542,
+    "BakeGPU": 0,
+    "DispatchWall": 114514792,
+    "TraceGPU": 25741417,
+    "Finish": 17309334,
+    "AccelerationWall": 28367959,
+    "AccelerationGPU": 10204791,
+    "InputBytes": 120776,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -5000,
+      "Y": 0,
+      "Z": -5000
+    },
+    "Max": {
+      "X": 5000,
+      "Y": 2500,
+      "Z": 5000
+    }
+  },
+  "stored-faces": 1152,
+  "seed": 5,
+  "image-sha256": "6e5394817d181ea8b99f22ec59b83d4d57147807996e218f9cb45f90013a83ef",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 8914125
+}

@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "dkist",
+      "group": "Haleakala families",
+      "about": "An off-axis solar instrument inside a round-pupil calotte proxy.",
+      "notes": "Published four-metre clear pupil and offset secondary; authored figure and housing, not a calibrated Gregorian prescription.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Primary family reference",
+          "url": "https://nso.edu/dkist-at-a-glance/"
+        }
+      ],
+      "view-yaw-deg": 20,
+      "view-elevation-deg": 55
+    },
+    "detail": "quick",
+    "folder": "dkist-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1230105,
+      "Candidates": 167618,
+      "Refined": 167618,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 187407125,
+    "Encode": 18710500,
+    "Compile": 1685917,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 119322831,
+    "TraceGPU": 58095874,
+    "Finish": 17581211,
+    "AccelerationWall": 16206000,
+    "AccelerationGPU": 1465041,
+    "InputBytes": 433604,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -14.5,
+      "Y": 0,
+      "Z": -14.5
+    },
+    "Max": {
+      "X": 40,
+      "Y": 44,
+      "Z": 14.5
+    }
+  },
+  "stored-faces": 4700,
+  "seed": 5,
+  "image-sha256": "b57f554301ac2009c6369fe80a97a0fbf5220738c396f8d8f7967deab5441c98",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 26989084
+}

@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "boulder",
+      "group": "Wood and stone",
+      "about": "An angular granite boulder with seeded lumps and cleaves.",
+      "notes": "The seed chooses form within the construction row's ranges.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "boulder-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 174365,
+      "Refined": 174365,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 213654750,
+    "Encode": 4406083,
+    "Compile": 1744709,
+    "BakeWall": 333,
+    "BakeGPU": 0,
+    "DispatchWall": 126124502,
+    "TraceGPU": 73588458,
+    "Finish": 28799290,
+    "AccelerationWall": 39244875,
+    "AccelerationGPU": 22546417,
+    "InputBytes": 62196,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.9084041984451177,
+      "Y": 0,
+      "Z": -0.8152284859826805
+    },
+    "Max": {
+      "X": 0.9084041984451177,
+      "Y": 1.3339930989306077,
+      "Z": 0.8152284859826805
+    }
+  },
+  "stored-faces": 320,
+  "seed": 5,
+  "image-sha256": "9ab2fde7cd3e6cc8d82eea7e77c64197f91e7b85333768f16e1f777692252406",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 4179833
+}

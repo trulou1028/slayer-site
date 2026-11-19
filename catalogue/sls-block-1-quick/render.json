@@ -1,0 +1,104 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "sls-block-1",
+      "group": "Launchers",
+      "about": "The Space Launch System, Block 1, its core stage, two solid rocket boosters and upper stage, 86.7 m tall, without Orion on top.",
+      "notes": "The core stage's and boosters' sizes are NASA's; the upper stage's is a table row inferred to be it; the adapter's height is picked. No engines, and not the core's orange foam.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "NASA, Space Launch System reference",
+          "url": "https://www.nasa.gov/reference/space-launch-system/"
+        },
+        {
+          "title": "NASA, SLS core stage fact sheet",
+          "url": "https://www.nasa.gov/wp-content/uploads/2020/02/sls_core_stage_fact_sheet_04262021_508.pdf"
+        }
+      ],
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "sls-block-1-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 72986,
+      "Refined": 72986,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 279927750,
+    "Encode": 6940292,
+    "Compile": 3190542,
+    "BakeWall": 625,
+    "BakeGPU": 0,
+    "DispatchWall": 154008626,
+    "TraceGPU": 110282082,
+    "Finish": 28688249,
+    "AccelerationWall": 74831917,
+    "AccelerationGPU": 47533291,
+    "InputBytes": 143108,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -7.857600000000001,
+      "Y": 0,
+      "Z": -7.857600000000001
+    },
+    "Max": {
+      "X": 7.857600000000001,
+      "Y": 86.7,
+      "Z": 7.857600000000001
+    }
+  },
+  "stored-faces": 1344,
+  "seed": 5,
+  "image-sha256": "bdb1ed786e0bcae9063c0755c46b78448bad6af130f469c3e07d11cb6ccc8816",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 10484292
+}

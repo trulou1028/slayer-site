@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "maser",
+      "group": "Fire and lamps",
+      "about": "A mounted dish carrying a radio emitter.",
+      "notes": "The housing is visible; its radio beam is not shown by an RGB picture.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "maser-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 88630,
+      "Refined": 88629,
+      "Fallbacks": 1
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 136466375,
+    "Encode": 1947084,
+    "Compile": 1375958,
+    "BakeWall": 292,
+    "BakeGPU": 0,
+    "DispatchWall": 61239958,
+    "TraceGPU": 8561624,
+    "Finish": 10768583,
+    "AccelerationWall": 51960583,
+    "AccelerationGPU": 314583,
+    "InputBytes": 43844,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -1.1936765000491198,
+      "Y": 0,
+      "Z": -1.84979781774953
+    },
+    "Max": {
+      "X": 2.0673124382818213,
+      "Y": 4.083842115986442,
+      "Z": 1.84979781774953
+    }
+  },
+  "stored-faces": 128,
+  "seed": 5,
+  "image-sha256": "ac85d99dec39e1cd97ef84d303fb5e42d29afc47092856c9d4e2f6820444fe28",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 125414708
+}

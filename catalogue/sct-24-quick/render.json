@@ -1,0 +1,100 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "sct-24",
+      "group": "Personal telescopes",
+      "about": "A 24-inch Schmidt-Cassegrain scenery on a fork and pier.",
+      "notes": "Requested 24-inch aperture. Short tube, primary, secondary, corrector proxy, finder and rear focuser. Tube and mount proportions are authored; the corrector is opaque scenery and does not refract light.",
+      "details": [
+        "hull",
+        "clumps",
+        "quick",
+        "demo"
+      ],
+      "references": [
+        {
+          "title": "Celestron, Schmidt-Cassegrain construction and corrector",
+          "url": "https://www.celestron.com/blogs/knowledgebase/the-ultimate-guide-to-celestron-optical-tubes"
+        }
+      ],
+      "view-yaw-deg": 35,
+      "view-elevation-deg": 25
+    },
+    "detail": "quick",
+    "folder": "sct-24-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1236378,
+      "Candidates": 67997,
+      "Refined": 67997,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 231092542,
+    "Encode": 13914333,
+    "Compile": 2310833,
+    "BakeWall": 500,
+    "BakeGPU": 0,
+    "DispatchWall": 150757874,
+    "TraceGPU": 100067291,
+    "Finish": 25827085,
+    "AccelerationWall": 22718417,
+    "AccelerationGPU": 1841624,
+    "InputBytes": 274244,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.7315199999999998,
+      "Y": 0,
+      "Z": -1.9507199999999998
+    },
+    "Max": {
+      "X": 0.7315199999999998,
+      "Y": 3.6575999999999995,
+      "Z": 0.7315199999999998
+    }
+  },
+  "stored-faces": 2924,
+  "seed": 5,
+  "image-sha256": "9af4521d3d96afb14380e63cab644d34892235d9c887d1fa0bb0431b3ce52d04",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 21780792
+}

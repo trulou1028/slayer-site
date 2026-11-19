@@ -1,0 +1,92 @@
+{
+  "specimen": {
+    "entry": {
+      "kind": "pebble",
+      "group": "Wood and stone",
+      "about": "A small worn granite lump.",
+      "notes": "Size classes were recalled, not verified; wornness is an authored control.",
+      "details": [
+        "quick"
+      ],
+      "references": null,
+      "view-yaw-deg": 0,
+      "view-elevation-deg": null
+    },
+    "detail": "quick",
+    "folder": "pebble-quick",
+    "status": "native GPU render",
+    "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+    "producer": {
+      "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+      "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+      "compiled-tree-modified": "false",
+      "go-version": "go1.27.3"
+    }
+  },
+  "producer": {
+    "binary-sha256": "2b7e6e67c275bf408953d937ff53fe9f8c988d14e6abc01c24bbee1289a1e5fb",
+    "compiled-revision": "39f29e1d991c16553aac36e55b78e43a2e7ff064",
+    "compiled-tree-modified": "false",
+    "go-version": "go1.27.3"
+  },
+  "gpu-profile": {
+    "EnvironmentWall": 0,
+    "EnvironmentGPU": 0,
+    "EnvironmentNodes": 0,
+    "VolumeSkySamples": 0,
+    "ShellVolumes": 0,
+    "BoxedCPU": {
+      "Wall": 0,
+      "Cells": 0,
+      "Volumes": 0
+    },
+    "Native": {
+      "Queries": 1228800,
+      "Candidates": 180017,
+      "Refined": 180017,
+      "Fallbacks": 0
+    },
+    "LightingWall": 0,
+    "LightingGPU": 0,
+    "Device": "Apple M3 Max",
+    "Total": 193594875,
+    "Encode": 3372958,
+    "Compile": 2058292,
+    "BakeWall": 417,
+    "BakeGPU": 0,
+    "DispatchWall": 121464709,
+    "TraceGPU": 70083457,
+    "Finish": 22282249,
+    "AccelerationWall": 30961208,
+    "AccelerationGPU": 14580333,
+    "InputBytes": 41460,
+    "SampleBytes": 58982400,
+    "PeakSampleBytes": 3932160,
+    "Retained": {
+      "Held": 0,
+      "Sent": 0,
+      "SentBytes": 0,
+      "Patched": false
+    },
+    "LampStoreBytes": 0,
+    "SkyShared": false
+  },
+  "duration-unit": "nanoseconds",
+  "physical-bounds-metres": {
+    "Min": {
+      "X": -0.028848768295130185,
+      "Y": 0,
+      "Z": -0.02588972809676532
+    },
+    "Max": {
+      "X": 0.028848768295130185,
+      "Y": 0.04236446494217392,
+      "Z": 0.02588972809676532
+    }
+  },
+  "stored-faces": 80,
+  "seed": 5,
+  "image-sha256": "2d801ce9c63f03af8cadee8d398b269025b1be154cf43a5aa4819f031815402d",
+  "settings-sha256": "c04fb56eb13b733916c709720bcfbed016ae37ea4e2462e504d24ecf6f4cda4e",
+  "preparation-wall": 1000667
+}
